@@ -1,1 +1,3 @@
-'admin'
+const admin = () => {
+    
+}

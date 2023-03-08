@@ -1,1 +1,3 @@
-'productsController'
+const productsController = () => {
+    
+}

@@ -32,7 +32,12 @@ app.use(methodOverride('_method'));
 
 // Rutas
 const mainRouter = require('./routes/mainRouter.js');
+const productRouter = require('./routes/productRouter.js');
+const adminRouter = require('./routes/adminRouter.js');
+
 app.use('/',mainRouter);
+app.use('/product',productRouter);
+app.use('/admin',adminRouter)
 
 
 // Correr el servidor
@@ -40,6 +45,6 @@ app.use('/',mainRouter);
 const PORT = process.env.PORT || 3500;
 
 app.listen(PORT,()=>{
-    console.log(" 🚀 Se levanto proyecto en htpp://localhost:" + PORT)
+    console.log(" 🚀 Se levanto proyecto en http://localhost:" + PORT)
 })
 

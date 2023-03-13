@@ -1,1 +1,3 @@
-'adminController'
+const admin = () => {
+    
+}

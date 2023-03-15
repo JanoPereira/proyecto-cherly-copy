@@ -10,8 +10,13 @@
     padding: 2.5vh 0;
     transition: all 1s ease;
     z-index: 1000;
+    
 }
-.header-section:hover{
+.normal-header { 
+    background-color: #fff;
+    position: static;
+}
+.home-header-section:hover{
     background-color: #ffffff;
 }
 .nav-bar-section{

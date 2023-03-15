@@ -2,18 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/30a937ae38.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/header.css">
+    <%- include('./partials/head.ejs') %>
     <link rel="stylesheet" href="./css/index.css">
     <title>Home</title>
 </head>
 
 <body>
     <div class="main-container">
-        <%- include('./partials/header.ejs') %>
+        <%- include('./partials/header/homeHeader.ejs') %>
             <section class="main-section">
                 <div class="carrusel-image-container">
                     <img src="./img/homePage/snicker.avif" alt="">
@@ -22,7 +18,7 @@
                         <button>Discover the Collection</button>
                     </div>
                 </div>
-                
+
             </section>
 
     </div>

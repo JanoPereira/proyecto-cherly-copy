@@ -42,7 +42,6 @@ li{
     background: #fff;
     width: 100vw;
     height: 90vh;
-    
     left: 0;
     z-index: 1000;
     padding-top: 2vh;
@@ -51,14 +50,16 @@ li{
 .side-navbar {
     position: fixed;
     left: 0;
-    top: 11vh;
+    top: 9vh;
     bottom: 0;
     background-color: white;
-    z-index: 1;
-    right: 70%;
+    z-index: 999;
+    right: 0;
     max-width: 0;
     overflow: hidden;
-    transition: max-width 150ms;
+    transition: max-width 350ms ease;
+    border-top: 1px solid grey;
+    padding-top: 1rem;
 }
 
 .side-navbar-active {
@@ -91,9 +92,14 @@ li{
     position: absolute;
     width: 100%;
     padding: 2.5vh 0;
-    transition: all 1s ease;
     z-index: 1000;
+    transition: background-color 300ms ease;
+}
 
+.header-section-active {
+    background-color: white;
+    border-bottom: 1px solid grey
+    ; /*(40, 40, 40, .2);*/
 }
 
 .home-header-section:hover {

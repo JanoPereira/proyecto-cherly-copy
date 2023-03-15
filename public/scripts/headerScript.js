@@ -27,26 +27,29 @@ window.addEventListener('load', () => {
 
         togglerButton.forEach(btn => {
             btn.addEventListener('click', () => {
-                if (btn.classList.contains('fa-x')) {
-                    console.log('entro al primero')
+                if (btn.classList.contains('fa-x')) { // CERRAR MENU
+                   
                     sideNavbar.classList.remove('side-navbar-active')
                     burgerIcon.classList.add('icon-active')
                     burgerIcon.classList.remove('icon-inactive')
                     xIcon.classList.add('icon-inactive')
                     xIcon.classList.remove('icon-active')
-                    if (isNotInHome) {
-                        header.style.backgroundColor = 'white'
-                    }
+                    if (!isNotInHome) {
+                        header.classList.remove('header-section-active')
+                        header.style.backgroundColor = 'transparent'
+                        header.style.position = 'absolute'
+                    } 
 
 
-                } else {
-                    console.log('entro al segundo')
+                } else {    // ABRIR MENU
+                    header.classList.add('header-section-active')
                     sideNavbar.classList.add('side-navbar-active')
                     burgerIcon.classList.add('icon-inactive')
                     burgerIcon.classList.remove('icon-active')
                     xIcon.classList.add('icon-active')
                     xIcon.classList.remove('icon-inactive')
                     header.style.backgroundColor = 'white'
+                   
 
                 }
             })

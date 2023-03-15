@@ -9,7 +9,9 @@
     height: 100%;
 }
 
-.carrusel-image-container .sticky-options-container{
-    position: sticky;
-    bottom: 10%;
+.sticky-options-container{
+    position: absolute;
+    bottom: 20%;
+    transform: translateX(50%);
+    right: 50%; 
 }

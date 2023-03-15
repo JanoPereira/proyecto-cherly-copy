@@ -1,4 +1,4 @@
-.filter-section{
+.filter-section {
     width: 100%;
     border-top: 1px solid rgba(40, 40, 40, .2);
     display: flex;
@@ -8,10 +8,13 @@
     margin-bottom: 3.5vh;
 }
 
-.page-detail{
+.page-detail {
     margin: auto 0;
+    font-size: 15px;
+    letter-spacing: 1px;
 }
-.filter-container{
+
+.filter-container {
     width: 120px;
     display: flex;
     justify-content: space-evenly;
@@ -24,52 +27,83 @@
 
 }
 
-.filter-container:hover{ /*TODO: No funciona hover */ 
+.filter-container:hover {
     border: 1px solid #000;
 }
 
 /* PRODUCT LIST */
-.product-list-section{
+.product-list-section {
     display: flex;
     flex-wrap: wrap;
 
 }
+
 /* PRODUCT CARD */
-.product-card-container{
+.product-card-container {
     position: relative;
     cursor: pointer;
     width: 25%;
-    height: 420px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 15px ;
-    background: linear-gradient(rgba(200,200,200,.6),rgba(255,255,255,0.2));
+    padding: 15px;
+    background: linear-gradient(rgba(200, 200, 200, .4), rgba(255, 255, 255, 0.2));
 }
-.image-container{
-    height: 400px;
+
+.image-container {
+    height: 80%;
 
 }
-.image-container img{
+
+.image-container img {
     object-fit: cover;
+    height: 100%;
     width: 100%;
+
+}
+
+.product-info-container .product-name, 
+.product-info-container .product-price {
+    font-size: 15px;
+    letter-spacing: 1px;
+
 }
 
 /* FLECHAS ATRAS/ADELANTE */
-.image-buttons{
+.image-buttons {
     opacity: 0;
     transition: all .7s ease-out;
 }
-.product-card-container:hover > .image-container > .image-buttons{
+
+.product-card-container:hover>.image-container>.image-buttons {
     opacity: 1;
 }
-.back-button, .foward-button{
+
+.back-button,
+.foward-button {
     position: absolute;
     top: 50%;
     font-size: 20px;
 }
-.back-button{
+
+.back-button {
     left: 10px;
 }
-.foward-button{
+
+.foward-button {
     right: 10px;
+}
+
+/* MEDIAS QUERIES */
+/* TABLET */
+@media (max-width:768px){
+.product-card-container {
+    width: 33.333%;
+}
+}
+/* MOBILE */
+@media (max-width:426px){
+.product-card-container {
+    width: 50%;
+}
 }

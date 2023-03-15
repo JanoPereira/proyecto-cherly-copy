@@ -1,61 +1,113 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.hidden{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
 
-.header-section{
+/* MENU HAMBURGUESA */
+.burguer-menu-toggler-container{
+    display: none;
+}
+.burguer-menu-container{
+    position: absolute;
+    background: #fff;
+    width: 100vw;
+    height: 90vh;
+    top: 11vh;
+    left: 0;
+    z-index: 1000;
+    padding-top: 2vh;
+}
+
+.burguer-menu-options {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vh;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.burguer-menu-option{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.burguer-menu-option a{
+    color: #000;
+    font-size: 25px;
+}
+.burguer-menu-option i{
+    margin: auto 0;
+}
+/* END MENU HAMBURGUESA */
+
+.header-section {
     position: absolute;
     width: 100%;
     padding: 2.5vh 0;
     transition: all 1s ease;
     z-index: 1000;
-    
+
 }
-.normal-header { 
+
+.normal-header {
     background-color: #fff;
     position: static;
 }
-.home-header-section:hover{
+
+.home-header-section:hover {
     background-color: #ffffff;
 }
-.nav-bar-section{
-   display: flex;
-   width: 100%;
-   justify-content: space-between;
-   align-items: center;
+
+.nav-bar-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.search-container{
+.search-container {
     width: 25%;
-    padding-left: 5vw;
+    text-align: center;
 }
-.search-container .nav-label{
+
+.search-container .nav-label {
     margin-left: 10px;
 }
 
-.brand-name{
+.brand-name {
     width: 50%;
     text-align: center;
     font-size: 40px;
     font-weight: 500;
 }
 
-.nav-end{
+.nav-end {
     width: 25%;
     display: flex;
     justify-content: space-around;
     /* align-self: flex-end; */
 }
-.shopping-cart-container{
+
+.shopping-cart-container {
     position: relative;
     width: fit-content;
 }
-.shopping-cart-container .fa-bag-shopping{
+
+.shopping-cart-container .fa-bag-shopping {
     font-weight: 900;
     font-size: 20px;
 }
-.shopping-cart-container .products-quantity{
+
+.shopping-cart-container .products-quantity {
     position: absolute;
     background: #000;
     color: #fff;
@@ -70,4 +122,41 @@
     align-content: center;
     top: -18px;
     right: -15px;
+}
+
+
+/* MEDIAS QUERIES */
+
+/* TABLET */
+@media (max-width:768px) {}
+
+/* MOBILE */
+@media (max-width:426px) {
+    .header{
+        max-height: 10vh;
+    }
+    .search-container .nav-label {
+        display: none;
+    }
+
+    .brand-name {
+        font-size: 30px;
+    }
+    .shopping-cart-container .fa-bag-shopping{
+        font-size: 15px;
+    }
+    .shopping-cart-container .products-quantity {
+        font-size: 8px;
+        height: 7px;
+        width: 7px;
+        padding: 8px;
+    }
+    .search-container{
+        width: 12.5%;
+    }
+    .burguer-menu-toggler-container{
+        display: inline;
+        width: 12.5%;
+        text-align: center;
+    }
 }

@@ -16,17 +16,55 @@ li{
 /* MENU HAMBURGUESA */
 .burguer-menu-toggler-container{
     display: none;
+    position: relative;
 }
+
+.fa-bars, .fa-x {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 350ms;
+}
+
+.icon-inactive {
+    pointer-events: none;
+}
+
+.icon-active {
+    z-index: 1;
+    pointer-events: auto;
+    opacity: 1;
+}
+
 .burguer-menu-container{
     position: absolute;
     background: #fff;
     width: 100vw;
     height: 90vh;
-    top: 11vh;
+    
     left: 0;
     z-index: 1000;
     padding-top: 2vh;
 }
+
+.side-navbar {
+    position: fixed;
+    left: 0;
+    top: 11vh;
+    bottom: 0;
+    background-color: white;
+    z-index: 1;
+    right: 70%;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 150ms;
+}
+
+.side-navbar-active {
+    max-width: 1000px;
+}
+
 
 .burguer-menu-options {
     display: flex;
@@ -56,11 +94,6 @@ li{
     transition: all 1s ease;
     z-index: 1000;
 
-}
-
-.normal-header {
-    background-color: #fff;
-    position: static;
 }
 
 .home-header-section:hover {

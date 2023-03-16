@@ -1,7 +1,8 @@
-window.addEventListener('beforeunload',()=>{
+window.addEventListener('unload',()=>{
     window.scrollTo(0,0);
 })
-window.addEventListener('load', () => { //TODO: Terminar logica
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
     let video = document.querySelector('.video');
     const rect = video.getBoundingClientRect(); 
     const elementPosition = rect.y //posicion que esta con respecto al total

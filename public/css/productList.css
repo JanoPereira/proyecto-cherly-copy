@@ -61,11 +61,17 @@
 
 }
 
+/* NOMBRE Y PRECIO */
 .product-info-container .product-name, 
 .product-info-container .product-price {
     font-size: 15px;
     letter-spacing: 1px;
-
+}
+/* COLORES */
+.single-color{
+    width: 12px;
+    height: 12px;
+    color: #ead;
 }
 
 /* FLECHAS ATRAS/ADELANTE */

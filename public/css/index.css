@@ -1,17 +1,53 @@
+/* PARA OCULTAR EL PROGRESO DEL VIDEO */
+/* Ocultar el control de progreso en el video */
+video::-webkit-media-controls-timeline,
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display{
+    display: none;
+  }
+
 .carrusel-image-container{
     position: relative;
-    background-color: aqua;
-    height: 100%;
+    height: 100%;   
+    background-image:  linear-gradient(to top,rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-.carrusel-image-container img{
+.carrusel-image-container img,
+.carrusel-image-container video{
+    display: block;
     object-fit: cover;
     width: 100%;
-    height: 100%;
+    z-index: -1;
+    position: relative;
+    
+}
+.carrusel-image-container video{
+    z-index: 1;
 }
 
 .sticky-options-container{
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     transform: translateX(50%);
     right: 50%; 
+    z-index: 1;
+}
+.sticky-options-title{
+    color: #fff;
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 4vh;
+}
+.sticky-options-container a{
+    background: none;
+    border: 1px solid white;
+    color: #fff;
+    border-radius: 20px;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    width: fit-content;
+    letter-spacing: 1px;
 }

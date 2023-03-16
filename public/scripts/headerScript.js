@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 
     if (isNotInHome) { // agregar estilo de header si no coincide con home
         header.style.position = 'static'
-        header.style.backgroundColor = 'white'
+        header.classList.add('header-section-active')
     }
 
 

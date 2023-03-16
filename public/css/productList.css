@@ -3,8 +3,9 @@
     display: flex;
     justify-content: space-between;
     padding: 0 5vw;
-    padding-top: 2.5vh;
+    padding-top: 12vh;
     margin-bottom: 3.5vh;
+
 }
 
 .page-detail {

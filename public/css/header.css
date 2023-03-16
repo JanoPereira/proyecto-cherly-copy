@@ -58,8 +58,8 @@ li{
     max-width: 0;
     overflow: hidden;
     transition: max-width 350ms ease;
-    border-top: 1px solid grey;
-    padding-top: 1rem;
+    margin-top: 1rem;
+    overflow-y: scroll;
 }
 
 .side-navbar-active {
@@ -98,7 +98,7 @@ li{
 
 .header-section-active {
     background-color: white;
-    border-bottom: 1px solid grey
+    border-bottom: 1px solid rgba(40,40,40,.2)
     ; /*(40, 40, 40, .2);*/
 }
 
@@ -172,8 +172,9 @@ li{
 
 /* MOBILE */
 @media (max-width:426px) {
-    .header{
+    .header-section{
         max-height: 10vh;
+        position: fixed !important;
     }
     .search-container .nav-label {
         display: none;

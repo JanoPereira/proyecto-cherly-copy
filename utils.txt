@@ -1,0 +1,29 @@
+  <% categories.forEach(category=> { %>
+                <li class="burguer-menu-option" data-id=<%=category.id %>>
+                    <a href="#">
+                        <%= category.name %>
+                    </a>
+                    <i class="fa-solid fa-angle-right"></i>
+
+        <div class="side-navbar-submenu">
+
+        <div class="back-menu-container">
+            <div class="back-menu-subcontainer">
+                <li class="burger-submenu-back">Menu</li>
+            </div>
+        </div>
+        <ul class="category-submenu-options">
+                   
+            <% products.forEach((product, i)=> { %>
+                <% if(product.category_id==category.id && i < 5) { %>
+                        <li class="submenu-product"><%= product.name %></li>
+                <% } %>
+                <% })%>
+                      
+        </ul>
+    </div>
+
+                
+
+        </li> %>
+<% }) %>

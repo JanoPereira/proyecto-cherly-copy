@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.noScroll{
+
+.noScroll {
     overflow: hidden;
 }
 
@@ -61,27 +62,63 @@ li {
 .side-navbar {
     position: fixed;
     left: 0;
-    top: 9vh;
+    top: 7vh;
     bottom: 0;
     background-color: white;
-    z-index: 999;
+    z-index: 2;
     right: 0;
     max-width: 0;
     overflow: hidden;
     transition: max-width 350ms ease;
-    margin-top: 1rem;
     overflow-y: scroll;
+    padding-top: 1rem;
 }
 
 .side-navbar-active {
+
     max-width: 1000px;
 }
 
+.side-navbar-submenu {
+    position: fixed;
+    top: 6vh;
+    bottom: 0;
+    background-color: white;
+    z-index: 3;
+    right: 0;
+    left: 110%;
+    transition: left 350ms ease;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    height: auto;
+    padding-top: 1rem;
+
+}
+
+.side-navbar-submenu-active {
+    left: 0%;
+}
+
+.back-menu-container {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.back-menu-subcontainer {
+    width: 90%;
+    text-align: left;
+}
+
+.category-submenu-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .burguer-menu-options {
     display: flex;
     flex-direction: column;
-    row-gap: 4vh;
     align-content: center;
     flex-wrap: wrap;
 }
@@ -90,6 +127,20 @@ li {
     width: 90%;
     display: flex;
     justify-content: space-between;
+    margin: 0.650rem 0;
+}
+
+.burguer-submenu-option {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+   
+    margin: 0.650rem 0;
+}
+
+.burguer-submenu-option a {
+    color: #000;
+    font-size: 25px;
 }
 
 .burguer-menu-option a {
@@ -99,6 +150,12 @@ li {
 
 .burguer-menu-option i {
     margin: auto 0;
+}
+
+.burger-submenu-back {
+    color: rgb(166, 166, 166);
+    font-size: 25px;
+  
 }
 
 /* END MENU HAMBURGUESA */
@@ -191,13 +248,13 @@ li {
     right: 0;
     bottom: 0;
     z-index: -1;
-    transition: opacity .5s ease,z-index .2s ease;
+    transition: opacity .5s ease, z-index .2s ease;
     opacity: 0;
     overflow-y: none;
 }
 
 .search-main-section-active {
-    
+
     z-index: 1000;
     background-color: rgba(0, 0, 0, .4);
     opacity: 1;
@@ -218,7 +275,7 @@ li {
 .search-form-container-inactive {
     transform: translateY(-100%);
     max-width: 0;
-    transition: transform .2s ease-in, max-width 2s ease-in, background-color .1s ease,opacity .5s ease;
+    transition: transform .2s ease-in, max-width 2s ease-in, background-color .1s ease, opacity .5s ease;
     opacity: 0;
     /* Lo redefino para que se vaya prolijo */
 }

@@ -1,11 +1,12 @@
 window.addEventListener('load',()=>{
+    const body = document.querySelector('body');
     const togglerOpenButton = document.querySelector('.search-container');
     const searchFormContainer = document.querySelector('.search-form-container');
     const togglerCloseButton = document.querySelector('.close-search-form-button');
     const blackScreen = document.querySelector('.search-container-bottom');
     const mainSection = document.querySelector('.search-main-section'); //Es la seccion donde se encuentran ambas cosas
     togglerOpenButton.addEventListener('click',()=>{ // Si abre el menu
-
+        body.classList.add('noScroll');//Para que no me deje scrollear
         blackScreen.classList.add('search-container-bottom-active');
         mainSection.classList.add('search-main-section-active');
         searchFormContainer.classList.add('search-form-container-active');
@@ -13,12 +14,14 @@ window.addEventListener('load',()=>{
     })
     
     togglerCloseButton.addEventListener('click',()=>{ //Si toca la x
+        body.classList.remove('noScroll');//Para que no me deje scrollear
         mainSection.classList.remove('search-main-section-active');
         blackScreen.classList.remove('search-container-bottom-active');
         searchFormContainer.classList.add('search-form-container-inactive');
         searchFormContainer.classList.remove('search-form-container-active');
     });
     blackScreen.addEventListener('click',()=>{ //Si toca la pantalla negra
+        body.classList.remove('noScroll');//Para que no me deje scrollear
         mainSection.classList.remove('search-main-section-active');
         blackScreen.classList.remove('search-container-bottom-active');
         searchFormContainer.classList.add('search-form-container-inactive');

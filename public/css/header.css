@@ -69,7 +69,7 @@ li {
     max-width: 0;
     overflow: hidden;
     transition: max-width 350ms ease;
-    /* margin-top: 1rem; */
+    padding-top: 1rem;
     overflow-y: scroll;
 }
 
@@ -109,6 +109,7 @@ li {
     padding: 2.5vh 0;
     z-index: 100;
     transition: background-color 300ms ease;
+    background-color: transparent;
 }
 
 .header-section-active {
@@ -388,6 +389,9 @@ li {
     .header-section {
         height: 10vh;
         position: fixed !important;
+    }
+    .header-section:hover{
+        background-color: none;
     }
 
     .search-container .nav-label {

@@ -37,8 +37,6 @@ window.addEventListener('load', () => {
                     xIcon.classList.remove('icon-active');
                     if (!isNotInHome) {
                         header.classList.remove('header-section-active');
-                        header.style.backgroundColor = 'transparent';
-                        header.style.position = 'absolute';
                     } 
 
 
@@ -50,9 +48,6 @@ window.addEventListener('load', () => {
                     burgerIcon.classList.remove('icon-active');
                     xIcon.classList.add('icon-active');
                     xIcon.classList.remove('icon-inactive');
-                    header.style.backgroundColor = 'white';
-                   
-
                 }
             })
         })

@@ -108,17 +108,21 @@
 .product-size-container {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+
 }
 
 .product-color-container {
     border-bottom: 1px solid rgba(200, 200, 200, .4);
     padding-bottom: 15px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .select-label {
     font-size: 16px;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .color-choose-option,

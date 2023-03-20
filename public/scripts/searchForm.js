@@ -5,7 +5,12 @@ window.addEventListener('load',()=>{
     const togglerCloseButton = document.querySelector('.close-search-form-button');
     const blackScreen = document.querySelector('.search-container-bottom');
     const mainSection = document.querySelector('.search-main-section'); //Es la seccion donde se encuentran ambas cosas
+    const sideNavbar = document.querySelector('.side-navbar');
+    const header = document.querySelector('.header-section');
+
     togglerOpenButton.addEventListener('click',()=>{ // Si abre el menu
+        header.classList.add('header-section-active');
+        sideNavbar.classList.remove('side-navbar-active');
         body.classList.add('noScroll');//Para que no me deje scrollear
         blackScreen.classList.add('search-container-bottom-active');
         mainSection.classList.add('search-main-section-active');

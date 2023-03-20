@@ -12,52 +12,54 @@
     <%- include('./partials/wpp.ejs') %>
         <%- include('./partials/header/header.ejs') %>
             <section class="product-detail-section">
-                <div class="carousel-container">
-                    <div class="images-carousel">
-                        <img src="  /img/products/handbags/cartera1.avif" alt="product-detail-image"
-                            class="product-image product-image-active">
-                        <img src="  /img/products/handbags/cartera2.avif" alt="product-detail-image"
-                            class="product-image">
-                        <img src="  /img/products/handbags/cartera3.avif" alt="product-detail-image"
-                            class="product-image">
-                        <img src="  /img/products/handbags/cartera4.avif" alt="product-detail-image"
-                            class="product-image">
+                <div class="images-info-wrapper">
+                    <div class="carousel-container">
+                        <div class="images-carousel">
+                            <img src="  /img/products/handbags/cartera1.avif" alt="product-detail-image"
+                                class="product-image product-image-active">
+                            <img src="  /img/products/handbags/cartera2.avif" alt="product-detail-image"
+                                class="product-image">
+                            <img src="  /img/products/handbags/cartera3.avif" alt="product-detail-image"
+                                class="product-image">
+                            <img src="  /img/products/handbags/cartera4.avif" alt="product-detail-image"
+                                class="product-image">
+                        </div>
+                        <div class="scrollbar-carousel"></div>
                     </div>
-                    <div class="scrollbar-carousel"></div>
-                </div>
-                <div class="product-info-container">
-                    <div class="product-code-container">
-                        <p class="product-code">M75232G</p>
-                    </div>
-                    <div class="bookmark-logo-container">
-                        <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
-                            <i class="fa-regular fa-bookmark bookmark-logo"></i>
-
-                            <% }else{ %>
-                                <i class="fa-solid fa-bookmark bookmark-logo"></i>
-                                <% } %>
-                    </div>
-                    <div class="product-price-name-container">
-                        <p class="product-name">Cartera Women Fashion</p>
-                        <p class="product-price">$8000</p>
-                    </div>
-                    <div class="product-color-container">
-                        <label for="" class="select-label">Colores</label>
-                        <p class="color-choose-option">
-                            Verde
-                            <span class="color-dot-green"></span>
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </p>
-                    </div>
-                    <div class="product-size-container">
-                        <label for="" class="select-label">Tamaños</label>
-                        <p class="size-choose-option">
-                            Medium
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </p>
-                    </div>
-                    <div class="cart-button-container">
-                        <button class="cart-add-button">Agregar al Carro</button>
+                    <div class="product-info-container">
+                        <div class="product-code-container">
+                            <p class="product-code">M75232G</p>
+                        </div>
+                        <div class="bookmark-logo-container">
+                            <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                <i class="fa-regular fa-bookmark bookmark-logo"></i>
+    
+                                <% }else{ %>
+                                    <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                    <% } %>
+                        </div>
+                        <div class="product-price-name-container">
+                            <p class="product-name">Cartera Women Fashion</p>
+                            <p class="product-price">$8000</p>
+                        </div>
+                        <div class="product-color-container">
+                            <label for="" class="select-label">Colores</label>
+                            <p class="color-choose-option">
+                                Verde
+                                <span class="color-dot-green"></span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </p>
+                        </div>
+                        <div class="product-size-container">
+                            <label for="" class="select-label">Tamaños</label>
+                            <p class="size-choose-option">
+                                Medium
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </p>
+                        </div>
+                        <div class="cart-button-container">
+                            <button class="cart-add-button">Agregar al Carro</button>
+                        </div>
                     </div>
                 </div>
                 <div class="product-description-container">
@@ -136,36 +138,7 @@
                                 <p class="related-product-price">$6000</p>
                             </div>
                         </div>
-                        <div class="related-product-card">
-                            <div class="product-image-container">
-                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
-                                    class="related-product-image">
-                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
-                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
-                                    <% }else{ %>
-                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
-                                        <% } %>
-                            </div>
-                            <div class="related-product-info">
-                                <p class="related-product-name">Related Handbag #2</p>
-                                <p class="related-product-price">$6000</p>
-                            </div>
-                        </div>
-                        <div class="related-product-card">
-                            <div class="product-image-container">
-                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
-                                    class="related-product-image">
-                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
-                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
-                                    <% }else{ %>
-                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
-                                        <% } %>
-                            </div>
-                            <div class="related-product-info">
-                                <p class="related-product-name">Related Handbag #3</p>
-                                <p class="related-product-price">$6000</p>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="client-preferences-container">

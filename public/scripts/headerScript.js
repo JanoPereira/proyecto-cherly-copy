@@ -1,12 +1,12 @@
 window.addEventListener('load', () => {
     // FUNCIONES
-
+    const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const header = document.querySelector('.header-section');
     let burgerIcon = document.querySelector('.fa-bars')
     let xIcon = document.querySelector('.fa-x')
     const sideNavbar = document.querySelector('.side-navbar')
 
-    const isNotInHome = window.location.pathname != '/'
+    const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname)
 
     if (isNotInHome) { // agregar estilo de header si no coincide con home
         header.style.position = 'static'
@@ -21,9 +21,9 @@ window.addEventListener('load', () => {
 
     const listenTogglerButton = () => {
 
-        if (isNotInHome) {
-            header.style.backgroundColor = 'white'
-        }
+        // if (isNotInHome) {
+        //     header.style.backgroundColor = 'white'
+        // }
 
         togglerButton.forEach(btn => {
             btn.addEventListener('click', () => {

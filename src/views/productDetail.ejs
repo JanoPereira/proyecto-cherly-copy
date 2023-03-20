@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/productDetail.css">
+        <script src="/scripts/productDetail.js"></script>
+        <title>Cartera #1</title>
+</head>
+
+<body>
+    <%- include('./partials/wpp.ejs') %>
+        <%- include('./partials/header/header.ejs') %>
+            <section class="product-detail-section">
+                <div class="carousel-container">
+                    <div class="images-carousel">
+                        <img src="  /img/products/handbags/cartera1.avif" alt="product-detail-image"
+                            class="product-image product-image-active">
+                        <img src="  /img/products/handbags/cartera2.avif" alt="product-detail-image"
+                            class="product-image">
+                        <img src="  /img/products/handbags/cartera3.avif" alt="product-detail-image"
+                            class="product-image">
+                        <img src="  /img/products/handbags/cartera4.avif" alt="product-detail-image"
+                            class="product-image">
+                    </div>
+                    <div class="scrollbar-carousel"></div>
+                </div>
+                <div class="product-info-container">
+                    <div class="product-code-container">
+                        <p class="product-code">M75232G</p>
+                    </div>
+                    <div class="bookmark-logo-container">
+                        <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                            <i class="fa-regular fa-bookmark bookmark-logo"></i>
+
+                            <% }else{ %>
+                                <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                <% } %>
+                    </div>
+                    <div class="product-price-name-container">
+                        <p class="product-name">Cartera Women Fashion</p>
+                        <p class="product-price">$8000</p>
+                    </div>
+                    <div class="product-color-container">
+                        <label for="" class="select-label">Colores</label>
+                        <p class="color-choose-option">
+                            Verde
+                            <span class="color-dot-green"></span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </p>
+                    </div>
+                    <div class="product-size-container">
+                        <label for="" class="select-label">Tamaños</label>
+                        <p class="size-choose-option">
+                            Medium
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </p>
+                    </div>
+                    <div class="cart-button-container">
+                        <button class="cart-add-button">Agregar al Carro</button>
+                    </div>
+                </div>
+                <div class="product-description-container">
+                    <p class="product-description">
+                        Introducing the Twist One Handle PM handbag in Taurillon leather. Its striking shape, elegant
+                        top handle, and iconic LV twist-lock make it a sophisticated everyday bag. In addition to the
+                        top handle, there’s a removable strap for comfortable shoulder and cross-body carry. The bag's
+                        interior is lined in colored leather.
+                    </p>
+                </div>
+                <div class="product-specifications-container">
+                    <label class="product-specifications-label">Product Details</label>
+                    <div class="product-size-specifications">
+                        <p class="size-number-specifications"> 9.8 x 6.7 x 4.3 cms</p>
+                        <p class="size-labels-specifications">(length x Height x Width)</p>
+                    </div>
+                    <ul class="specification-item-list">
+                        <li class="specification-item">Greige</li>
+                        <li class="specification-item">Taurillon leather</li>
+                        <li class="specification-item">Taurillon-leather trim</li>
+                        <li class="specification-item">Cowhide-leather lining</li>
+                        <li class="specification-item">Gold-color hardware</li>
+                        <li class="specification-item">Transforming LV twist-lock</li>
+                        <li class="specification-item">2 flat pockets</li>
+                        <li class="specification-item">Zipped pocket</li>
+                        <li class="specification-item">Flat pocket with removable mirror</li>
+                        <li class="specification-item">Strap:Removable. adjustable</li>
+                        <li class="specification-item">Strap drop: 13.6 inches</li>
+                    </ul>
+                </div>
+                <div class="related-products-container">
+                    <label class="related-products-label">YOU MAY ALSO LIKE</label>
+                    <div class="related-product-cards-container">
+                        <div class="related-product-card">
+                            <div class="product-image-container">
+                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
+                                    class="related-product-image">
+                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
+                                    <% }else{ %>
+                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                        <% } %>
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-name">Related Handbag #1</p>
+                                <p class="related-product-price">$6000</p>
+                            </div>
+                        </div>
+                        <div class="related-product-card">
+                            <div class="product-image-container">
+                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
+                                    class="related-product-image">
+                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
+                                    <% }else{ %>
+                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                        <% } %>
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-name">Related Handbag #1</p>
+                                <p class="related-product-price">$6000</p>
+                            </div>
+                        </div>
+                        <div class="related-product-card">
+                            <div class="product-image-container">
+                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
+                                    class="related-product-image">
+                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
+                                    <% }else{ %>
+                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                        <% } %>
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-name">Related Handbag #1</p>
+                                <p class="related-product-price">$6000</p>
+                            </div>
+                        </div>
+                        <div class="related-product-card">
+                            <div class="product-image-container">
+                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
+                                    class="related-product-image">
+                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
+                                    <% }else{ %>
+                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                        <% } %>
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-name">Related Handbag #2</p>
+                                <p class="related-product-price">$6000</p>
+                            </div>
+                        </div>
+                        <div class="related-product-card">
+                            <div class="product-image-container">
+                                <img src="/img/products/handbags/cartera1.avif" alt="related-product-image"
+                                    class="related-product-image">
+                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                    <i class="fa-regular fa-bookmark bookmark-logo"></i>
+                                    <% }else{ %>
+                                        <i class="fa-solid fa-bookmark bookmark-logo"></i>
+                                        <% } %>
+                            </div>
+                            <div class="related-product-info">
+                                <p class="related-product-name">Related Handbag #3</p>
+                                <p class="related-product-price">$6000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-preferences-container">
+                    <div class="payment-options-container">
+                        <i class="fa-regular fa-credit-card credit-card-logo"></i>
+                        <div class="payment-text-container">
+                            <p class="payment-label">Métodos de Pago</p>
+                            <p class="payment-description">Crédito, Débito, o Mercado Pago</p>
+                        </div>
+                        <i class="fa-regular fa-clone"></i>
+                    </div>
+                    <div class="shipment-options-container">
+                        <i class="fa-solid fa-truck"></i>
+                        <div class="shipment-text-container">
+                            <p class="shipment-label">Envíos</p>
+                            <p class="shipment-description">Mercado envíos, Retiro por el local</p>
+                        </div>
+                        <i class="fa-regular fa-clone"></i>
+                    </div>
+                    <div class="change-options-container">
+                        <i class="fa-solid fa-right-left"></i>
+                        <div class="change-text-container">
+                            <p class="change-label">Cambios & Devoluciones</p>
+                            <p class="change-description">Hasta 30 dias luego de tu compra</p>
+                            
+                        </div>
+                        <i class="fa-regular fa-clone"></i>
+                    </div>
+    
+                </div>
+                
+            </section>
+</body>
+
+</html>

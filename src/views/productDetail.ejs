@@ -10,6 +10,8 @@
 
 <body>
     <%- include('./partials/wpp.ejs') %>
+    <%- include('./partials/blackScreen.ejs') %>
+    <%- include('./partials/login.ejs') %>
         <%- include('./partials/header/header.ejs') %>
             <section class="product-detail-section">
                 <div class="images-info-wrapper">
@@ -169,8 +171,53 @@
                     </div>
     
                 </div>
-                
             </section>
+            <div class="color-picker-container">
+                <div class="color-picker-top">
+                    <p class="color-picker-label">COLORES</p>
+                    <div class="color-picker-exit-btn-container">
+                        <i class="fa-solid fa-x color-picker-exit-btn"></i>
+                    </div>
+                </div>
+                <div class="color-picker-options">
+                    <div class="color-picker-card color-picker-card-active">
+                        <div class="color-picker-image-container">
+                            <img src="/img/products/handbags/cartera1.avif" alt="color-image" class="color-picker-image">
+                        </div>
+                        <div class="color-picker-info">
+                            <p class="color-picker-name">Greige</p>
+                            <div class="color-picker-stock">
+                                <div class="available-dot available-dot-in-stock"></div>
+                                <p class="stock-availability-text">In stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-picker-card">
+                        <div class="color-picker-image-container">
+                            <img src="/img/products/handbags/cartera1.avif" alt="color-image" class="color-picker-image">
+                        </div>
+                        <div class="color-picker-info">
+                            <p class="color-picker-name">Greige</p>
+                            <div class="color-picker-stock">
+                                <div class="available-dot available-dot-out-of-stock"></div>
+                                <p class="stock-availability-text">Out of stock</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="color-picker-card">
+                        <div class="color-picker-image-container">
+                            <img src="/img/products/handbags/cartera1.avif" alt="color-image" class="color-picker-image">
+                        </div>
+                        <div class="color-picker-info">
+                            <p class="color-picker-name">Greige</p>
+                            <div class="color-picker-stock">
+                                <div class="available-dot available-dot-in-stock"></div>
+                                <p class="stock-availability-text">In stock</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </body>
 
 </html>

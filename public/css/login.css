@@ -1,0 +1,127 @@
+/* COLOR PICKER */
+.login-container {
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    transition: all .35s ease;
+    margin-right: -100%;
+    overflow: hidden;
+}
+
+.login-container-active {
+    margin-right: 0;
+    overflow-y: scroll;
+}
+
+.login-top {
+    height: 10%;
+    display: flex;
+    border-bottom: 1px solid rgba(200, 200, 200, .4);
+}
+
+.login-top-label{
+    font-size: 25px;
+    width: 100%;
+    padding: 3vh 2vw;
+    font-weight: 800;
+}
+.login-label {
+    width: 100%;
+    /* text-align: center; */
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.login-exit-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    border-left: 1px solid rgba(200, 200, 200, .4);
+    cursor: pointer;
+}
+.login-exit-btn-container:hover {
+    background-color: #ccc;
+}
+
+
+.login-exit-btn {
+    position: static;
+    opacity: 1;
+    transform: none;
+    cursor: pointer;
+}
+.login-with-account{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 3vw;
+    border-bottom: 1px solid rgba(200, 200, 200, .6);
+}
+.login-form{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.input-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+.input-label{
+    margin-bottom: 10px;
+}
+.input{
+    border: 1px solid rgba(200, 200, 200, .6);
+    padding: 15px 6px    ;
+    outline: none;
+    width: 100%;
+}
+.input-container{
+    width: 100%;
+}
+.relative-input{
+    position: relative;
+}
+.show-password-btn{
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+}
+.btn{
+    margin-top: 3.5vh;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    height: fit-content;
+    padding: 13px;
+    cursor: pointer;
+}
+.forgot-password-link{
+    margin-top: 10px;
+    color: #000;
+    text-decoration:underline;
+}
+
+.registration-container{
+    padding: 5vh 3vw;
+}
+.registration-text{
+    margin-top: 12px;
+}
+@media(min-width: 1024px) {
+
+    /* COLOR PICKER */
+    .login-container {
+        max-width: 35%;
+    }
+}

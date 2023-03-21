@@ -272,7 +272,6 @@
 }
 
 /* PAYMENT & SHIPMENT */
-.payment-options-container {}
 
 .payment-options-container,
 .shipment-options-container,
@@ -308,6 +307,108 @@
     margin-top: 8px;
 }
 
+
+/* COLOR PICKER */
+.color-picker-container{
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    transition: all .35s ease;
+    margin-right: -100%;
+    overflow: hidden;
+}
+
+.color-picker-container-active{
+    margin-right: 0;
+}
+.color-picker-top{
+    height: 10%;
+    display: flex;
+    border-bottom: 1px solid rgba(200, 200, 200, .4);
+}
+.color-picker-label{
+    width: 60%;
+    /* text-align: center; */
+    margin: auto;
+    font-size: 25px;
+    font-weight: 600;
+}
+.color-picker-exit-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    border-left: 1px solid rgba(200, 200, 200, .4);
+}
+.color-picker-exit-btn{
+    position: static;
+    opacity: 1;
+    transform: none;
+    cursor: pointer;
+}
+
+.color-picker-options{
+    height: 90%;
+    padding: 2vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    row-gap: 15px;
+}
+.color-picker-card{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(200, 200, 200, .4);
+    padding: 10px;
+}
+.color-picker-card-active{
+    border: 1px solid #000;
+}
+.color-picker-image-container{
+    height: 75%;
+    width: 100%;
+}
+.color-picker-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background:  linear-gradient(rgba(200, 200, 200, .4), rgba(200, 200, 200, 0.2));
+}
+.color-picker-info{
+    height: 20%;
+}
+
+.color-picker-name{
+    padding: 10px 0;
+}
+.color-picker-stock{
+    display: flex;
+    align-items: center;
+}
+
+.available-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.available-dot-in-stock{
+    background-color: #0f0;
+}
+.available-dot-out-of-stock{
+    background-color: rgb(169, 0, 0);
+}
+.stock-availability-text{
+    color: #444;
+    white-space: 2px;
+    font-size: 15px;
+}
 @media(min-width:1024px) {
     .product-detail-section {
         display: flex;
@@ -429,5 +530,10 @@
     .shipment-options-container{
         border-left: 1px solid rgba(200, 200, 200, .4);
         border-right: 1px solid rgba(200, 200, 200, .4);
+    }
+
+    /* COLOR PICKER */
+    .color-picker-container{
+        max-width: 35%;
     }
 }

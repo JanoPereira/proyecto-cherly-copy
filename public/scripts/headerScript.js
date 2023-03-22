@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
     const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const header = document.querySelector('.header-section');
     let burgerIcon = document.querySelector('.fa-bars');
-    let xIcon = document.querySelector('.fa-x');
+    let xIcon = document.querySelector('.burguer-menu-close-button');
     const sideNavbar = document.querySelector('.side-navbar');
     const inputSearchForm = document.querySelector('.search-main-section')
 
@@ -22,13 +22,9 @@ window.addEventListener('load', () => {
 
     const listenTogglerButton = () => {
 
-        // if (isNotInHome) {
-        //     header.style.backgroundColor = 'white'
-        // }
-
         togglerButton.forEach(btn => {
             btn.addEventListener('click', () => {
-                if (btn.classList.contains('fa-x')) { // CERRAR MENU
+                if (btn.classList.contains('burguer-menu-close-button')) { // CERRAR MENU
                    
                     sideNavbar.classList.remove('side-navbar-active');
                     burgerIcon.classList.add('icon-active');

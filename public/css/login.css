@@ -89,12 +89,14 @@
 .relative-input{
     position: relative;
 }
-.show-password-btn{
+.password-btn-toggler{
     position: absolute;
     right: 3%;
     top: 50%;
     transform: translateY(-50%);
     color: #555;
+    cursor: pointer;
+    user-select: none;
 }
 .btn{
     margin-top: 3.5vh;

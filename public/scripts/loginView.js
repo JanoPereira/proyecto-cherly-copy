@@ -23,5 +23,22 @@ window.addEventListener('load',()=>{
         loginForm.classList.remove('login-container-active');
         body.classList.remove('noScroll');
         blackScreen.classList.remove('black-screen-active')
-    })
+    });
+
+
+    // LOGICA PARA MOSTRAR CONTRASENA
+    const showPassBtn = document.querySelector('.show-password-btn');
+    const hidePassBtn = document.querySelector('.hide-password-btn')
+    const passInput = document.getElementById('password');
+    showPassBtn.addEventListener('click',()=>{
+        passInput.type = 'text';
+        hidePassBtn.classList.remove('hidden');
+        showPassBtn.classList.add('hidden');
+
+    });
+    hidePassBtn.addEventListener('click',()=>{
+        passInput.type = 'password';
+        hidePassBtn.classList.add('hidden');
+        showPassBtn.classList.remove('hidden');
+    });
 });

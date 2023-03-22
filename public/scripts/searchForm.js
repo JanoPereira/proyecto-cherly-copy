@@ -53,6 +53,14 @@ window.addEventListener('load', () => {
         if (!isNotInHome) {
             header.classList.remove('header-section-active');
         }
-    })
+    });
+
+    // TODO: HACER FUNCIONES PARA ACTIVATE-DEACTIVATE
+    
+    // function activateClass(array){//['.header','.side-bar',...]
+    //     array.forEach(elem=>{
+    //         document.querySelector(elem).classList.add(`${elem}-active`);
+    //     })
+    // }
 
 })

@@ -3,125 +3,131 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-        <link rel="stylesheet" href="./css/productList.css">
+        <link rel="stylesheet" href="/css/productList.css">
         <title>Cartera - Lista</title>
 </head>
 
 <body>
     <%- include('./partials/wpp.ejs') %>
-    <%- include('./partials/header/header.ejs') %>
-        <section class="filter-section">
-            <p class="page-detail">All handbags</p>
-            <div class="filter-container">
-                <p class="filter-name">Filters</p>
-                <p class="filter-amount">(2)</p>
-                <i class="fa-solid fa-filter"></i>
-            </div>
-        </section>
-        <section class="product-list-section">
-            <div class="product-card-container">
-                <div class="image-container">
-                    <img src="./img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
-                    <div class="image-buttons">
-                        <i class="fa-solid fa-angle-left back-button"></i>
-                        <i class="fa-solid fa-angle-right foward-button"></i>
-                    </div>
+    <%- include('./partials/blackScreen.ejs') %>
+    <%- include('./partials/login.ejs') %>
+        <%- include('./partials/header/header.ejs') %>
+            <section class="filter-section">
+                <p class="page-detail">All handbags</p>
+                <div class="filter-container">
+                    <p class="filter-name">Filters</p>
+                    <p class="filter-amount">(2)</p>
+                    <i class="fa-solid fa-filter"></i>
                 </div>
-                <div class="product-info-container">
-                    <div class="price-name-container">
-                        <p class="product-name">Cartera #1</p>
-                        <p class="product-price">$3000</p>
-                    </div>
-                    <div class="color-container">
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="more-color">
-                            <p>2+</p>
+            </section>
+            <section class="product-list-section">
+                <a href="/product/10" class="product-card-container">
+                    <div class="image-container">
+                        <img src="/img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
+                        <div class="image-buttons">
+                            <i class="fa-solid fa-angle-left back-button"></i>
+                            <i class="fa-solid fa-angle-right foward-button"></i>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="product-card-container">
-                <div class="image-container">
-                    <img src="./img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
-                    <div class="image-buttons">
-                        <i class="fa-solid fa-angle-left back-button"></i>
-                        <i class="fa-solid fa-angle-right foward-button"></i>
-                    </div>
-                </div>
-                <div class="product-info-container">
-                    <div class="price-name-container">
-                        <p class="product-name">Cartera #1</p>
-                        <p class="product-price">$3000</p>
-                    </div>
-                    <div class="color-container">
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="more-color">
-                            <p>2+</p>
+                    <div class="product-info-container">
+                        <div class="price-name-container">
+                            <p class="product-name">Cartera #1</p>
+                            <p class="product-price">$3000</p>
+                        </div>
+                        <div class="color-container">
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="more-color">
+                                <p>2+</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="product-card-container">
-                <div class="image-container">
-                    <img src="./img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
-                    <div class="image-buttons">
-                        <i class="fa-solid fa-angle-left back-button"></i>
-                        <i class="fa-solid fa-angle-right foward-button"></i>
                     </div>
-                </div>
-                <div class="product-info-container">
-                    <div class="price-name-container">
-                        <p class="product-name">Cartera #1</p>
-                        <p class="product-price">$3000</p>
-                    </div>
-                    <div class="color-container">
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="more-color">
-                            <p>2+</p>
+                </a>
+                <a href="/product/10" class="product-card-container">
+                    <div class="image-container">
+                        <img src="/img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
+                        <div class="image-buttons">
+                            <i class="fa-solid fa-angle-left back-button"></i>
+                            <i class="fa-solid fa-angle-right foward-button"></i>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="product-card-container">
-                <div class="image-container">
-                    <img src="./img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
-                    <div class="image-buttons">
-                        <i class="fa-solid fa-angle-left back-button"></i>
-                        <i class="fa-solid fa-angle-right foward-button"></i>
-                    </div>
-                </div>
-                <div class="product-info-container">
-                    <div class="price-name-container">
-                        <p class="product-name">Cartera #1</p>
-                        <p class="product-price">$3000</p>
-                    </div>
-                    <div class="color-container">
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="single-color"></div>
-                        <div class="more-color">
-                            <p>2+</p>
+                    <div class="product-info-container">
+                        <div class="price-name-container">
+                            <p class="product-name">Cartera #1</p>
+                            <p class="product-price">$3000</p>
+                        </div>
+                        <div class="color-container">
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="more-color">
+                                <p>2+</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    </div>
+                </a>
+                <a href="/product/10" class="product-card-container">
+                    <div class="image-container">
+                        <img src="/img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
+                        <div class="image-buttons">
+                            <i class="fa-solid fa-angle-left back-button"></i>
+                            <i class="fa-solid fa-angle-right foward-button"></i>
+                        </div>
+                    </div>
+                    <div class="product-info-container">
+                        <div class="price-name-container">
+                            <p class="product-name">Cartera #1</p>
+                            <p class="product-price">$3000</p>
+                        </div>
+                        <div class="color-container">
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="more-color">
+                                <p>2+</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </a>
+                <a href="/product/10" class="product-card-container">
+                    <div class="image-container">
+                        <img src="/img/products/handbags/cartera1.avif" alt="product-image" class="product-image">
+                        <div class="image-buttons">
+                            <i class="fa-solid fa-angle-left back-button"></i>
+                            <i class="fa-solid fa-angle-right foward-button"></i>
+                        </div>
+                    </div>
+                    <div class="product-info-container">
+                        <div class="price-name-container">
+                            <p class="product-name">Cartera #1</p>
+                            <p class="product-price">$3000</p>
+                        </div>
+                        <div class="color-container">
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="single-color"></div>
+                            <div class="more-color">
+                                <p>2+</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </a>
 
-        </section>
+            </section>
 
-        <div class="side-navbar">
-            <ul type="none">
-                <li class="navbar-anchor">Home</li>
-                <li class="navbar-anchor">Products</li>
-                <li class="navbar-anchor">Asd</li>
-                <li class="navbar-anchor">Asd</li>
-            </ul>
-        </div>
+            <div class="side-navbar">
+                <ul type="none">
+                    <li class="navbar-anchor">Home</li>
+                    <li class="navbar-anchor">Products</li>
+                    <li class="navbar-anchor">Asd</li>
+                    <li class="navbar-anchor">Asd</li>
+                </ul>
+            </div>
 
 </body>
 

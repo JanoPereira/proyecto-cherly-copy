@@ -40,6 +40,7 @@
 
 /* PRODUCT CARD */
 .product-card-container {
+    color: #000;
     position: relative;
     cursor: pointer;
     width: 25%;

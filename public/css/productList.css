@@ -5,6 +5,7 @@
     padding: 0 5vw;
     padding-top: 5vh;
     margin-bottom: 3.5vh;
+    margin-top: 10vh;
 
 }
 
@@ -41,11 +42,12 @@
 }
 
 /* PRODUCT CARD */
-.product-card-link{
+.product-card-link {
     color: #000;
 }
+
 .product-card-container {
-    
+
     position: relative;
     cursor: pointer;
     width: 30%;
@@ -65,7 +67,7 @@
     position: relative;
     width: 100%;
     height: 100%;
- 
+
 }
 
 .product-image-test {
@@ -98,7 +100,7 @@
 .product-image {
     object-fit: cover;
     height: 100%;
-    width: 100%;     
+    width: 100%;
 }
 
 /* PRODUCT INFO */
@@ -148,9 +150,10 @@
 }
 
 /* FLECHAS ATRAS/ADELANTE */
-.foward-btn-container, .back-btn-container {
+.foward-btn-container,
+.back-btn-container {
     opacity: 0;
-    transition: opacity .7s ;
+    transition: opacity .7s;
 }
 
 .product-card-container:hover .foward-btn-container {
@@ -158,7 +161,7 @@
     z-index: 2;
 }
 
-.product-card-container:hover  .back-btn-container {
+.product-card-container:hover .back-btn-container {
     opacity: 1;
     z-index: 2;
 }
@@ -194,24 +197,25 @@
 
 /* MOBILE */
 @media (max-width:426px) {
-    .filter-section{
-        margin-top: 10vh;
-    }
     .product-card-container {
         width: 50%;
     }
-    .image-container{
+
+    .image-container {
         height: 200px;
     }
+
     .product-name,
-    .product-price{
+    .product-price {
         font-size: 12px;
     }
-    .single-color{
+
+    .single-color {
         width: 8px;
         height: 8px;
     }
-    .more-color p{
+
+    .more-color p {
         font-size: 10px;
     }
 }

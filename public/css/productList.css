@@ -194,6 +194,9 @@
 
 /* MOBILE */
 @media (max-width:426px) {
+    .filter-section{
+        margin-top: 10vh;
+    }
     .product-card-container {
         width: 50%;
     }

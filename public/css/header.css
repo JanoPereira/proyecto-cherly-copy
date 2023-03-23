@@ -445,7 +445,7 @@ li {
 @media (max-width:426px) {
     .header-section {
         height: 10vh;
-        position: fixed !important;
+        position: fixed !important; /* Esto esta para que el black-screen no lo tape */
     }
     .header-section:hover{
         background-color: unset;

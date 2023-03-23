@@ -5,7 +5,9 @@ window.addEventListener('load', () => {
     const blackScreen = document.querySelector('.black-screen');
     const searchSection = document.querySelector('.search-main-section'); //Es la seccion donde se encuentran el buscador
     const sideNavbar = document.querySelector('.side-navbar');
+    
     const header = document.querySelector('.header-section');
+    
     const input = document.querySelector('.search-input');
     const burguerMenuCloseButton = document.querySelector('.close-menu-button');
     const burguerMenuOpenButton = document.querySelector('.open-menu-button');
@@ -38,7 +40,11 @@ window.addEventListener('load', () => {
         blackScreen.classList.remove('black-screen-active');
         blackScreen.style.zIndex = '-1';
 
+        // // SACO LA CLASE ACTIVE
+        // header.classList.remove('header-section-active')
+
         if (!isNotInHome) {
+            console.log('Tendria que sacarlo');
             header.classList.remove('header-section-active');
         }
     });
@@ -50,9 +56,11 @@ window.addEventListener('load', () => {
         blackScreen.classList.remove('black-screen-active');
         blackScreen.style.zIndex = '-1';
         
-        searchFormContainer.classList.add('search-form-container-inactive');
-        searchFormContainer.classList.remove('search-form-container-active');
+        // // SACO LA CLASE ACTIVE
+        // header.classList.remove('header-section-active')
+
         if (!isNotInHome) {
+            console.log('Tendria que sacarlo');
             header.classList.remove('header-section-active');
         }
     });

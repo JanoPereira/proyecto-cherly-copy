@@ -9,7 +9,9 @@ window.addEventListener('load',()=>{
         btn.addEventListener('click',()=>{
             loginForm.classList.add('login-container-active');
             body.classList.add('noScroll');
+            
             blackScreen.classList.add('black-screen-active')
+            blackScreen.style.zIndex = '101'; //Porque el header tiene que tapar la pantalla negra
         });
     });
     
@@ -17,12 +19,16 @@ window.addEventListener('load',()=>{
     exitBtn.addEventListener('click',()=>{
         loginForm.classList.remove('login-container-active');
         body.classList.remove('noScroll');
-        blackScreen.classList.remove('black-screen-active')
+        
+        blackScreen.classList.remove('black-screen-active');
+        blackScreen.style.zIndex = '-1'
     });
     blackScreen.addEventListener('click',()=>{
         loginForm.classList.remove('login-container-active');
         body.classList.remove('noScroll');
-        blackScreen.classList.remove('black-screen-active')
+        
+        blackScreen.classList.remove('black-screen-active');
+        blackScreen.style.zIndex = '-1';
     });
 
 

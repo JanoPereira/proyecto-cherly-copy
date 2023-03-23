@@ -39,8 +39,11 @@
 }
 
 /* PRODUCT CARD */
-.product-card-container {
+.product-card-link{
     color: #000;
+}
+.product-card-container {
+    
     position: relative;
     cursor: pointer;
     width: 30%;

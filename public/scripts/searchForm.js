@@ -36,7 +36,10 @@ window.addEventListener('load', () => {
         input.value = ''; //Borro el contenido del input
         body.classList.remove('noScroll');//Para que no me deje scrollear
         mainSection.classList.remove('search-main-section-active');
+        
         blackScreen.classList.remove('black-screen-active');
+        blackScreen.style.zIndex = '-1';
+
         searchFormContainer.classList.add('search-form-container-inactive');
         searchFormContainer.classList.remove('search-form-container-active');
         if (!isNotInHome) {
@@ -47,7 +50,10 @@ window.addEventListener('load', () => {
         input.value = ''; //Borro el contenido del input
         body.classList.remove('noScroll');//Para que no me deje scrollear
         mainSection.classList.remove('search-main-section-active');
+        
         blackScreen.classList.remove('black-screen-active');
+        blackScreen.style.zIndex = '-1';
+        
         searchFormContainer.classList.add('search-form-container-inactive');
         searchFormContainer.classList.remove('search-form-container-active');
         if (!isNotInHome) {

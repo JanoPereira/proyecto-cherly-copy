@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
     const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const header = document.querySelector('.header-section');
     let burgerIcon = document.querySelector('.fa-bars');
-    let xIcon = document.querySelector('.fa-x');
+    let xIcon = document.querySelector('.close-menu-button');
     const sideNavbar = document.querySelector('.side-navbar');
     const inputSearchForm = document.querySelector('.search-main-section')
 

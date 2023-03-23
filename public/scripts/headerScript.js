@@ -1,22 +1,24 @@
 window.addEventListener('load', () => {
     // FUNCIONES
-    const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const header = document.querySelector('.header-section');
     let burgerIcon = document.querySelector('.open-menu-button');
     let xIcon = document.querySelector('.close-menu-button');
+    
     const sideNavbar = document.querySelector('.side-navbar');
+    
     const sideSubmenuNavbar = document.querySelector('.side-navbar-submenu');
     const giftId = document.getElementById('gifts');
     const burgerSubmenuBack = document.querySelector('.burger-submenu-back');
     
     const searchSection = document.querySelector('.search-main-section');
-
+    
     const blackScreen = document.querySelector('.black-screen'); //Pantalla negra
-
+    
+    const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname);
 
     if (isNotInHome) { // agregar estilo de header si no coincide con home
-        header.style.position = 'static';
+        // header.style.position = 'static';
         header.classList.add('header-section-active');
     }
 
@@ -62,7 +64,7 @@ window.addEventListener('load', () => {
                     burgerIcon.classList.remove('icon-active')
                     xIcon.classList.add('icon-active')
                     xIcon.classList.remove('icon-inactive')
-                    header.style.backgroundColor = 'white'
+                    // header.style.backgroundColor = 'white'
 
 
                 }

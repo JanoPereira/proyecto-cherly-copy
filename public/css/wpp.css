@@ -27,8 +27,8 @@
     .whatsapp-link {
         right: 0;
         padding: 10px 3px;
-        bottom: 50%;
-        transform: translateY(50%);
+        /* bottom: 50%;
+        transform: translateY(50%); */
     }
 
     .whatsapp-link img {

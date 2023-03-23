@@ -9,8 +9,11 @@ window.addEventListener('load', () => {
     const header = document.querySelector('.header-section');
     
     const input = document.querySelector('.search-input');
+
+    // Botones del menu para abrir/cerrar
     const burguerMenuCloseButton = document.querySelector('.close-menu-button');
     const burguerMenuOpenButton = document.querySelector('.open-menu-button');
+    
     // Para ver si esta en la home
     const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname)

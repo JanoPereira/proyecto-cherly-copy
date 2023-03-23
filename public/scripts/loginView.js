@@ -5,13 +5,18 @@ window.addEventListener('load',()=>{
     const blackScreen = document.querySelector('.black-screen');
     const exitBtn = document.querySelector('.login-exit-btn-container');
 
+    const searchSection = document.querySelector('.search-main-section');
+
     loginBtn.forEach(btn => {
-        btn.addEventListener('click',()=>{
+        btn.addEventListener('click',()=>{ //ABRIR LOGIN VIEW
             loginForm.classList.add('login-container-active');
             body.classList.add('noScroll');
             
             blackScreen.classList.add('black-screen-active')
             blackScreen.style.zIndex = '101'; //Porque el header tiene que tapar la pantalla negra
+
+            // Si estaba el menu de busqueda, lo saco
+            searchSection.classList.remove('search-main-section-active')
         });
     });
     

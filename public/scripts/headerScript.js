@@ -2,20 +2,24 @@ window.addEventListener('load', () => {
     // FUNCIONES
     const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const header = document.querySelector('.header-section');
-    let burgerIcon = document.querySelector('.fa-bars');
-    let xIcon = document.querySelector('.fa-x');
+    let burgerIcon = document.querySelector('.open-menu-button');
+    let xIcon = document.querySelector('.close-menu-button');
     const sideNavbar = document.querySelector('.side-navbar');
     const sideSubmenuNavbar = document.querySelector('.side-navbar-submenu');
     const giftId = document.getElementById('gifts');
     const burgerSubmenuBack = document.querySelector('.burger-submenu-back');
     
+    const searchSection = document.querySelector('.search-main-section');
+
+    const blackScreen = document.querySelector('.black-screen'); //Pantalla negra
+
     const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname);
 
     if (isNotInHome) { // agregar estilo de header si no coincide con home
         header.style.position = 'static';
         header.classList.add('header-section-active');
     }
-    
+
     console.log(sideNavbar.dataset.id)
 
 
@@ -29,20 +33,29 @@ window.addEventListener('load', () => {
             btn.addEventListener('click', () => {
                 if (btn.classList.contains('fa-x')) { // CERRAR MENU
 
-                    sideNavbar.classList.remove('side-navbar-active')
-                    burgerIcon.classList.add('icon-active')
-                    burgerIcon.classList.remove('icon-inactive')
-                    xIcon.classList.add('icon-inactive')
-                    xIcon.classList.remove('icon-active')
-                    sideSubmenuNavbar.classList.remove('side-navbar-submenu-active')
+                    sideNavbar.classList.remove('side-navbar-active');
+                    burgerIcon.classList.add('icon-active');
+                    burgerIcon.classList.remove('icon-inactive');
+                    xIcon.classList.add('icon-inactive');
+                    xIcon.classList.remove('icon-active');
+                    sideSubmenuNavbar.classList.remove('side-navbar-submenu-active');
+                    
                     if (!isNotInHome) {
-                        header.classList.remove('header-section-active')
-                        header.style.backgroundColor = 'transparent'
-                        header.style.position = 'absolute'
+                        header.classList.remove('header-section-active');
+                        header.style.backgroundColor = 'transparent';
+                        header.style.position = 'absolute';
                     }
 
 
                 } else {    // ABRIR MENU
+                    
+                    // Si abre el menu y estaba activo el search-form, se lo desactivo
+                    searchSection.classList.remove('search-main-section-active');
+                    
+                    // Si abre el menu, seteo el backscreen z-index a -1 por las dudas que se haya abierto desde buscador
+                    blackScreen.classList.remove('black-screen-active')
+                    blackScreen.style.zIndex = '-1';
+
                     header.classList.add('header-section-active')
                     sideNavbar.classList.add('side-navbar-active')
                     burgerIcon.classList.add('icon-inactive')

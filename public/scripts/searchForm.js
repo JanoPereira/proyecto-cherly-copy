@@ -1,15 +1,14 @@
 window.addEventListener('load', () => {
     const body = document.querySelector('body');
     const togglerOpenButton = document.querySelector('.search-container');
-    const searchFormContainer = document.querySelector('.search-form-container');
     const togglerCloseButton = document.querySelector('.close-search-form-button');
     const blackScreen = document.querySelector('.black-screen');
-    const mainSection = document.querySelector('.search-main-section'); //Es la seccion donde se encuentran ambas cosas
+    const searchSection = document.querySelector('.search-main-section'); //Es la seccion donde se encuentran el buscador
     const sideNavbar = document.querySelector('.side-navbar');
     const header = document.querySelector('.header-section');
     const input = document.querySelector('.search-input');
-    const burguerMenuCloseButton = document.querySelector('.burguer-menu-close-button');
-    const burguerMenuOpenButton = document.querySelector('.burguer-menu-open-button');
+    const burguerMenuCloseButton = document.querySelector('.close-menu-button');
+    const burguerMenuOpenButton = document.querySelector('.open-menu-button');
     // Para ver si esta en la home
     const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname)
@@ -27,21 +26,18 @@ window.addEventListener('load', () => {
         blackScreen.classList.add('black-screen-active');
         blackScreen.style.zIndex = '99'; //Porque el header tiene que tapar la pantalla negra
 
-        mainSection.classList.add('search-main-section-active');
-        searchFormContainer.classList.add('search-form-container-active');
-        searchFormContainer.classList.remove('search-form-container-inactive');
+        searchSection.classList.add('search-main-section-active');
+    
     })
 
     togglerCloseButton.addEventListener('click', () => { //Si toca la x
         input.value = ''; //Borro el contenido del input
         body.classList.remove('noScroll');//Para que no me deje scrollear
-        mainSection.classList.remove('search-main-section-active');
+        searchSection.classList.remove('search-main-section-active');
         
         blackScreen.classList.remove('black-screen-active');
         blackScreen.style.zIndex = '-1';
 
-        searchFormContainer.classList.add('search-form-container-inactive');
-        searchFormContainer.classList.remove('search-form-container-active');
         if (!isNotInHome) {
             header.classList.remove('header-section-active');
         }
@@ -49,7 +45,7 @@ window.addEventListener('load', () => {
     blackScreen.addEventListener('click', () => { //Si toca la pantalla negra
         input.value = ''; //Borro el contenido del input
         body.classList.remove('noScroll');//Para que no me deje scrollear
-        mainSection.classList.remove('search-main-section-active');
+        searchSection.classList.remove('search-main-section-active');
         
         blackScreen.classList.remove('black-screen-active');
         blackScreen.style.zIndex = '-1';

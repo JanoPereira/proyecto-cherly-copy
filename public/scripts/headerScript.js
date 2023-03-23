@@ -2,13 +2,14 @@ window.addEventListener('load', () => {
     // FUNCIONES
     const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
     const header = document.querySelector('.header-section');
-    let burgerIcon = document.querySelector('.fa-bars')
-    let xIcon = document.querySelector('.fa-x')
-    const sideNavbar = document.querySelector('.side-navbar')
-    const sideSubmenuNavbar = document.querySelector('.side-navbar-submenu')
-    const giftId = document.getElementById('gifts')
-    const burgerSubmenuBack = document.querySelector('.burger-submenu-back')
-    const isNotInHome = window.location.pathname != '/'
+    let burgerIcon = document.querySelector('.fa-bars');
+    let xIcon = document.querySelector('.fa-x');
+    const sideNavbar = document.querySelector('.side-navbar');
+    const sideSubmenuNavbar = document.querySelector('.side-navbar-submenu');
+    const giftId = document.getElementById('gifts');
+    const burgerSubmenuBack = document.querySelector('.burger-submenu-back');
+    
+    const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname);
 
     if (isNotInHome) { // agregar estilo de header si no coincide con home
         header.style.position = 'static';

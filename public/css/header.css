@@ -62,11 +62,7 @@ li {
 .side-navbar {
     position: fixed;
     left: 0;
-<<<<<<< HEAD
-    top: 7vh;
-=======
     top: 10vh;
->>>>>>> dev
     bottom: 0;
     background-color: white;
     z-index: 2;
@@ -74,10 +70,6 @@ li {
     max-width: 0;
     overflow: hidden;
     transition: max-width 350ms ease;
-<<<<<<< HEAD
-=======
-    padding-top: 1rem;
->>>>>>> dev
     overflow-y: scroll;
     padding-top: 1rem;
 }
@@ -129,6 +121,11 @@ li {
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
+}
+.delete-style{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .burguer-menu-option {

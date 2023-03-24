@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.noScroll{
+
+.noScroll {
     overflow: hidden;
 }
 
@@ -64,32 +65,87 @@ li {
     top: 10vh;
     bottom: 0;
     background-color: white;
-    z-index: 999;
+    z-index: 3;
     right: 0;
     max-width: 0;
     overflow: hidden;
     transition: max-width 350ms ease;
-    padding-top: 1rem;
     overflow-y: scroll;
+    padding-top: 1rem;
 }
 
 .side-navbar-active {
+
     max-width: 1000px;
 }
 
+.side-navbar-submenu {
+    position: fixed;
+    top: 6vh;
+    bottom: 0;
+    background-color: white;
+    z-index: 3;
+    right: 0;
+    left: 110%;
+    transition: left 350ms ease;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    height: auto;
+    padding-top: 1rem;
+
+}
+
+.side-navbar-submenu-active {
+    left: 0%;
+}
+
+.back-menu-container {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.back-menu-subcontainer {
+    width: 90%;
+    text-align: left;
+}
+
+.category-submenu-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .burguer-menu-options {
     display: flex;
     flex-direction: column;
-    row-gap: 4vh;
     align-content: center;
     flex-wrap: wrap;
+}
+.delete-style{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .burguer-menu-option {
     width: 90%;
     display: flex;
     justify-content: space-between;
+    margin: 0.650rem 0;
+}
+
+.burguer-submenu-option {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+   
+    margin: 0.650rem 0;
+}
+
+.burguer-submenu-option a {
+    color: #000;
+    font-size: 25px;
 }
 
 .burguer-menu-option a {
@@ -101,6 +157,12 @@ li {
     margin: auto 0;
 }
 
+.burger-submenu-back {
+    color: rgb(166, 166, 166);
+    font-size: 25px;
+  
+}
+
 /* END MENU HAMBURGUESA */
 
 .header-section {
@@ -110,6 +172,7 @@ li {
     z-index: 100;
     transition: background-color 300ms ease;
     background-color: transparent;
+    top: 0;
 }
 
 .header-section-active {
@@ -195,44 +258,40 @@ li {
     top: 0;
     right: 0;
     width: 100%;
-    height: 65%;
-    z-index: -1;
-    transition: opacity .5s ease,z-index .2s ease;
-    opacity: 0;
-    overflow-y: none;
+    z-index: 1000;
+    transition: all .3s ease;
+    opacity: 1;
+    overflow-y: hidden;
+    
+    height: 0%;
+    /* transform: translateY(-100%); */
+    /* margin-top: -100%; */
 }
 
 .search-main-section-active {
-    
-    z-index: 1000;
-    opacity: 1;
+    /* margin-top: 0; */
+    /* transform: translateY(0); */
+    height: 65%;
 }
 
 .search-form-container {
     display: flex;
     flex-direction: column;
     z-index: 100000;
-    overflow-y: none;
-    max-width: 0;
-    transition: transform .2s ease-in, background-color .1s ease;
+    overflow-y: hidden;
+    max-width: 100vw;
+    transition: all .3s ease;
     height: 100%;
-
-
 }
 
-.search-form-container-inactive {
+/* .search-form-container-inactive {
     transform: translateY(-100%);
     max-width: 0;
-    transition: transform .2s ease-in, max-width 2s ease-in, background-color .1s ease,opacity .5s ease;
+    transition: transform .2s ease-in, max-width 2s ease-in, background-color .1s ease, opacity .5s ease;
     opacity: 0;
-    /* Lo redefino para que se vaya prolijo */
-}
+    Lo redefino para que se vaya prolijo
+} */
 
-.search-form-container-active {
-    transform: translateY(0);
-    max-width: 100vw;
-    opacity: 1;
-}
 
 /* PARTE DE ARRIBA */
 .search-container-top {
@@ -386,7 +445,7 @@ li {
 @media (max-width:426px) {
     .header-section {
         height: 10vh;
-        position: fixed !important;
+        /* position: absolute !important; Esto esta para que el black-screen no lo tape */
     }
     .header-section:hover{
         background-color: unset;
@@ -429,9 +488,11 @@ li {
 
     /* SEARCH FORM */
     .search-main-section{
-        height: 10%;
         margin-top: 10vh;
         /* border-top: 1px solid rgba(200, 200, 200, .4); */
+    }
+    .search-main-section-active{
+        height: 12%;
     }
     .search-container-top{
         padding: 5px 0;

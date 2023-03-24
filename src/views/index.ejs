@@ -9,48 +9,47 @@
 </head>
 
 <body>
-    <div class="main-container">
-        <%- include('./partials/wpp.ejs') %>
-        <%- include('./partials/blackScreen.ejs') %>
-        <%- include('./partials/login.ejs') %>
-        <%- include('./partials/header/header.ejs') %>
-            <section class="main-section">
-                <div class="carrusel-image-container">
-                    <img src="./img/homePage/snicker.avif" alt="">
-                    <div class="sticky-options-container">
-                        <p class="sticky-options-title">EXCLUSIVELY ONLINE: LV ARCHLIGHT 2.0</p>
-                        <a href="/product">Discover the Collection</a>
-                    </div>
-                </div>
-                <div class="carrusel-image-container">
-                    <img src="./img/homePage/homeImage2.jpg" alt="">
-                    <div class="sticky-options-container">
-                        <p class="sticky-options-title">THE NEW DAMIER</p>
-                        <a href="/product">Discover the Collection</a>
-                    </div>
-                </div>
-                <div class="carrusel-image-container">
-                    <img src="./img/homePage/homeImage3.jpg" alt="">
-                    <div class="sticky-options-container">
-                        <p class="sticky-options-title">ICONIC HANDBAGS</p>
-                        <a href="/product">Discover the Collection</a>
-                    </div>
-                </div>
-                <div class="carrusel-image-container video-container">
-                    <video class="video" controls muted playsinline loop>
-                        <source src="https://lv-vod.fl.freecaster.net/vod/louisvuitton/m7EFVWqEVi_HD.mp4" type="video/mp4">
-                        <source src="https://lv-vod.fl.freecaster.net/vod/louisvuitton/m7EFVWqEVi_HD.mp4" type="video/webm">
-                        No se puede reproducir el video
-                    </video>
-                    <div class="sticky-options-container">
-                        <p class="sticky-options-title">ALTER EGO HORIZON LIGHT UP EARPHONES</p>
-                        <a href="/product">Discover the Collection</a>
-                    </div>
-                </div>
+    <%- include('./partials/wpp.ejs') %>
+    <%- include('./partials/blackScreen.ejs') %>
+    <%- include('./partials/login.ejs') %>
+    <%- include('./partials/header.ejs') %>
+                    <main class="main">
 
-            </section>
-
-    </div>
+                        <div class="carrusel-image-container">
+                            <img src="./img/homePage/snicker.avif" alt="">
+                            <div class="sticky-options-container">
+                                <p class="sticky-options-title">EXCLUSIVELY ONLINE: LV ARCHLIGHT 2.0</p>
+                                <a href="/product">Discover the Collection</a>
+                            </div>
+                        </div>
+                        <div class="carrusel-image-container">
+                            <img src="./img/homePage/homeImage2.jpg" alt="">
+                            <div class="sticky-options-container">
+                                <p class="sticky-options-title">THE NEW DAMIER</p>
+                                <a href="/product">Discover the Collection</a>
+                            </div>
+                        </div>
+                        <div class="carrusel-image-container">
+                            <img src="./img/homePage/homeImage3.jpg" alt="">
+                            <div class="sticky-options-container">
+                                <p class="sticky-options-title">ICONIC HANDBAGS</p>
+                                <a href="/product">Discover the Collection</a>
+                            </div>
+                        </div>
+                        <div class="carrusel-image-container video-container">
+                            <video class="video" controls muted playsinline loop>
+                                <source src="https://lv-vod.fl.freecaster.net/vod/louisvuitton/m7EFVWqEVi_HD.mp4"
+                                    type="video/mp4">
+                                <source src="https://lv-vod.fl.freecaster.net/vod/louisvuitton/m7EFVWqEVi_HD.mp4"
+                                    type="video/webm">
+                                No se puede reproducir el video
+                            </video>
+                            <div class="sticky-options-container">
+                                <p class="sticky-options-title">ALTER EGO HORIZON LIGHT UP EARPHONES</p>
+                                <a href="/product">Discover the Collection</a>
+                            </div>
+                        </div>
+                    </main>
 </body>
 
 </html>

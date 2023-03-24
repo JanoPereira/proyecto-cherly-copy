@@ -1,3 +1,14 @@
+  --------------CONVENTIONS---------------------
+    Toda clase que queremos activar ==> "#nombreClase-active";
+    Todas las vistas mobileFirst
+    Medidas del VP ==>  || >1024px (Desktop) ||  >426px && <1024px (Tablet) || <426px (Mobile) 
+    Font-size dependiendo el viewport ==> ...
+    Contenedor de contenedores ==> product-cards-section
+    Contenedor de elementos particulares que componen un contenedor ==> product-card-container
+
+  
+  
+  --------------CODIGO---------------------
   <% categories.forEach(category=> { %>
                 <li class="burguer-menu-option" data-id=<%=category.id %>>
                     <a href="#">

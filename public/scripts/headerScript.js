@@ -1,16 +1,12 @@
 window.addEventListener('load', () => {
     // FUNCIONES
-    const header = document.querySelector('.header-section');
+    const header = document.querySelector('.header');
     let burgerIcon = document.querySelector('.open-menu-button');
     let xIcon = document.querySelector('.close-menu-button');
     
-    const sideNavbar = document.querySelector('.side-navbar');
-    
-    const sideSubmenuNavbar = document.querySelector('.side-navbar-submenu');
-    const giftId = document.getElementById('gifts');
-    const burgerSubmenuBack = document.querySelector('.burger-submenu-back');
-    
-    const searchSection = document.querySelector('.search-main-section');
+    const sideNavbar = document.querySelector('.side-navbar-container');
+        
+    const searchSection = document.querySelector('.search-section-container');
     
     const blackScreen = document.querySelector('.black-screen'); //Pantalla negra
     
@@ -19,31 +15,27 @@ window.addEventListener('load', () => {
 
     if (isNotInHome) { // agregar estilo de header si no coincide con home
         // header.style.position = 'static';
-        header.classList.add('header-section-active');
+        header.classList.add('header-active');
     }
 
     console.log(sideNavbar.dataset.id)
 
-
-    burgerIcon.classList.add('icon-active');
-    xIcon.classList.add('icon-inactive');
-    const togglerButton = document.querySelectorAll('.burguer-menu-toggler');
+    const menuBtn = document.querySelectorAll('.burguer-menu-btn');
 
     const listenTogglerButton = () => {
 
-        togglerButton.forEach(btn => {
+        menuBtn.forEach(btn => {
             btn.addEventListener('click', () => {
                 if (btn.classList.contains('fa-x')) { // CERRAR MENU
 
-                    sideNavbar.classList.remove('side-navbar-active');
-                    burgerIcon.classList.add('icon-active');
-                    burgerIcon.classList.remove('icon-inactive');
-                    xIcon.classList.add('icon-inactive');
-                    xIcon.classList.remove('icon-active');
-                    sideSubmenuNavbar.classList.remove('side-navbar-submenu-active');
+                    sideNavbar.classList.remove('side-navbar-container-active');
+                    burgerIcon.classList.add('burguer-menu-btn-active');
+                    // burgerIcon.classList.remove('icon-inactive');
+                    // xIcon.classList.add('icon-inactive');
+                    xIcon.classList.remove('burguer-menu-btn-active');
                     
                     if (!isNotInHome) {
-                        header.classList.remove('header-section-active');
+                        header.classList.remove('header-active');
                         header.style.backgroundColor = 'transparent';
                         header.style.position = 'absolute';
                     }
@@ -52,18 +44,18 @@ window.addEventListener('load', () => {
                 } else {    // ABRIR MENU
                     
                     // Si abre el menu y estaba activo el search-form, se lo desactivo
-                    searchSection.classList.remove('search-main-section-active');
+                    searchSection.classList.remove('search-section-container-active');
                     
                     // Si abre el menu, seteo el backscreen z-index a -1 por las dudas que se haya abierto desde buscador
                     blackScreen.classList.remove('black-screen-active')
                     blackScreen.style.zIndex = '-1';
 
-                    header.classList.add('header-section-active')
-                    sideNavbar.classList.add('side-navbar-active')
-                    burgerIcon.classList.add('icon-inactive')
-                    burgerIcon.classList.remove('icon-active')
-                    xIcon.classList.add('icon-active')
-                    xIcon.classList.remove('icon-inactive')
+                    header.classList.add('header-active')
+                    sideNavbar.classList.add('side-navbar-container-active')
+                    // burgerIcon.classList.add('icon-inactive')
+                    burgerIcon.classList.remove('burguer-menu-btn-active')
+                    xIcon.classList.add('burguer-menu-btn-active')
+                    // xIcon.classList.remove('icon-inactive')
                     // header.style.backgroundColor = 'white'
 
 
@@ -75,22 +67,9 @@ window.addEventListener('load', () => {
 
 
     }
-
     listenTogglerButton();
 
-    const navbarMenusInteraction = () => {
-        giftId.addEventListener('click', () => {
-            sideNavbar.classList.remove('side-navbar-active')
-            sideSubmenuNavbar.classList.toggle('side-navbar-submenu-active')
-        })
 
-        burgerSubmenuBack.addEventListener('click', () => {
-            sideNavbar.classList.add('side-navbar-active')
-            sideSubmenuNavbar.classList.remove('side-navbar-submenu-active')
-        })
-    }
-
-    navbarMenusInteraction()
 
     const headerShow = () => {
         let prevScrollPos = window.pageYOffset;
@@ -98,9 +77,9 @@ window.addEventListener('load', () => {
             let currentScrollPos = window.pageYOffset;
             if (prevScrollPos > currentScrollPos) {
                 console.log("El usuario está haciendo scroll hacia arriba");
-                header.classList.add('header-section-active')
+                header.classList.add('header-active')
             } else {
-                header.classList.remove('header-section-active')
+                header.classList.remove('header-active')
                 console.log("El usuario está haciendo scroll hacia abajo");
             }
             prevScrollPos = currentScrollPos;
@@ -108,9 +87,5 @@ window.addEventListener('load', () => {
     }
 
     headerShow()
-
-
-
-
 
 })

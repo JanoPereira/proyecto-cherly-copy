@@ -25,27 +25,24 @@ li {
 }
 
 /* MENU HAMBURGUESA */
-.burguer-menu-toggler-container {
+.burguer-menu-btns-container {
     display: none;
     position: relative;
 }
 
-.fa-bars,
-.fa-x {
+.header .fa-bars,
+.header .fa-x {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
     transition: opacity 350ms;
-}
-
-.icon-inactive {
     pointer-events: none;
 }
 
-.icon-active {
+.burguer-menu-btn-active {
     z-index: 1;
-    pointer-events: auto;
+    pointer-events: auto !important;
     opacity: 1;
 }
 
@@ -59,7 +56,7 @@ li {
     padding-top: 2vh;
 }
 
-.side-navbar {
+.side-navbar-container {
     position: fixed;
     left: 0;
     top: 10vh;
@@ -74,29 +71,9 @@ li {
     padding-top: 1rem;
 }
 
-.side-navbar-active {
+.side-navbar-container-active {
 
     max-width: 1000px;
-}
-
-.side-navbar-submenu {
-    position: fixed;
-    top: 6vh;
-    bottom: 0;
-    background-color: white;
-    z-index: 3;
-    right: 0;
-    left: 110%;
-    transition: left 350ms ease;
-    margin-top: 1rem;
-    overflow-y: scroll;
-    height: auto;
-    padding-top: 1rem;
-
-}
-
-.side-navbar-submenu-active {
-    left: 0%;
 }
 
 .back-menu-container {
@@ -116,7 +93,7 @@ li {
     justify-content: center;
 }
 
-.burguer-menu-options {
+.burguer-menu-option-list {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -165,7 +142,7 @@ li {
 
 /* END MENU HAMBURGUESA */
 
-.header-section {
+.header {
     position: absolute;
     width: 100%;
     padding: 2.5vh 0;
@@ -175,13 +152,13 @@ li {
     top: 0;
 }
 
-.header-section-active {
+.header-active {
     background-color: white !important;
     border-bottom: 1px solid rgba(40, 40, 40, .2);
     /*(40, 40, 40, .2);*/
 }
 
-.header-section:hover {
+.header:hover {
     background-color: #ffffff;
 }
 
@@ -221,7 +198,7 @@ li {
     cursor: pointer;
 }
 .login-toggler-mobile{
-    display: none;
+    display: inline-block;
 }
 .shopping-cart-container {
     position: relative;
@@ -251,71 +228,52 @@ li {
 }
 
 /* SEARCH FORM */
-.search-main-section {
-    display: flex;
-    flex-direction: column;
+.search-section-container {
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
     z-index: 1000;
     transition: all .3s ease;
-    opacity: 1;
-    overflow-y: hidden;
-    
+    overflow: hidden;
     height: 0%;
+    background-color: #fff;
+    display: flex;
+    /* padding: 3.5vh 0; */
+    border-bottom: 1px solid rgba(40, 40, 40, .2);
+    justify-content: center;
     /* transform: translateY(-100%); */
     /* margin-top: -100%; */
 }
 
-.search-main-section-active {
+.search-section-container-active {
     /* margin-top: 0; */
     /* transform: translateY(0); */
-    height: 65%;
+    height: 15%;
 }
 
-.search-form-container {
-    display: flex;
-    flex-direction: column;
-    z-index: 100000;
-    overflow-y: hidden;
-    max-width: 100vw;
-    transition: all .3s ease;
-    height: 100%;
-}
-
-/* .search-form-container-inactive {
-    transform: translateY(-100%);
-    max-width: 0;
-    transition: transform .2s ease-in, max-width 2s ease-in, background-color .1s ease, opacity .5s ease;
-    opacity: 0;
-    Lo redefino para que se vaya prolijo
-} */
-
-
-/* PARTE DE ARRIBA */
-.search-container-top {
-    width: 100%;
-    display: flex;
-    position: relative;
-    padding: 3.5vh 0;
-    border-bottom: 1px solid rgba(40, 40, 40, .2);
-    justify-content: center;
-    height: 100%;
-    background-color: #fff;
-}
 
 .search-input-container {
     position: relative;
     height: fit-content;
     margin: auto;
+    width: 100%;
+    text-align: center;
 }
 
-.search-input-container i {
+.search-input-container .search-logo {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 10px;
+    left: 31%;
+    cursor: pointer;
+}
+.search-input-container .close-search-form-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5%;
+    cursor: pointer;
 }
 
 .search-input-container .search-input {
@@ -339,102 +297,6 @@ li {
 }
 
 /* END PARTE DE ARRIBA */
-/* PARTE DEL MEDIO */
-
-.search-container-middle {
-    width: 100%;
-    display: flex;
-    height: 100%;
-    background-color: #fff;
-}
-
-.categories-section-container {
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 5vh 3vw;
-    border-right: 1px solid rgba(40, 40, 40, .2);
-}
-
-.categories-section-container .category-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.category-label,
-.product-label {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1.11px;
-}
-
-.category-topics-list {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.category-topics-list a {
-    color: #000;
-}
-
-.products-section-container {
-    width: 50%;
-    padding: 5vh 3vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.products-section-container .products-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-}
-
-.product-label {
-    margin-bottom: 30px;
-}
-
-.search-product-card {
-    width: 45%;
-    display: flex;
-    align-items: center;
-}
-
-.search-image-container {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(rgba(200, 200, 200, .4), rgba(255, 255, 255, 0.2));
-}
-
-.search-image-container img {
-    width: 100%;
-    object-fit: cover;
-}
-
-.search-product-name {
-    margin-left: 1vw;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-/* END PARTE DEL MEDIO */
-
-.search-container-bottom {
-    height: 100%;
-    opacity: 0;
-    transition: all .3s ease;
-}
-
-.search-container-bottom-active {
-    opacity: 1;
-}
-
-/* END PARTE DE ABAJO */
-
 /* TERMINADO SEARCH FORM  */
 /* MEDIAS QUERIES */
 
@@ -443,11 +305,11 @@ li {
 
 /* MOBILE */
 @media (max-width:426px) {
-    .header-section {
+    .header {
         height: 10vh;
         /* position: absolute !important; Esto esta para que el black-screen no lo tape */
     }
-    .header-section:hover{
+    .header:hover{
         background-color: unset;
     }
 
@@ -457,12 +319,6 @@ li {
 
     .brand-name {
         font-size: 30px;
-    }
-    .login-toggler-desktop{
-        display: none;
-    }
-    .login-toggler-mobile{
-        display: inline-block;
     }
 
     .shopping-cart-container .fa-bag-shopping {
@@ -480,24 +336,24 @@ li {
         width: 12.5%;
     }
 
-    .burguer-menu-toggler-container {
+    .burguer-menu-btns-container {
         display: inline;
         width: 12.5%;
         text-align: center;
     }
 
     /* SEARCH FORM */
-    .search-main-section{
+    .search-section-container{
         margin-top: 10vh;
         /* border-top: 1px solid rgba(200, 200, 200, .4); */
     }
-    .search-main-section-active{
+    .search-section-container-active{
         height: 12%;
     }
     .search-container-top{
         padding: 5px 0;
     }
-    .search-container-middle,
+    
     .close-search-form-button{
         display: none;
     }

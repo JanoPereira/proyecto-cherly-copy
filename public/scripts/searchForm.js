@@ -29,7 +29,6 @@ window.addEventListener('load', () => {
         body.classList.add('noScroll');//Para que no me deje scrollear
         
         blackScreen.classList.add('black-screen-active');
-        blackScreen.style.zIndex = '99'; //Porque el header tiene que tapar la pantalla negra
 
         searchSection.classList.add('search-section-container-active');
     
@@ -39,16 +38,9 @@ window.addEventListener('load', () => {
         input.value = ''; //Borro el contenido del input
         body.classList.remove('noScroll');//Para que no me deje scrollear
         searchSection.classList.remove('search-section-container-active');
+        
         blackScreen.classList.remove('black-screen-active');
-        blackScreen.style.zIndex = '-1';
 
-        // // SACO LA CLASE ACTIVE
-        // header.classList.remove('header-active')
-
-        if (!isNotInHome) {
-            console.log('Tendria que sacarlo');
-            header.classList.remove('header-active');
-        }
     });
     blackScreen.addEventListener('click', () => { //Si toca la pantalla negra
         input.value = ''; //Borro el contenido del input
@@ -56,15 +48,7 @@ window.addEventListener('load', () => {
         searchSection.classList.remove('search-section-container-active');
         
         blackScreen.classList.remove('black-screen-active');
-        blackScreen.style.zIndex = '-1';
-        
-        // // SACO LA CLASE ACTIVE
-        // header.classList.remove('header-active')
-
-        if (!isNotInHome) {
-            console.log('Tendria que sacarlo');
-            header.classList.remove('header-active');
-        }
+  
     });
 
     // TODO: HACER FUNCIONES PARA ACTIVATE-DEACTIVATE

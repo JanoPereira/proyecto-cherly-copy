@@ -25,109 +25,81 @@ li {
 }
 
 /* MENU HAMBURGUESA */
+
 .burguer-menu-btns-container {
-    display: none;
+    display: inline;
+    width: 12.5%;
+    text-align: center;
     position: relative;
 }
 
-.header .fa-bars,
-.header .fa-x {
+.open-menu-button{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0;
     transition: opacity 350ms;
-    pointer-events: none;
-}
-
-.burguer-menu-btn-active {
     z-index: 1;
-    pointer-events: auto !important;
-    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
-.burguer-menu-container {
-    position: absolute;
-    background: #fff;
-    width: 100vw;
-    height: 90vh;
-    left: 0;
-    z-index: 1000;
-    padding-top: 2vh;
-}
+/* MENU  */
 
 .side-navbar-container {
     position: fixed;
     left: 0;
-    top: 10vh;
+    top: 0;
     bottom: 0;
     background-color: white;
-    z-index: 3;
+    z-index: 110;
     right: 0;
-    max-width: 0;
+    width: 0;
     overflow: hidden;
-    transition: max-width 350ms ease;
+    transition: width 350ms ease;
     overflow-y: scroll;
     padding-top: 1rem;
+    height: 100%;
 }
 
 .side-navbar-container-active {
+    width: 490px;
 
-    max-width: 1000px;
 }
 
-.back-menu-container {
-    margin-bottom: 1rem;
+.close-button-container{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    padding-left: 2rem;
 }
-
-.back-menu-subcontainer {
-    width: 90%;
-    text-align: left;
+.close-menu-button{
+    margin-right: 20px;
 }
-
-.category-submenu-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.close-menu-text{
+    font-size: 19px;
 }
-
-.burguer-menu-option-list {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
+.burguer-menu-category-list{
+    padding: 0 2rem;
 }
-.delete-style{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.category-link{
+    color: #000;
+    font-size: 24px;
 }
-
+.burguer-menu-option-list{
+    padding: 0 2rem;
+}
 .burguer-menu-option {
     width: 90%;
     display: flex;
     justify-content: space-between;
-    margin: 0.650rem 0;
-}
-
-.burguer-submenu-option {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-   
-    margin: 0.650rem 0;
-}
-
-.burguer-submenu-option a {
-    color: #000;
-    font-size: 25px;
+    margin: 0.8rem 0;
 }
 
 .burguer-menu-option a {
     color: #000;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .burguer-menu-option i {
@@ -158,7 +130,7 @@ li {
 }
 
 .search-container {
-    width: 25%;
+    width: 12.5%;
     text-align: center;
     cursor: pointer;
 }
@@ -222,13 +194,12 @@ li {
     right: 0;
     width: 100%;
     z-index: 1000;
-    transition: all .3s ease;
+    transition: height .3s ease;
     overflow: hidden;
     height: 0%;
     background-color: #fff;
     display: flex;
     /* padding: 3.5vh 0; */
-    border-bottom: 1px solid rgba(40, 40, 40, .2);
     justify-content: center;
     /* transform: translateY(-100%); */
     /* margin-top: -100%; */
@@ -238,6 +209,7 @@ li {
     /* margin-top: 0; */
     /* transform: translateY(0); */
     height: 15%;
+    border-bottom: 1px solid rgba(40, 40, 40, .2);
 }
 
 
@@ -321,11 +293,17 @@ li {
         width: 12.5%;
     }
 
-    .burguer-menu-btns-container {
-        display: inline;
-        width: 12.5%;
-        text-align: center;
+    /* MENU */
+    .side-navbar-container-active{
+        width: 100%;
     }
+    .category-link{
+        font-size: 20px;
+    }
+    .burguer-menu-option{
+        font-size: 15px;
+    }
+
 
     /* SEARCH FORM */
     .search-section-container{

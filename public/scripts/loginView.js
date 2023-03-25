@@ -24,7 +24,6 @@ window.addEventListener('load', () => {
             body.classList.add('noScroll');
 
             blackScreen.classList.add('black-screen-active')
-            blackScreen.style.zIndex = '101'; //Porque el header tiene que tapar la pantalla negra
 
             // Si estaba el menu, lo saco
             sideNavbar.classList.remove('side-navbar-container-active');
@@ -46,7 +45,7 @@ window.addEventListener('load', () => {
         body.classList.remove('noScroll');
 
         blackScreen.classList.remove('black-screen-active');
-        blackScreen.style.zIndex = '-1';
+        // blackScreen.style.zIndex = '-1';
 
         if (!isNotInHome) {
             console.log('Tendria que sacarlo');
@@ -58,7 +57,7 @@ window.addEventListener('load', () => {
         body.classList.remove('noScroll');
 
         blackScreen.classList.remove('black-screen-active');
-        blackScreen.style.zIndex = '-1';
+        // blackScreen.style.zIndex = '-1';
 
         if (!isNotInHome) {
             console.log('Tendria que sacarlo');

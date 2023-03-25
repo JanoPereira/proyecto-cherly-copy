@@ -143,23 +143,11 @@ li {
 /* END MENU HAMBURGUESA */
 
 .header {
-    position: absolute;
+    position: static;
     width: 100%;
     padding: 2.5vh 0;
-    z-index: 100;
-    transition: background-color 300ms ease;
-    background-color: transparent;
-    top: 0;
-}
-
-.header-active {
-    background-color: white !important;
+    background-color: white;
     border-bottom: 1px solid rgba(40, 40, 40, .2);
-    /*(40, 40, 40, .2);*/
-}
-
-.header:hover {
-    background-color: #ffffff;
 }
 
 .nav-bar-section {
@@ -308,9 +296,6 @@ li {
     .header {
         height: 10vh;
         /* position: absolute !important; Esto esta para que el black-screen no lo tape */
-    }
-    .header:hover{
-        background-color: unset;
     }
 
     .search-container .nav-label {

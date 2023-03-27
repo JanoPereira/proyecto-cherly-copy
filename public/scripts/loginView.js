@@ -10,13 +10,16 @@ window.addEventListener('load', () => {
     const loginRegisterContainer = 'login-register-container';
     const sideNavbar = 'side-navbar-container';
     const searchSection = 'search-section-container';
-    const registrationFormContainer = 'registration-form-container'
+    const registrationFormContainer = 'registration-form-container';
+
+    let [classesToActivate,classesToDeactivate] = [];
+ 
 
     loginBtn.addEventListener('click', () => { //ABRIR LOGIN VIEW
-        let classesToActivate = [loginRegisterContainer,blackScreen];
+        classesToActivate = [loginRegisterContainer,blackScreen];
         activateClass(classesToActivate);
 
-        let classesToDeactivate = [sideNavbar,searchSection];
+        classesToDeactivate = [sideNavbar,searchSection];
         deactivateClass(classesToDeactivate);
         
         body.classList.add('noScroll');
@@ -24,14 +27,14 @@ window.addEventListener('load', () => {
     });
 
     exitBtn.addEventListener('click', () => {
-        let classesToDeactivate = [loginRegisterContainer,blackScreen];
+        classesToDeactivate = [loginRegisterContainer,blackScreen];
         deactivateClass(classesToDeactivate);
 
         body.classList.remove('noScroll');
 
     });
     document.querySelector(`.${blackScreen}`).addEventListener('click', () => {
-        let classesToDeactivate = [loginRegisterContainer,blackScreen,registrationFormContainer];
+        classesToDeactivate = [loginRegisterContainer,blackScreen,registrationFormContainer];
         deactivateClass(classesToDeactivate);
         
         body.classList.remove('noScroll');
@@ -41,13 +44,13 @@ window.addEventListener('load', () => {
     openRegistrationForm.addEventListener('click',()=>{
         body.classList.add('noScroll');
 
-        let classesToActivate = [registrationFormContainer,blackScreen];
+        classesToActivate = [registrationFormContainer,blackScreen];
         activateClass(classesToActivate);
     });
     closeRegistrationForm.addEventListener('click',()=>{
         body.classList.remove('noScroll');
 
-        let classesToDeactivate = [registrationFormContainer];
+        classesToDeactivate = [registrationFormContainer];
         deactivateClass(classesToDeactivate);
     })
     // LOGICA PARA MOSTRAR CONTRASENA

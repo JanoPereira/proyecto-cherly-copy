@@ -13,6 +13,7 @@
         <%- include('./partials/blackScreen.ejs') %>
             <%- include('./partials/login.ejs') %>
                 <%- include('./partials/header.ejs') %>
+                <%- include('./partials/registrationForm.ejs') %>
                     <section class="filter-section">
                         <p class="page-detail">All handbags</p>
                         <div class="filter-container">
@@ -29,13 +30,13 @@
 
                             <a href="/product/10" class="product-card-link">
                                 <div class="image-container">
-                                    <div class="image-carousel">
+                                    <div class="image-carousel" data-productId = "10">
                                         <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                            class="product-image-test">
+                                            class="product-image-test" data-productId = "10">
                                         <img src="/img/products/handbags/bag1.avif" alt="product-image"
-                                            class="product-image-test">
+                                            class="product-image-test" data-productId = "10">
                                         <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                            class="product-image-test">
+                                            class="product-image-test" data-productId = "10">
                                     </div>
 
 
@@ -54,58 +55,99 @@
                             </div>
                         </div>
 
-                        <a href="/product/10" class="product-card-container product-card-link">
-                            <div class="image-container">
-                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                    class="product-image">
-                                <div class="image-buttons">
-                                    <i class="fa-solid fa-angle-left back-button"></i>
-                                    <i class="fa-solid fa-angle-right foward-button"></i>
-                                </div>
+                        <div class="product-card-container">
+                            <div class="back-btn-container">
+                                <i class="fa-solid fa-angle-left back-button"></i>
                             </div>
-                            <div class="product-info-container">
-                                <div class="price-name-container">
-                                    <p class="product-name">Cartera #1</p>
-                                    <p class="product-price">$3000</p>
-                                </div>
-                            </div>
-                            </div>
-                        </a>
-                        <a href="/product/10" class="product-card-container product-card-link">
-                            <div class="image-container">
-                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                    class="product-image">
-                                <div class="image-buttons">
-                                    <i class="fa-solid fa-angle-left back-button"></i>
-                                    <i class="fa-solid fa-angle-right foward-button"></i>
-                                </div>
-                            </div>
-                            <div class="product-info-container">
-                                <div class="price-name-container">
-                                    <p class="product-name">Cartera #1</p>
-                                    <p class="product-price">$3000</p>
-                                </div>
-                            </div>
-                            </div>
-                        </a>
 
-                        <a href="/product/10" class="product-card-container product-card-link">
-                            <div class="image-container">
-                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                    class="product-image">
-                                <div class="image-buttons">
-                                    <i class="fa-solid fa-angle-left back-button"></i>
-                                    <i class="fa-solid fa-angle-right foward-button"></i>
+                            <a href="/product/10" class="product-card-link">
+                                <div class="image-container">
+                                    <div class="image-carousel" data-productId = "11">
+                                        <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "11">
+                                        <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "11">
+                                        <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "11">
+                                    </div>
+
+
                                 </div>
-                            </div>
-                            <div class="product-info-container">
-                                <div class="price-name-container">
-                                    <p class="product-name">Cartera #1</p>
-                                    <p class="product-price">$3000</p>
+                                <div class="product-info-container">
+                                    <div class="price-name-container">
+                                        <p class="product-name">Cartera #1</p>
+                                        <p class="product-price">$3000</p>
+                                    </div>
+
                                 </div>
+
+                            </a>
+                            <div class="foward-btn-container">
+                                <i class="fa-solid fa-angle-right foward-button"></i>
                             </div>
+                        </div>
+                        <div class="product-card-container">
+                            <div class="back-btn-container">
+                                <i class="fa-solid fa-angle-left back-button"></i>
                             </div>
-                        </a>
+
+                            <a href="/product/10" class="product-card-link">
+                                <div class="image-container">
+                                    <div class="image-carousel" data-productId = "12">
+                                        <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "12">
+                                        <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "12">
+                                        <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "12">
+                                    </div>
+
+
+                                </div>
+                                <div class="product-info-container">
+                                    <div class="price-name-container">
+                                        <p class="product-name">Cartera #1</p>
+                                        <p class="product-price">$3000</p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+                            <div class="foward-btn-container">
+                                <i class="fa-solid fa-angle-right foward-button"></i>
+                            </div>
+                        </div>
+                        <div class="product-card-container">
+                            <div class="back-btn-container">
+                                <i class="fa-solid fa-angle-left back-button"></i>
+                            </div>
+
+                            <a href="/product/10" class="product-card-link">
+                                <div class="image-container">
+                                    <div class="image-carousel" data-productId = "13">
+                                        <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "13">
+                                        <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "13">
+                                        <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                            class="product-image-test" data-productId = "13">
+                                    </div>
+
+
+                                </div>
+                                <div class="product-info-container">
+                                    <div class="price-name-container">
+                                        <p class="product-name">Cartera #1</p>
+                                        <p class="product-price">$3000</p>
+                                    </div>
+
+                                </div>
+
+                            </a>
+                            <div class="foward-btn-container">
+                                <i class="fa-solid fa-angle-right foward-button"></i>
+                            </div>
+                        </div>
 
                     </section>
 

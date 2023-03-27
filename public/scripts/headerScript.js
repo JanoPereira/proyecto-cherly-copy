@@ -1,6 +1,6 @@
-import {activateClass,deactivateClass} from './utils.js';
+import { activateClass, deactivateClass } from './utils.js';
 
-window.addEventListener('load', () => {  
+window.addEventListener('load', () => {
     const body = document.querySelector('body');
 
     let openMenuButton = document.querySelector('.open-menu-button');
@@ -13,29 +13,31 @@ window.addEventListener('load', () => {
 
     const blackScreen = 'black-screen'; //Pantalla negra
 
+    let classesToActivate = [];
+    let classesToDeactivate
     openMenuButton.addEventListener('click', () => { // ABRIR MENU
-        let classesToActivate = [blackScreen,sideNavbar];
+        classesToActivate = [blackScreen, sideNavbar];
         activateClass(classesToActivate);
-        
-        let classesToDeactivate = [searchSection];
+
+        classesToDeactivate = [searchSection];
         deactivateClass(classesToDeactivate);
-        
+
         body.classList.add('noScroll');
     });
 
     closeMenuButton.addEventListener('click', () => { // CERRAR MENU
 
-        let classesToDeactivate = [sideNavbar,blackScreen];
+        classesToDeactivate = [sideNavbar, blackScreen];
         deactivateClass(classesToDeactivate);
-        
+
         body.classList.remove('noScroll');
     });
 
     document.querySelector(`.${blackScreen}`).addEventListener('click', () => { // CERRAR MENU
 
-        let classesToDeactivate = [sideNavbar,blackScreen];
+        classesToDeactivate = [sideNavbar, blackScreen];
         deactivateClass(classesToDeactivate);
-        
+
         body.classList.remove('noScroll');
     })
 
@@ -43,13 +45,13 @@ window.addEventListener('load', () => {
     // LOGICA DEL HEADER AL SCROLLEAR
     const header = document.querySelector('.header');
 
-    const isAtTop = function() { //Para saber si esta arriba de todo
+    const isAtTop = function () { //Para saber si esta arriba de todo
         return (document.documentElement.scrollTop || document.body.scrollTop) === 0;
-      };
+    };
     const headerShow = () => { //Para hacer el header aparezca/desaparezca
         let prevScrollPos = window.pageYOffset;
         window.onscroll = function () {
-  
+
             let currentScrollPos = window.pageYOffset;
             if (prevScrollPos > currentScrollPos) { //Scroll Up
                 header.classList.add('header-active');
@@ -59,7 +61,7 @@ window.addEventListener('load', () => {
                 header.classList.remove('header-active');
                 header.classList.add('header-hidden');
             }
-            if(isAtTop()){
+            if (isAtTop()) {
                 header.classList.remove('header-hidden');
                 header.classList.remove('header-active');
             }

@@ -45,17 +45,25 @@ window.addEventListener('load', () => {
     })
 
 
-
-    const headerShow = () => {
+    const isAtTop = function() { //Para saber si esta arriba de todo
+        return (document.documentElement.scrollTop || document.body.scrollTop) === 0;
+      };
+    const headerShow = () => { //Para hacer el header aparezca/desaparezca
         let prevScrollPos = window.pageYOffset;
         window.onscroll = function () {
+  
             let currentScrollPos = window.pageYOffset;
-            if (prevScrollPos > currentScrollPos) {
-                console.log("El usuario está haciendo scroll hacia arriba");
-                header.classList.add('header-active')
-            } else {
-                header.classList.remove('header-active')
-                console.log("El usuario está haciendo scroll hacia abajo");
+            if (prevScrollPos > currentScrollPos) { //Scroll Up
+                header.classList.add('header-active');
+                header.classList.remove('header-hidden');
+
+            } else { //Scroll Down
+                header.classList.remove('header-active');
+                header.classList.add('header-hidden');
+            }
+            if(isAtTop()){
+                header.classList.remove('header-hidden');
+                header.classList.remove('header-active');
             }
             prevScrollPos = currentScrollPos;
         }

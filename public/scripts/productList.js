@@ -4,60 +4,73 @@ window.addEventListener('load', () => {
     const nextArrow = document.querySelector('.foward-button')
     const productCardContainer = document.querySelector('.product-card-container');
     const carouselContainers = document.querySelectorAll('.image-carousel');
-    const images = document.querySelectorAll('.product-image-test');
-    var imagesSelected;
-    const addImage = carouselContainers.forEach(container=>{
-        imagesSelected = [];
-        container.addEventListener('mouseover',()=>{
-            const id = container.dataset.productid;
-            images.forEach(img=>{
-                if(img.dataset.productid == id){
-                    imagesSelected.push(img);
-                }
-            });
-            
-        });
-        console.log(imagesSelected);
-        
-    });
-    
-    
+    const allImages = document.querySelectorAll('.product-image-test');
+    const dotsContainers = document.querySelectorAll('.product-dots-container');
     let currentImage = 0;
-    let slidesLength = images.length
-
-    handleCarouselImages()
 
 
-    backArrow.addEventListener('click', (e) => {
-        if (currentImage != 0) {
-            currentImage -= 1
-            handleCarouselImages()
-        } else {
-            currentImage = slidesLength - 1;
-            handleCarouselImages()
-        }
-    })
+    carouselContainers.forEach(container => {
+        let imagesSelected;
+        container.addEventListener('mouseenter', () => {     
+            imagesSelected = []
+            containersGlobalMouseEnter(imagesSelected, container)
+        });
+    });
 
-    nextArrow.addEventListener('click', (e) => {
+    const containersGlobalMouseEnter = (imagesSelected, container) => {
+        handleDotsCount(container, imagesSelected)
+        handleCarouselHover(container, imagesSelected)
+        handleConditionForSlide(imagesSelected)
+    }
+
+    const handleCarouselHover = (container, imagesSelected) => {
+        const id = container.dataset.productid;
+        allImages.forEach(img => {
+            if (img.dataset.productid == id) {
+                imagesSelected.push(img);
+            }
+        });
+        return imagesSelected
+    }
+
+    const handleConditionForSlide = (images) => {
+        let slidesLength = images.length
         if (currentImage < slidesLength - 1) {
             currentImage += 1
-            handleCarouselImages()
+            handleCarouselAutoSlide(images)
+
         } else {
             currentImage = 0
-            handleCarouselImages()
+            handleCarouselAutoSlide(images)
         }
-    })
+    }
 
-    function handleCarouselImages () {
-      
-        images.forEach((img, i) => {
+    const handleDotsCount = (container, imagesSelected) => {
+        let containers = []
+        let slidesLength = imagesSelected.length
+        const id = container.dataset.productid;
+        dotsContainers.forEach(dotCont => containers.push(dotCont))
+
+        const dotContToInject = containers.find(cont => cont.dataset.productid === id) 
+        for(i = 0; i < slidesLength; i++) {
+            if(i == 0) {
+              dotContToInject.innerHTML += "<div class='home-slider-dot dot-active'></div>";
+            } else {
+              dotContToInject.innerHTML += "<div class='home-slider-dot'></div>";
+            }
+          }
         
+    }
+
+    const handleCarouselAutoSlide = (images) => {
+        let slidesLength = images.length
+        console.log(currentImage)
+        images.forEach((img, i) => {
             if (i == currentImage) {
                 img.classList.remove('product-image-test-prev-slide')
                 img.classList.remove('product-image-test-next-slide')
                 img.classList.add('product-image-test-active')
-            }
-            else if (i == currentImage - 1 || (currentImage == 0 && i == slidesLength - 1)) {
+            } else if (i == currentImage - 1 || (currentImage == 0 && i == slidesLength - 1)) {
                 img.classList.remove('product-image-test-active')
                 img.classList.remove('product-image-test-next-slide')
                 img.classList.add('product-image-test-prev-slide')
@@ -68,7 +81,9 @@ window.addEventListener('load', () => {
                 img.classList.add('product-image-test-next-slide');
             }
         })
-
     }
+
+
+
 
 })

@@ -15,9 +15,9 @@
             <div class="input-field">
                 <label for="password" class="input-label">Contraseña</label>
                 <div class="input-container relative-input">
-                    <input type="password" class="input" name="password" id="password">
-                    <i class="fa-solid fa-eye show-password-btn password-btn-toggler"></i>
-                    <i class="fa-solid fa-eye-slash hide-password-btn password-btn-toggler hidden"></i>
+                    <input type="password" class="input input-password" name="password" id="password" data-place="login">
+                    <i class="fa-solid fa-eye show-password-btn password-btn-toggler" data-place="login"></i>
+                    <i class="fa-solid fa-eye-slash hide-password-btn password-btn-toggler hidden" data-place="login"></i>
                 </div>
                 <a href="#" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
             </div>
@@ -27,6 +27,6 @@
     <div class="register-container">
         <p class="login-label">NO ESTOY REGISTRADO</p>
         <p class="registration-text">Enjoy added benefits and richer experience by creating a personal account.</p>
-        <button class="btn">Crear Cuenta</button>
+        <button class="btn" id="open-registration-form">Crear Cuenta</button>
     </div>
 </div>

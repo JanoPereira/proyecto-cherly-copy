@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
     
 
     togglerOpenButton.addEventListener('click', () => { // Si abre el searchForm
-        let classesToActivate = [header,blackScreen,searchSection];
+        let classesToActivate = [blackScreen,searchSection];
         activateClass(classesToActivate);
         
         let classesToDeactivate = [sideNavbar];

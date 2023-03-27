@@ -2,12 +2,28 @@ window.addEventListener('load', () => {
 
     const backArrow = document.querySelector('.back-button')
     const nextArrow = document.querySelector('.foward-button')
-    const productCardContainer = document.querySelector('.product-card-container')
-    const images = document.querySelectorAll('.product-image-test')
-
+    const productCardContainer = document.querySelector('.product-card-container');
+    const carouselContainers = document.querySelectorAll('.image-carousel');
+    const images = document.querySelectorAll('.product-image-test');
+    var imagesSelected;
+    const addImage = carouselContainers.forEach(container=>{
+        imagesSelected = [];
+        container.addEventListener('mouseover',()=>{
+            const id = container.dataset.productid;
+            images.forEach(img=>{
+                if(img.dataset.productid == id){
+                    imagesSelected.push(img);
+                }
+            });
+            
+        });
+        console.log(imagesSelected);
+        
+    });
+    
+    
     let currentImage = 0;
     let slidesLength = images.length
-
 
     handleCarouselImages()
 

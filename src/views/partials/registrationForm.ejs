@@ -1,0 +1,53 @@
+<div class="registration-form-container">
+    <div class="registration-form-top">
+        <p class="registration-top-label">REGISTRATE</p>
+        <div class="registration-exit-btn-container">
+           
+            <i class="fa-solid fa-arrow-left login-exit-btn" id="close-registration-form-btn"></i>
+        </div>
+    </div>
+    <form action="" class="registration-form" method="POST">
+        <div class="registration-input-field">
+            <label for="name" class="input-label">Nombre: *</label>
+            <input type="text" id="name" class="input" name="name">
+        </div>
+        <div class="registration-input-field">
+            <label for="last-name" class="input-label">Apellido: *</label>
+            <input type="text" id="last-name" class="input" name="lastName">
+        </div>
+        <div class="registration-input-field">
+            <label for="email" class="input-label">Email: *</label>
+            <input type="email" id="email" class="input" name="email">
+        </div>
+        <div class="registration-input-field">
+            <label for="dni" class="input-label">DNI: *</label>
+            <input type="text" id="dni" class="input" name="dni">
+        </div>
+        <div class="registration-input-field wpp-input-field">
+            <label for="phone" class="input-label">WhatsApp:</label>
+            <p class="prefix-phone">+549</p>
+            <input type="text" id="phone" class="input" name="phone" placeholder="1154676543">
+        </div>
+        <div class="registration-input-field">
+            <label for="password" class="input-label">Contraseña: *</label>
+            <div class="input-container relative-input">
+                <input type="password" id="password" class="input input-password" name="password" data-place="regist">
+                <i class="fa-solid fa-eye show-password-btn password-btn-toggler" data-place="regist"></i>
+                <i class="fa-solid fa-eye-slash hide-password-btn password-btn-toggler hidden" data-place="regist"></i>
+            </div>
+        </div>
+        <div class="registration-input-field">
+            <label for="repeat-password" class="input-label">Repetir Contraseña: *</label>
+            <div class="input-container relative-input">
+                <input type="password" id="repeat-password" class="input input-password" name="repeatPassword" data-place="regist-repeat">
+                <i class="fa-solid fa-eye show-password-btn password-btn-toggler" data-place="regist-repeat"></i>
+                <i class="fa-solid fa-eye-slash hide-password-btn password-btn-toggler hidden" data-place="regist-repeat"></i>
+            </div>
+        </div>
+        <div class="checkbox-notify">
+            <input type="checkbox" id="checkbox" name="notifications">
+            <label for="checkbox">Acepto recibir notificaciones por teléfono y correo electrónico </label>
+        </div>
+        <button class="btn registration-btn">CREAR CUENTA</button>
+    </form>
+</div>

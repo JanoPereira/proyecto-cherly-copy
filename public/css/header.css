@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 @media (min-width: 1024px) {
@@ -37,7 +38,7 @@ li {
     position: relative;
 }
 
-.open-menu-button{
+.open-menu-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -66,11 +67,11 @@ li {
 }
 
 .side-navbar-container-active {
-    width: 490px;
+    width: 100%;
 
 }
 
-.close-button-container{
+.close-button-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -78,27 +79,34 @@ li {
     cursor: pointer;
     padding-left: 2rem;
 }
-.close-menu-button{
+
+.close-menu-button {
     margin-right: 20px;
 }
-.close-menu-text{
+
+.close-menu-text {
     font-size: 19px;
 }
-.burguer-menu-category-list{
+
+.burguer-menu-category-list {
     padding: 0 2rem;
 }
-.category-link{
+
+.category-link {
     color: #000;
-    font-size: 24px;
+    font-size: 20px;
 }
-.burguer-menu-option-list{
+
+.burguer-menu-option-list {
     padding: 0 2rem;
 }
+
 .burguer-menu-option {
     width: 90%;
     display: flex;
     justify-content: space-between;
     margin: 0.8rem 0;
+    font-size: 15px;
 }
 
 .burguer-menu-option a {
@@ -113,7 +121,7 @@ li {
 .burger-submenu-back {
     color: rgb(166, 166, 166);
     font-size: 25px;
-  
+
 }
 
 /* END MENU HAMBURGUESA */
@@ -124,6 +132,22 @@ li {
     padding: 2.5vh 0;
     background-color: white;
     border-bottom: 1px solid rgba(40, 40, 40, .2);
+    height: 10vh;
+    transition: visibility .2s ease-out;
+}
+.header-hidden{
+    animation: fadeOutUp .2s ease-in-out;
+    position: fixed;
+    z-index: 10;
+    visibility: hidden;
+    top: 0;
+}
+.header-active{ /* Para cuando scrollean para arriba */
+    position: fixed;
+    z-index: 10;
+    animation: fadeInDown .4s ease-in-out;
+    top: 0;
+    visibility: visible;
 }
 
 .nav-bar-section {
@@ -139,16 +163,11 @@ li {
     cursor: pointer;
 }
 
-.search-container .nav-label {
-    margin-left: 10px;
-    cursor: pointer;
-}
-
 .brand-name {
     color: #000;
     width: 50%;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
 }
 
@@ -158,12 +177,15 @@ li {
     justify-content: space-around;
     /* align-self: flex-end; */
 }
-.login-toggler{
+
+.login-toggler {
     cursor: pointer;
 }
-.login-toggler-mobile{
+
+.login-toggler-mobile {
     display: inline-block;
 }
+
 .shopping-cart-container {
     position: relative;
     width: fit-content;
@@ -171,7 +193,7 @@ li {
 
 .shopping-cart-container .fa-bag-shopping {
     font-weight: 900;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .shopping-cart-container .products-quantity {
@@ -179,16 +201,16 @@ li {
     background: #000;
     color: #fff;
     border-radius: 50%;
-    padding: 10px;
-    font-size: 11px;
-    height: 9px;
-    width: 9px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     top: -18px;
     right: -15px;
+    font-size: 8px;
+    height: 7px;
+    width: 7px;
+    padding: 8px;
 }
 
 /* SEARCH FORM */
@@ -203,16 +225,14 @@ li {
     height: 0%;
     background-color: #fff;
     display: flex;
-    /* padding: 3.5vh 0; */
+    /* margin-top: 10vh; */
     justify-content: center;
-    /* transform: translateY(-100%); */
-    /* margin-top: -100%; */
 }
 
 .search-section-container-active {
     /* margin-top: 0; */
     /* transform: translateY(0); */
-    height: 15%;
+    height: 12%;
     border-bottom: 1px solid rgba(40, 40, 40, .2);
 }
 
@@ -221,7 +241,7 @@ li {
     position: relative;
     height: fit-content;
     margin: auto;
-    width: 100%;
+    width: 90%;
     text-align: center;
 }
 
@@ -229,22 +249,24 @@ li {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 31%;
+    left: 3%;
     cursor: pointer;
 }
-.search-input-container .close-search-form-button {
+
+.close-search-form-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 5%;
     cursor: pointer;
+    display: none;
 }
 
 .search-input-container .search-input {
     background-color: #efefef;
     padding: 15px;
     padding-left: 40px;
-    width: 40vw;
+    width: 100%;
     border: none;
     border-radius: 5px;
     font-size: 17px;
@@ -265,72 +287,92 @@ li {
 /* MEDIAS QUERIES */
 
 /* TABLET */
-@media (max-width:768px) {}
+@media (min-width:768px) {}
 
 /* MOBILE */
-@media (max-width:426px) {
-    .header {
-        height: 10vh;
-        /* position: absolute !important; Esto esta para que el black-screen no lo tape */
+@media (min-width: 1024px) {
+    .header{
+        height: auto;
     }
-
-    .search-container .nav-label {
-        display: none;
-    }
-
     .brand-name {
-        font-size: 30px;
+        font-size: 40px;
     }
 
     .shopping-cart-container .fa-bag-shopping {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .shopping-cart-container .products-quantity {
-        font-size: 8px;
-        height: 7px;
-        width: 7px;
-        padding: 8px;
-    }
-
-    .search-container {
-        width: 12.5%;
+        padding: 10px;
+        font-size: 11px;
+        height: 9px;
+        width: 9px;
     }
 
     /* MENU */
-    .side-navbar-container-active{
-        width: 100%;
+    .side-navbar-container-active {
+        width: 490px;
     }
-    .category-link{
-        font-size: 20px;
+
+    .category-link {
+        font-size: 24px;
     }
-    .burguer-menu-option{
-        font-size: 15px;
+
+    .burguer-menu-option {
+        /* font-size: 15px; */
     }
 
 
     /* SEARCH FORM */
-    .search-section-container{
-        margin-top: 10vh;
+    .search-section-container {
+        margin-top: 0;
         /* border-top: 1px solid rgba(200, 200, 200, .4); */
     }
-    .search-section-container-active{
-        height: 12%;
+
+    .search-section-container-active {
+        height: 15%;
     }
-    .search-container-top{
-        padding: 5px 0;
+
+    .close-search-form-button {
+        display: inline-block;
     }
-    
-    .close-search-form-button{
-        display: none;
-    }
-    .search-form-container{
-        height: 100%;
-    }
-    .search-input-container{
-        width: 90%;
-    }
-    .search-input-container .search-input{
+
+    .search-input-container {
         width: 100%;
     }
+
+    .search-input-container .search-logo{
+        left: 31%
+    }
+
+    .search-input-container .search-input {
+        width: 40vw;
+    }
 }
+
+
+
+/* ANIMACIONES */
+@keyframes fadeInDown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOutUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }

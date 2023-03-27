@@ -8,7 +8,7 @@ video::-webkit-media-controls-time-remaining-display {
 
 .carrusel-image-container {
     position: relative;
-    height: 100%;
+    height: 95vh;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
@@ -19,6 +19,7 @@ video::-webkit-media-controls-time-remaining-display {
     width: 100%;
     z-index: -1;
     position: relative;
+    height: 100%;
 
 }
 
@@ -32,6 +33,7 @@ video::-webkit-media-controls-time-remaining-display {
     transform: translateX(50%);
     right: 50%;
     z-index: 1;
+    width: 80%;
 }
 
 .sticky-options-title {
@@ -39,6 +41,9 @@ video::-webkit-media-controls-time-remaining-display {
     font-size: 33px;
     font-weight: 700;
     margin-bottom: 4vh;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
 }
 
 .sticky-options-container a {
@@ -47,7 +52,7 @@ video::-webkit-media-controls-time-remaining-display {
     color: #fff;
     border-radius: 20px;
     padding: 15px 20px;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 600;
     margin: 0 auto;
     display: block;
@@ -59,26 +64,25 @@ video::-webkit-media-controls-time-remaining-display {
 /* MEDIAS QUERIES */
 
 /* MOBILE */
-@media (max-width: 426px) {
+@media (min-width: 1024px) {
     .carrusel-image-container {
-        height: 95vh;
+        height: 100%;
     }
 
     .carrusel-image-container img,
     .carrusel-image-container video {
-        height: 100%;
+        /* height: 100%; */
     }
 
-    .sticky-options-container{
+    .sticky-options-container {
         width: 80%;
     }
+
     .sticky-options-title {
-        font-size: 22px;
-        text-align: center;
-        width: 100%;    
+        font-size: 33px;
     }
 
     .sticky-options-container a {
-        font-size: 12px;
+        font-size: 18px;
     }
 }

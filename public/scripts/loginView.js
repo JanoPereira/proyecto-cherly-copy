@@ -1,84 +1,94 @@
+import { activateClass, deactivateClass } from './utils.js';
 window.addEventListener('load', () => {
-    const loginRegisterContainer = document.querySelector('.login-register-container');
-    const loginBtn = document.querySelectorAll('.login-toggler');
+    const loginBtn = document.querySelector('.login-toggler');
     const body = document.querySelector('body');
-    const blackScreen = document.querySelector('.black-screen');
     const exitBtn = document.querySelector('.login-exit-btn-container');
+    const openRegistrationForm = document.getElementById('open-registration-form');
+    const closeRegistrationForm = document.getElementById('close-registration-form-btn');
 
-    const sideNavbar = document.querySelector('.side-navbar-container');
+    const blackScreen = 'black-screen';
+    const loginRegisterContainer = 'login-register-container';
+    const sideNavbar = 'side-navbar-container';
+    const searchSection = 'search-section-container';
+    const registrationFormContainer = 'registration-form-container';
 
-    const searchSection = document.querySelector('.search-section-container');
+    let [classesToActivate,classesToDeactivate] = [];
+ 
 
-    // Para saber si esta en las vistas donde el header se camufla y tiene hover
-    const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
-    const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname);
-    const header = document.querySelector('.header');
+    loginBtn.addEventListener('click', () => { //ABRIR LOGIN VIEW
+        classesToActivate = [loginRegisterContainer,blackScreen];
+        activateClass(classesToActivate);
 
-     // Botones del menu para abrir/cerrar
-    const burguerMenuCloseButton = document.querySelector('.close-menu-button');
-    const burguerMenuOpenButton = document.querySelector('.open-menu-button');
+        classesToDeactivate = [sideNavbar,searchSection];
+        deactivateClass(classesToDeactivate);
+        
+        body.classList.add('noScroll');
 
-    loginBtn.forEach(btn => {
-        btn.addEventListener('click', () => { //ABRIR LOGIN VIEW
-            loginRegisterContainer.classList.add('login-register-container-active');
-            body.classList.add('noScroll');
+    });
 
-            blackScreen.classList.add('black-screen-active')
+    exitBtn.addEventListener('click', () => {
+        classesToDeactivate = [loginRegisterContainer,blackScreen];
+        deactivateClass(classesToDeactivate);
 
-            // Si estaba el menu, lo saco
-            sideNavbar.classList.remove('side-navbar-container-active');
+        body.classList.remove('noScroll');
 
-            // Si estaba en el menu, tiene el boton x, le tengo que dejar el bars
-            burguerMenuCloseButton.classList.remove('icon-active');
-            burguerMenuCloseButton.classList.add('icon-inactive'); //Saco el x button
-            burguerMenuOpenButton.classList.add('icon-active');
-            burguerMenuOpenButton.classList.remove('icon-inactive'); //Pongo el open btn
+    });
+    document.querySelector(`.${blackScreen}`).addEventListener('click', () => {
+        classesToDeactivate = [loginRegisterContainer,blackScreen,registrationFormContainer];
+        deactivateClass(classesToDeactivate);
+        
+        body.classList.remove('noScroll');
+    });
 
-            // Si estaba el menu de busqueda, lo saco
-            searchSection.classList.remove('search-section-container-active')
+
+    openRegistrationForm.addEventListener('click',()=>{
+        body.classList.add('noScroll');
+
+        classesToActivate = [registrationFormContainer,blackScreen];
+        activateClass(classesToActivate);
+    });
+    closeRegistrationForm.addEventListener('click',()=>{
+        body.classList.remove('noScroll');
+
+        classesToDeactivate = [registrationFormContainer];
+        deactivateClass(classesToDeactivate);
+    })
+    // LOGICA PARA MOSTRAR CONTRASENA
+    const showPassBtn = document.querySelectorAll('.show-password-btn');
+    const hidePassBtn = document.querySelectorAll('.hide-password-btn')
+    const passInput = document.querySelectorAll('.input-password');
+    
+    showPassBtn.forEach(btn=>{ //Para mostrar
+        btn.addEventListener('click', () => {
+            let place = btn.dataset.place;
+            passInput.forEach(tag=>{
+                if (tag.dataset.place == place){
+                    tag.type = 'text';
+                }
+            });
+            hidePassBtn.forEach(tag=>{
+                if (tag.dataset.place == place){
+                    tag.classList.remove('hidden');
+                }
+            });
+            btn.classList.add('hidden'); 
+        });
+    });
+    hidePassBtn.forEach(btn=>{ //Para ocultar
+        btn.addEventListener('click', () => {
+            let place = btn.dataset.place;
+            passInput.forEach(tag=>{
+                if (tag.dataset.place == place){
+                    tag.type = 'password';
+                }
+            });
+            showPassBtn.forEach(tag=>{
+                if (tag.dataset.place == place){
+                    tag.classList.remove('hidden');
+                }
+            });
+            btn.classList.add('hidden'); 
         });
     });
 
-
-    exitBtn.addEventListener('click', () => {
-        loginRegisterContainer.classList.remove('login-register-container-active');
-        body.classList.remove('noScroll');
-
-        blackScreen.classList.remove('black-screen-active');
-        // blackScreen.style.zIndex = '-1';
-
-        if (!isNotInHome) {
-            console.log('Tendria que sacarlo');
-            header.classList.remove('header-active');
-        }
-    });
-    blackScreen.addEventListener('click', () => {
-        loginRegisterContainer.classList.remove('login-register-container-active');
-        body.classList.remove('noScroll');
-
-        blackScreen.classList.remove('black-screen-active');
-        // blackScreen.style.zIndex = '-1';
-
-        if (!isNotInHome) {
-            console.log('Tendria que sacarlo');
-            header.classList.remove('header-active');
-        }
-    });
-
-
-    // LOGICA PARA MOSTRAR CONTRASENA
-    const showPassBtn = document.querySelector('.show-password-btn');
-    const hidePassBtn = document.querySelector('.hide-password-btn')
-    const passInput = document.getElementById('password');
-    showPassBtn.addEventListener('click', () => {
-        passInput.type = 'text';
-        hidePassBtn.classList.remove('hidden');
-        showPassBtn.classList.add('hidden');
-
-    });
-    hidePassBtn.addEventListener('click', () => {
-        passInput.type = 'password';
-        hidePassBtn.classList.add('hidden');
-        showPassBtn.classList.remove('hidden');
-    });
 });

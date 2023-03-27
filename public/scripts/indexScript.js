@@ -11,8 +11,8 @@ window.addEventListener('load', () => {
     function detectarElementoEnPantalla() {
         // Obtener la posición del elemento
         
-        console.log(`rect: ${elementPosition}`);
-        console.log(`pagey: ${window.pageYOffset }`);
+        // console.log(`rect: ${elementPosition}`);
+        // console.log(`pagey: ${window.pageYOffset }`);
 
         if(window.pageYOffset >= elementPosition){
             console.log('Se llego al video');

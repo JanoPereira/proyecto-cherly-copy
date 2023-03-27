@@ -1,0 +1,151 @@
+/* COLOR PICKER */
+.registration-form-container {
+    position: fixed;
+    z-index: 10000;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    transition: all .35s ease;
+    margin-right: -100%;
+    overflow: hidden;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.registration-form-container-active {
+    margin-right: 0;
+}
+
+.registration-form-top {
+    height: 10%;
+    display: flex;
+    border-bottom: 1px solid rgba(200, 200, 200, .4);
+}
+
+.registration-top-label{
+    font-size: 25px;
+    width: 100%;
+    padding: 3vh 2vw;
+    font-weight: 800;
+}
+.login-label {
+    width: 100%;
+    /* text-align: center; */
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.registration-exit-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    border-left: 1px solid rgba(200, 200, 200, .4);
+    cursor: pointer;
+}
+.registration-exit-btn-container:hover {
+    background-color: #ccc;
+}
+
+
+.login-exit-btn {
+    position: static;
+    opacity: 1;
+    transform: none;
+    cursor: pointer;
+}
+.registration-form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 3vw;
+}
+
+.registration-input-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+.checkbox-notify{
+    margin-top: 2rem;
+}
+.registration-input-field.wpp-input-field{
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.registration-input-field.wpp-input-field .input-label{
+    width: 100%;
+   
+}
+.prefix-phone{
+    width: fit-content;
+    margin-right: 1rem;
+}
+.registration-input-field.wpp-input-field .input{
+    width: 80%;
+}
+.input-label{
+    margin-bottom: 10px;
+}
+.input{
+    border: 1px solid rgba(200, 200, 200, .6);
+    padding: 15px 1rem;
+    outline: none;
+    width: 100%;
+    border-radius: 2rem;
+}
+.input-container{
+    width: 100%;
+}
+.relative-input{
+    position: relative;
+}
+.password-btn-toggler{
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
+    cursor: pointer;
+    user-select: none;
+}
+.btn{
+    margin-top: 3.5vh;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    font-size: 20px;
+    height: fit-content;
+    padding: 13px;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+.registration-btn{
+    margin-bottom: 2rem;
+}
+
+@media(min-width: 1024px) {
+    .registration-form-container-active{
+        width: 35%;
+    }
+    .registration-form-container{
+        overflow-y: hidden;
+    }
+    .registration-form{
+        justify-content: space-evenly;
+    }
+    .registration-input-field{
+        width: 45%;
+    }
+    .registration-input-field.wpp-input-field{
+        width: 93.3%;
+    }
+    /* COLOR PICKER */
+    .login-register-container {
+        max-width: 35%;
+    }
+}

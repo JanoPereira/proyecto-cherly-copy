@@ -1,10 +1,9 @@
 .whatsapp-link {
     position: fixed;
     bottom: 0px;
-    right: 20px;
+    right: 0;
     z-index: 10000;
     border-radius: 5px;
-    padding: 15px 5px;
 }
 
 .whatsapp-link img {
@@ -16,16 +15,15 @@
 
 /* MEDIA QUERIES */
 
-@media(max-width:426px) {
+@media(min-width:1024px) {
     .whatsapp-link {
-        right: 0;
-        padding: 10px 3px;
+        right: 20px;
         /* bottom: 50%;
         transform: translateY(50%); */
     }
 
     .whatsapp-link img {
-        width: 30px;
-        height: 30px;
+        /* width: 50px;
+        height: 50px; */
     }
 }

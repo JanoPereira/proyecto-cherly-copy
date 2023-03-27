@@ -1,68 +1,38 @@
+import { activateClass, deactivateClass } from './utils.js';
 window.addEventListener('load', () => {
-    const loginRegisterContainer = document.querySelector('.login-register-container');
-    const loginBtn = document.querySelectorAll('.login-toggler');
+    const loginBtn = document.querySelector('.login-toggler');
     const body = document.querySelector('body');
-    const blackScreen = document.querySelector('.black-screen');
     const exitBtn = document.querySelector('.login-exit-btn-container');
+    
+    const blackScreen = 'black-screen';
+    const loginRegisterContainer = 'login-register-container';
+    const sideNavbar = 'side-navbar-container';
+    const searchSection = 'search-section-container';
 
-    const sideNavbar = document.querySelector('.side-navbar-container');
 
-    const searchSection = document.querySelector('.search-section-container');
+    loginBtn.addEventListener('click', () => { //ABRIR LOGIN VIEW
+        let classesToActivate = [loginRegisterContainer,blackScreen];
+        activateClass(classesToActivate);
 
-    // Para saber si esta en las vistas donde el header se camufla y tiene hover
-    const URLPattern = /^\/product\/\d+$/; //Para capturar la URL '/product/:id'
-    const isNotInHome = window.location.pathname != '/' && !URLPattern.test(window.location.pathname);
-    const header = document.querySelector('.header');
+        let classesToDeactivate = [sideNavbar,searchSection];
+        deactivateClass(classesToDeactivate);
+        
+        body.classList.add('noScroll');
 
-     // Botones del menu para abrir/cerrar
-    const burguerMenuCloseButton = document.querySelector('.close-menu-button');
-    const burguerMenuOpenButton = document.querySelector('.open-menu-button');
-
-    loginBtn.forEach(btn => {
-        btn.addEventListener('click', () => { //ABRIR LOGIN VIEW
-            loginRegisterContainer.classList.add('login-register-container-active');
-            body.classList.add('noScroll');
-
-            blackScreen.classList.add('black-screen-active')
-
-            // Si estaba el menu, lo saco
-            sideNavbar.classList.remove('side-navbar-container-active');
-
-            // Si estaba en el menu, tiene el boton x, le tengo que dejar el bars
-            burguerMenuCloseButton.classList.remove('icon-active');
-            burguerMenuCloseButton.classList.add('icon-inactive'); //Saco el x button
-            burguerMenuOpenButton.classList.add('icon-active');
-            burguerMenuOpenButton.classList.remove('icon-inactive'); //Pongo el open btn
-
-            // Si estaba el menu de busqueda, lo saco
-            searchSection.classList.remove('search-section-container-active')
-        });
     });
-
 
     exitBtn.addEventListener('click', () => {
-        loginRegisterContainer.classList.remove('login-register-container-active');
+        let classesToDeactivate = [loginRegisterContainer,blackScreen];
+        deactivateClass(classesToDeactivate);
+
         body.classList.remove('noScroll');
 
-        blackScreen.classList.remove('black-screen-active');
-        // blackScreen.style.zIndex = '-1';
-
-        if (!isNotInHome) {
-            console.log('Tendria que sacarlo');
-            header.classList.remove('header-active');
-        }
     });
-    blackScreen.addEventListener('click', () => {
-        loginRegisterContainer.classList.remove('login-register-container-active');
+    document.querySelector(`.${blackScreen}`).addEventListener('click', () => {
+        let classesToDeactivate = [loginRegisterContainer,blackScreen];
+        deactivateClass(classesToDeactivate);
+        
         body.classList.remove('noScroll');
-
-        blackScreen.classList.remove('black-screen-active');
-        // blackScreen.style.zIndex = '-1';
-
-        if (!isNotInHome) {
-            console.log('Tendria que sacarlo');
-            header.classList.remove('header-active');
-        }
     });
 
 

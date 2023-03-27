@@ -1,49 +1,47 @@
-window.addEventListener('load', () => {
-    const header = document.querySelector('.header');
-    
+import {activateClass,deactivateClass} from './utils.js';
+
+window.addEventListener('load', () => {  
     const body = document.querySelector('body');
 
     let openMenuButton = document.querySelector('.open-menu-button');
 
     let closeMenuButton = document.querySelector('.close-button-container');
 
-    const sideNavbar = document.querySelector('.side-navbar-container');
+    const sideNavbar = 'side-navbar-container';
 
-    const searchSection = document.querySelector('.search-section-container');
+    const searchSection = 'search-section-container';
 
-    const blackScreen = document.querySelector('.black-screen'); //Pantalla negra
+    const blackScreen = 'black-screen'; //Pantalla negra
 
     openMenuButton.addEventListener('click', () => { // ABRIR MENU
-
+        let classesToActivate = [blackScreen,sideNavbar];
+        activateClass(classesToActivate);
+        
+        let classesToDeactivate = [searchSection];
+        deactivateClass(classesToDeactivate);
+        
         body.classList.add('noScroll');
-        // Si abre el menu y estaba activo el search-form, se lo desactivo
-        searchSection.classList.remove('search-section-container-active');
-
-        // Si abre el menu, pongo el black-screen
-        blackScreen.classList.add('black-screen-active');
-
-        sideNavbar.classList.add('side-navbar-container-active');
     });
 
     closeMenuButton.addEventListener('click', () => { // CERRAR MENU
 
+        let classesToDeactivate = [sideNavbar,blackScreen];
+        deactivateClass(classesToDeactivate);
+        
         body.classList.remove('noScroll');
-
-        sideNavbar.classList.remove('side-navbar-container-active');
-        blackScreen.classList.remove('black-screen-active')
     });
 
-    blackScreen.addEventListener('click', () => { // CERRAR MENU
+    document.querySelector(`.${blackScreen}`).addEventListener('click', () => { // CERRAR MENU
 
+        let classesToDeactivate = [sideNavbar,blackScreen];
+        deactivateClass(classesToDeactivate);
+        
         body.classList.remove('noScroll');
-        sideNavbar.classList.remove('side-navbar-container-active');
-        openMenuButton.classList.add('burguer-menu-btn-active');
-
-        closeMenuButton.classList.remove('burguer-menu-btn-active');
-
-        blackScreen.classList.remove('black-screen-active');
     })
 
+
+    // LOGICA DEL HEADER AL SCROLLEAR
+    const header = document.querySelector('.header');
 
     const isAtTop = function() { //Para saber si esta arriba de todo
         return (document.documentElement.scrollTop || document.body.scrollTop) === 0;

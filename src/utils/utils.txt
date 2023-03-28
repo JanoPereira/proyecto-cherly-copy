@@ -38,3 +38,19 @@
 
         </li> %>
 <% }) %>
+
+
+CODIGO PARA CUANDO TENGAMOS PRODUCTOS CON LAS IMAGENES
+
+<% product.images.forEach((img,i) => { %>
+                                                <% if (i==currentImage) { %>
+                                                    <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-active"
+                                                    data-productId="10">
+                                                <% } %>
+                                                <% else if (i == product.images.length-1) { %>
+                                                    <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-prev-slide"
+                                                    data-productId="10">
+                                                <% } %>
+                                            <% }) %>

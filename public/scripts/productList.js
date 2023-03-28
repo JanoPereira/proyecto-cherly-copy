@@ -7,66 +7,59 @@ window.addEventListener('load', () => {
     const allImages = document.querySelectorAll('.product-image-test');
     const dotsContainers = document.querySelectorAll('.product-dots-container');
     const dots = document.querySelectorAll('.product-carousel-dot')
-
     let currentImage = 0;
     var intervalId;
 
-    const productImages = {}
+    const productImages = {};
 
     allImages.forEach(img => {
         const productId = img.dataset.productid
         if(productImages[productId]) {
-            productImages[productId].push(img)
+            productImages[productId].push(img);
         } else {
-            productImages[productId] = [img]
-        }
-    })
-
-    console.log(productImages)
-
+            productImages[productId] = [img];
+        };
+    });
 
 
     carouselContainers.forEach(container => { //Va por cada carousel los productos
-        let imagesSelected;
-
+        
+        let productSelectedId = container.dataset.productid;
+        dotsJump(productSelectedId);
+        
         container.addEventListener('mouseenter', () => { //Cuando el mouse se para arriba    
-            imagesSelected = [];
-            containersGlobalMouseEnter(imagesSelected, container);
+            
+            handleConditionForSlide(productSelectedId);
+            intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
+                handleConditionForSlide(productSelectedId);
+    
+            }, 2000);
         });
+        
+        container.addEventListener('mouseleave', () => { //Esto es para que una vez que se va del producto, vuelva a la primer imagen
+            currentImage = 0;
+            handleCarouselAutoSlide(productImages[productSelectedId]);
+            clearInterval(intervalId);
+        })
 
 
     });
 
-    const containersGlobalMouseEnter = (imagesSelected, container) => {
-        handleDotsCount(container, imagesSelected);
-        handleCarouselHover(container, imagesSelected);
+    // const handleCarouselHover = (container, imagesSelected) => { //Retorna las imagenes pertenecientes al carousel
+    //     const id = container.dataset.productid;
+    //     allImages.forEach(img => {
+    //         if (img.dataset.productid == id) {
+    //             imagesSelected.push(img);
+    //         }
+    //     });
 
-        intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
-            handleConditionForSlide(imagesSelected);
+    //     return imagesSelected;
+    // }
 
-        }, 2000);
-        container.addEventListener('mouseleave', () => { //Esto es para que una vez que se va del producto, vuelva a la primer imagen
-            currentImage = 0;
-            handleCarouselAutoSlide(imagesSelected);
-            clearInterval(intervalId);
-        })
+    const handleConditionForSlide = (productSelectedId) => { //Nos dice donde esta parada la foto para saber a cual pasar
 
-    }
-
-    const handleCarouselHover = (container, imagesSelected) => { //Retorna las imagenes pertenecientes al carousel
-        const id = container.dataset.productid;
-        allImages.forEach(img => {
-            if (img.dataset.productid == id) {
-                imagesSelected.push(img);
-            }
-        });
-
-        return imagesSelected;
-    }
-
-    const handleConditionForSlide = (images) => { //Nos dice donde esta parada la foto para saber a cual pasar
-        let slidesLength = images.length;
-        if (currentImage < slidesLength - 1) {
+        let images =  productImages[productSelectedId]; // Imagenes del producto
+        if (currentImage < images.length - 1) {
             currentImage += 1;
         } else {
             currentImage = 0;
@@ -75,26 +68,26 @@ window.addEventListener('load', () => {
 
     }
 
-    const handleDotsCount = (container, imagesSelected) => { //Pinta los puntos 
-        let containers = []
-        let slidesLength = imagesSelected.length
-        const id = container.dataset.productid;
-        dotsContainers.forEach(dotCont => containers.push(dotCont));
+    // const handleDotsCount = (container, imagesSelected) => { //Pinta los puntos 
+    //     let containers = []
+    //     let slidesLength = imagesSelected.length
+    //     const id = container.dataset.productid;
+    //     dotsContainers.forEach(dotCont => containers.push(dotCont));
 
-        const dotContToInject = containers.find(cont => cont.dataset.productid === id);
-        for (i = 0; i < slidesLength; i++) {
-            if (i == 0) {
-                dotContToInject.innerHTML += "<div class='home-slider-dot dot-active'></div>";
-            } else {
-                dotContToInject.innerHTML += "<div class='home-slider-dot'></div>";
-            }
-        }
+    //     const dotContToInject = containers.find(cont => cont.dataset.productid === id);
+    //     for (i = 0; i < slidesLength; i++) {
+    //         if (i == 0) {
+    //             dotContToInject.innerHTML += "<div class='home-slider-dot dot-active'></div>";
+    //         } else {
+    //             dotContToInject.innerHTML += "<div class='home-slider-dot'></div>";
+    //         }
+    //     }
 
-    }
+    // }
 
     const handleCarouselAutoSlide = (images) => { //[<prev>,<active>,<next>]
         let slidesLength = images.length;
-        console.log(currentImage)
+
         images.forEach((img, i) => { //Va por cada imagen de un producto particular
             if (i == currentImage) {
                 img.classList.remove('product-image-test-prev-slide');
@@ -113,15 +106,15 @@ window.addEventListener('load', () => {
         })
     }
 
-    function dotsJump() {
+    function dotsJump(productSelectedId) { //Cuando el usuario clickea un dot random
         dots.forEach((dot, i) => {
             dot.addEventListener('click', () => {
-                if (!dot.classList.contains('active-dot')) {
-                    const activeDot = document.querySelector('.active-dot');
-                    activeDot.classList.remove('active-dot')
-                    dot.classList.add('active-dot')
+                if (!dot.classList.contains('product-carousel-dot-active')) {
+                    const activeDot = document.querySelector('.product-carousel-dot-active');
+                    activeDot.classList.remove('product-carousel-dot-active')
+                    dot.classList.add('product-carousel-dot-active')
                     currentImage = i;
-                    handleCarouselFn()
+                    handleCarouselAutoSlide(productImages[productSelectedId]);
                 }
             })
         })

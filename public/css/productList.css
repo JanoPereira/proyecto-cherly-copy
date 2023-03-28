@@ -125,9 +125,13 @@
 .product-dots-container {
     display: flex;
     justify-content: space-between;
-
     width: 50%;
     margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+    z-index: 10;
 }
 
 .product-carousel-dot {

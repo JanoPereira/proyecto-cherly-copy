@@ -6,36 +6,51 @@ window.addEventListener('load', () => {
     const carouselContainers = document.querySelectorAll('.image-carousel');
     const allImages = document.querySelectorAll('.product-image-test');
     const dotsContainers = document.querySelectorAll('.product-dots-container');
+    const dots = document.querySelectorAll('.product-carousel-dot')
 
     let currentImage = 0;
     var intervalId;
 
+    const productImages = {}
+
+    allImages.forEach(img => {
+        const productId = img.dataset.productid
+        if(productImages[productId]) {
+            productImages[productId].push(img)
+        } else {
+            productImages[productId] = [img]
+        }
+    })
+
+    console.log(productImages)
+
+
 
     carouselContainers.forEach(container => { //Va por cada carousel los productos
         let imagesSelected;
-        
+
         container.addEventListener('mouseenter', () => { //Cuando el mouse se para arriba    
             imagesSelected = [];
             containersGlobalMouseEnter(imagesSelected, container);
         });
-        
-        
+
+
     });
 
     const containersGlobalMouseEnter = (imagesSelected, container) => {
         handleDotsCount(container, imagesSelected);
         handleCarouselHover(container, imagesSelected);
 
-        intervalId = setInterval(()=>{ //Esto es para que vaya cambiando la foto cada 2 seg
+        intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
             handleConditionForSlide(imagesSelected);
-  
-        },2000); 
-        container.addEventListener('mouseleave',()=>{ //Esto es para que una vez que se va del producto, vuelva a la primer imagen
-            currentImage = 0 ;
+
+        }, 2000);
+        container.addEventListener('mouseleave', () => { //Esto es para que una vez que se va del producto, vuelva a la primer imagen
+            currentImage = 0;
             handleCarouselAutoSlide(imagesSelected);
             clearInterval(intervalId);
         })
-        
+
     }
 
     const handleCarouselHover = (container, imagesSelected) => { //Retorna las imagenes pertenecientes al carousel
@@ -95,6 +110,20 @@ window.addEventListener('load', () => {
                 img.classList.remove('product-image-test-prev-slide');
                 img.classList.add('product-image-test-next-slide');
             }
+        })
+    }
+
+    function dotsJump() {
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                if (!dot.classList.contains('active-dot')) {
+                    const activeDot = document.querySelector('.active-dot');
+                    activeDot.classList.remove('active-dot')
+                    dot.classList.add('active-dot')
+                    currentImage = i;
+                    handleCarouselFn()
+                }
+            })
         })
     }
 })

@@ -122,41 +122,24 @@
     letter-spacing: 1px;
 }
 
-/* FLECHAS ATRAS/ADELANTE */
-.foward-btn-container,
-.back-btn-container {
-    opacity: 0;
-    transition: opacity .7s;
+.product-dots-container {
+    display: flex;
+    justify-content: space-between;
+
+    width: 50%;
+    margin: 0 auto;
 }
 
-.product-card-container:hover .foward-btn-container {
-    opacity: 1;
-    z-index: 2;
+.product-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid grey;
 }
 
-.product-card-container:hover .back-btn-container {
-    opacity: 1;
-    z-index: 2;
+.product-carousel-dot-active {
+    background-color: black;
 }
-
-.back-button,
-.foward-button {
-    position: absolute;
-    top: 50%;
-    font-size: 20px;
-    z-index: 2;
-}
-
-.back-button {
-    left: 10px;
-}
-
-.foward-button {
-    right: 10px;
-}
-
-
-
 
 
 

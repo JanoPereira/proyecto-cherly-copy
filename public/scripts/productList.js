@@ -11,9 +11,9 @@ window.addEventListener('load', () => {
 
     carouselContainers.forEach(container => {
         let imagesSelected;
-        container.addEventListener('mouseenter', () => {     
+        container.addEventListener('mouseover', () => {     
             imagesSelected = []
-            containersGlobalMouseEnter(imagesSelected, container)
+           containersGlobalMouseEnter(imagesSelected, container)
         });
     });
 
@@ -82,8 +82,4 @@ window.addEventListener('load', () => {
             }
         })
     }
-
-
-
-
 })

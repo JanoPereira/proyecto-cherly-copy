@@ -14,14 +14,61 @@
             <%- include('./partials/login.ejs') %>
                 <%- include('./partials/header.ejs') %>
                     <%- include('./partials/registrationForm.ejs') %>
-                        <section class="filter-section">
-                            <p class="page-detail">All handbags</p>
-                            <div class="filter-container">
-                                <p class="filter-name">Filters</p>
-                                <p class="filter-amount">(2)</p>
+
+                        <div class="product-list-intro">
+
+                            <div class="product-title">
+                                <h2>Bags</h2>
+                            </div>
+
+                            <div class="filter-btn-container">
+                                <p class="filter-name">FILTRAR POR</p>
                                 <i class="fa-solid fa-filter"></i>
                             </div>
-                        </section>
+
+                        </div>
+
+
+
+
+                        <div class="filters-container">
+                            <div class="filter-title-close-btn-container">
+                                <h3>FILTER BY</h3>
+                                <i class="fa-solid fa-x close-filter-x"></i>
+                            </div>
+                            <div class="filters-list">
+                                <ul type="none">
+                                    <li class="filter filter-with-dropdown" data-label='size'>
+                                        <div class="filter-item-arrow-container">
+                                            <p>TALLA</p>
+                                           <i class="fa-solid fa-caret-down"></i>
+                                        </div>
+
+                                        <ul type="none" class="filter-dropdown-container" data-label='size'>
+                                            <li class="filter-dropdown-item">36</li>
+                                            <li class="filter-dropdown-item">38</li>
+                                            <li class="filter-dropdown-item">40</li>
+                                        </ul>
+                                    </li>
+                                    <li class="filter filter-with-dropdown" data-label='color'>
+                                        <div class="filter-item-arrow-container">
+                                            <p>COLOR</p>
+                                           <i class="fa-solid fa-caret-down"></i>
+                                        </div>
+                                        <ul type="none" class="filter-dropdown-container" data-label='color'>
+                                            <li class="filter-dropdown-item">Azul</li>
+                                            <li class="filter-dropdown-item">Blue</li>
+                                            <li class="filter-dropdown-item">Red</li>
+                                        </ul>
+                                    </li>
+                                    <li class="filter most-sold">MÁS VENDIDO</li>
+                                    <li class="filter high-to-low">PRECIO: MAYOR A MENOR</li>
+                                    <li class="filter low-to-high">PRECIO: MENOR A MAYOR</li>
+                                </ul>
+                            </div>
+                        </div>
+
+
                         <section class="product-list-section">
 
                             <div class="product-card-container">
@@ -30,23 +77,26 @@
                                 <a href="/product/10" class="product-card-link">
                                     <div class="image-container">
                                         <div class="image-carousel" data-productId="10">
-                                            
+
                                             <img src="/img/products/handbags/cartera1.avif" alt="product-image"
                                                 class="product-image-test product-image-test-active"
                                                 data-productId="10">
                                             <img src="/img/products/handbags/bag1.avif" alt="product-image"
-                                                class="product-image-test product-image-test-next-slide" data-productId="10">
+                                                class="product-image-test product-image-test-next-slide"
+                                                data-productId="10">
                                             <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test product-image-test-next-slide" data-productId="10">
+                                                class="product-image-test product-image-test-next-slide"
+                                                data-productId="10">
                                             <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test product-image-test-next-slide" data-productId="10">
+                                                class="product-image-test product-image-test-next-slide"
+                                                data-productId="10">
                                             <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test-prev-slide" data-productId="10"> 
-                                                <!-- TODO: BUSCAR EN UTILS PORCION DE CODIGO CUANDO TRAIGAMOS DEL BACK -->
+                                                class="product-image-test-prev-slide" data-productId="10">
+                                            <!-- TODO: BUSCAR EN UTILS PORCION DE CODIGO CUANDO TRAIGAMOS DEL BACK -->
                                         </div>
                                         <!-- TODO: HACER CONTENEDOR DE DOTS ACA ABAJO -->
 
-                                        
+
 
                                     </div>
                                     <div class="product-info-container">
@@ -65,7 +115,7 @@
                                     <div class="product-carousel-dot"></div>
                                 </div>
 
-                               
+
 
                             </div>
 
@@ -84,7 +134,7 @@
                                                 class="product-image-test" data-productId="11">
                                         </div>
 
-                                        
+
 
                                     </div>
                                     <div class="product-info-container">
@@ -101,7 +151,7 @@
                                     <div class="product-carousel-dot"></div>
                                     <div class="product-carousel-dot"></div>
                                 </div>
-                               
+
 
                             </div>
 
@@ -135,7 +185,7 @@
                                     <div class="product-carousel-dot"></div>
                                     <div class="product-carousel-dot"></div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="product-card-container">
@@ -168,7 +218,7 @@
                                     <div class="product-carousel-dot"></div>
                                     <div class="product-carousel-dot"></div>
                                 </div>
-                               
+
 
                             </div>
 

@@ -7,9 +7,17 @@ window.addEventListener('load', () => {
     const allImages = document.querySelectorAll('.product-image-test');
     const dotsContainers = document.querySelectorAll('.product-dots-container');
     const dots = document.querySelectorAll('.product-carousel-dot')
-    let currentImage = 0;
-    var intervalId;
+    const filterBtn = document.querySelector('.filter-btn-container')
+    const filtersContainer = document.querySelector('.filters-container')
+    const closeFilterMenuX = document.querySelector('.close-filter-x')
+    const allFilters = document.querySelectorAll('.filter')
+    const filtersWithDropdown = document.querySelectorAll('.filter-with-dropdown')
+    const filtersDropdown = document.querySelectorAll('.filter-dropdown-container')
+    const filterAmountContainer = document.querySelectorAll('.filter-amount')
+    const blackScreen = document.querySelector('.black-screen')
 
+    var intervalId;
+    let currentImage = 0;
     const productImages = {};
 
     allImages.forEach(img => {
@@ -20,6 +28,8 @@ window.addEventListener('load', () => {
             productImages[productId] = [img];
         };
     });
+
+   
 
 
     carouselContainers.forEach(container => { //Va por cada carousel los productos
@@ -119,4 +129,33 @@ window.addEventListener('load', () => {
             })
         })
     }
+
+
+    //filters function
+
+    filterBtn.addEventListener('click', () => {
+        filtersContainer.classList.add('filters-container-active')
+        blackScreen.classList.add('black-screen-active')
+    })
+
+    closeFilterMenuX.addEventListener('click', () => {
+        filtersContainer.classList.remove('filters-container-active')
+        blackScreen.classList.remove('black-screen-active')
+    })
+
+    filtersWithDropdown.forEach(filter => {
+        filter.addEventListener('click', () => {
+            const dataLabel = filter.dataset.label
+            filtersDropdown.forEach(dropdown => {
+                if(dropdown.dataset.label === dataLabel ) {
+                    dropdown.classList.toggle('filter-dropdown-container-active')
+                }
+            })
+        })
+    })
+
+   
+    
+
+
 })

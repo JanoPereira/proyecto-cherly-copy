@@ -1,7 +1,7 @@
 /* COLOR PICKER */
 .login-register-container {
     position: fixed;
-    z-index: 10000;
+    z-index: 10;
     bottom: 0;
     right: 0;
     height: 100%;

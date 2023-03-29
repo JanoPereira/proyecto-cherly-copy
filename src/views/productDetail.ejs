@@ -4,7 +4,7 @@
 <head>
     <%- include('./partials/head.ejs') %>
         <link rel="stylesheet" href="/css/productDetail.css">
-        <script src="/scripts/productDetail.js"></script>
+        <script src="/scripts/productDetail.js" type="module"></script>
         <title>Cartera #1</title>
 </head>
 
@@ -46,60 +46,46 @@
                                         <p class="product-name">Cartera Women Fashion</p>
                                         <p class="product-price">$8000</p>
                                     </div>
+                                    <div class="product-description-container">
+                                        <p class="product-description">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+                                    </div>
                                     <div class="product-color-container">
                                         <label for="" class="select-label">Colores</label>
-                                        <div class="color-choose-option">
-                                            <p class="current-color-choice">Verde</p>
-                                            <span class="color-dot-green"></span>
-                                            <i class="fa-solid fa-chevron-right"></i>
+                                        <div class="color-images-container">
+                                            <div class="color-image-border color-image-border-active">
+                                                <a href="#"><img src="/img/products/handbags/cartera1.avif" alt="color-image-option" class="color-image"></a>
+                                            </div>
+                                            <div class="color-image-border">
+                                                <a href="#"><img src="/img/products/handbags/cartera1.avif" alt="color-image-option" class="color-image"></a>
+                                            </div>
+                                            <div class="color-image-border">
+                                                <a href="#"><img src="/img/products/handbags/cartera1.avif" alt="color-image-option" class="color-image"></a>
+                                            </div>
+                
                                         </div>
                                     </div>
                                     <div class="product-size-container">
                                         <label for="" class="select-label">Tamaños</label>
-                                        <p class="size-choose-option">
-                                            Medium
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                        </p>
+                                        <p class="size-guide" id="size-guide-btn">Guía de Tamaños</p>
+                                        <div class="sizes-container">
+                                            <p class="size">XS</p>
+                                            <p class="size no-stock">S</p>
+                                            <p class="size">M</p>
+                                            <p class="size">L</p>
+                                        </div>
                                     </div>
                                     <div class="cart-button-container">
                                         <button class="cart-add-button">Agregar al Carro</button>
                                     </div>
+                                    <div class="product-specifications">
+                                        <label class="product-specifications-label" id="product-specifications-btn">Product Details</label>                                        
+                                    </div>
                                 </div>
                             </div>
-                            <div class="product-description-container">
-                                <p class="product-description">
-                                    Introducing the Twist One Handle PM handbag in Taurillon leather. Its striking
-                                    shape,
-                                    elegant
-                                    top handle, and iconic LV twist-lock make it a sophisticated everyday bag. In
-                                    addition
-                                    to the
-                                    top handle, there’s a removable strap for comfortable shoulder and cross-body carry.
-                                    The
-                                    bag's
-                                    interior is lined in colored leather.
-                                </p>
-                            </div>
-                            <div class="product-specifications-container">
-                                <label class="product-specifications-label">Product Details</label>
-                                <div class="product-size-specifications">
-                                    <p class="size-number-specifications"> 9.8 x 6.7 x 4.3 cms</p>
-                                    <p class="size-labels-specifications">(length x Height x Width)</p>
-                                </div>
-                                <ul class="specification-item-list">
-                                    <li class="specification-item">Greige</li>
-                                    <li class="specification-item">Taurillon leather</li>
-                                    <li class="specification-item">Taurillon-leather trim</li>
-                                    <li class="specification-item">Cowhide-leather lining</li>
-                                    <li class="specification-item">Gold-color hardware</li>
-                                    <li class="specification-item">Transforming LV twist-lock</li>
-                                    <li class="specification-item">2 flat pockets</li>
-                                    <li class="specification-item">Zipped pocket</li>
-                                    <li class="specification-item">Flat pocket with removable mirror</li>
-                                    <li class="specification-item">Strap:Removable. adjustable</li>
-                                    <li class="specification-item">Strap drop: 13.6 inches</li>
-                                </ul>
-                            </div>
+                            
+                            
                             <div class="related-products-container">
                                 <label class="related-products-label">SUGGESTIONS</label>
                                 <div class="related-product-cards-section">
@@ -179,6 +165,30 @@
                                 </div>
                             </div>
                         </main>
+                        <div class="size-guide-img-container">
+                            <img src="/img/size-guide.jpg" alt="" class="size-guide-img">
+                            <i class="fa-solid fa-xmark close-size-guide-btn"></i>
+                        </div>
+                        <div class="product-specifications-container">
+                            <div class="product-size-specifications">
+                                <p class="size-number-specifications"> 9.8 x 6.7 x 4.3 cms</p>
+                                <p class="size-labels-specifications">(length x Height x Width)</p>
+                            </div>
+                            <ul class="specification-item-list">
+                                <li class="specification-item">Greige</li>
+                                <li class="specification-item">Taurillon leather</li>
+                                <li class="specification-item">Taurillon-leather trim</li>
+                                <li class="specification-item">Cowhide-leather lining</li>
+                                <li class="specification-item">Gold-color hardware</li>
+                                <li class="specification-item">Transforming LV twist-lock</li>
+                                <li class="specification-item">2 flat pockets</li>
+                                <li class="specification-item">Zipped pocket</li>
+                                <li class="specification-item">Flat pocket with removable mirror</li>
+                                <li class="specification-item">Strap:Removable. adjustable</li>
+                                <li class="specification-item">Strap drop: 13.6 inches</li>
+                            </ul>
+                            <i class="fa-solid fa-xmark close-size-guide-btn"></i>
+                        </div>
 </body>
 
 </html>

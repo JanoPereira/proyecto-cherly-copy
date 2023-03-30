@@ -5,7 +5,7 @@
     Font-size dependiendo el viewport ==> ...
     Contenedor de contenedores ==> product-cards-section
     Contenedor de elementos particulares que componen un contenedor ==> product-card-container
-
+    MAIN CONTENT TIENE MARGIN-TOP PARA QUE EL HEADER NO TAPE
   
   
   --------------CODIGO---------------------
@@ -54,3 +54,24 @@ CODIGO PARA CUANDO TENGAMOS PRODUCTOS CON LAS IMAGENES
                                                     data-productId="10">
                                                 <% } %>
                                             <% }) %>
+
+
+
+FUNCION DOTS PARA CAMBIO IMAGEN
+function dotsNextSlide() { //Se invoca cuando una imagen cambia a la siguiente
+        const activeDot = document.querySelector('.active-dot')
+        activeDot.classList.remove('active-dot')
+        if (activeDot.nextElementSibling) {
+            const dotToActive = activeDot.nextElementSibling;
+            dotToActive.classList.add('active-dot')
+        } else {
+            imgDots[0].classList.add('active-dot'); //imgDots es un selectorAll de todos
+        }
+    }
+
+CODIGO EJS PARA DOTS
+                                   <div class="product-dots-container" data-productId="11">
+                                        <div class="product-carousel-dot product-carousel-dot-active"></div>
+                                        <div class="product-carousel-dot"></div>
+                                        <div class="product-carousel-dot"></div>
+                                    </div>

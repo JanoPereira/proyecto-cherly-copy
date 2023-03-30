@@ -3,7 +3,7 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-        <script src="/scripts/productList.js"></script>
+        <script src="/scripts/productList.js" type="module"></script>
         <link rel="stylesheet" href="/css/productList.css">
         <title>Cartera - Lista</title>
 </head>
@@ -14,21 +14,6 @@
             <%- include('./partials/login.ejs') %>
                 <%- include('./partials/header.ejs') %>
                     <%- include('./partials/registrationForm.ejs') %>
-
-                        <div class="product-list-intro">
-
-                            <div class="product-title">
-                                <h2>Bags</h2>
-                            </div>
-
-                            <div class="filter-btn-container">
-                                <p class="filter-name">FILTRAR POR</p>
-                                <i class="fa-solid fa-filter"></i>
-                            </div>
-
-                        </div>
-
-
 
 
                         <div class="filters-container">
@@ -41,7 +26,7 @@
                                     <li class="filter filter-with-dropdown" data-label='size'>
                                         <div class="filter-item-arrow-container">
                                             <p>TALLA</p>
-                                           <i class="fa-solid fa-caret-down"></i>
+                                            <i class="fa-solid fa-caret-down"></i>
                                         </div>
 
                                         <ul type="none" class="filter-dropdown-container" data-label='size'>
@@ -53,7 +38,7 @@
                                     <li class="filter filter-with-dropdown" data-label='color'>
                                         <div class="filter-item-arrow-container">
                                             <p>COLOR</p>
-                                           <i class="fa-solid fa-caret-down"></i>
+                                            <i class="fa-solid fa-caret-down"></i>
                                         </div>
                                         <ul type="none" class="filter-dropdown-container" data-label='color'>
                                             <li class="filter-dropdown-item">Azul</li>
@@ -68,161 +53,241 @@
                             </div>
                         </div>
 
+                        <main class="main">
+                            <div class="product-list-intro">
 
-                        <section class="product-list-section">
-
-                            <div class="product-card-container">
-
-
-                                <a href="/product/10" class="product-card-link">
-                                    <div class="image-container">
-                                        <div class="image-carousel" data-productId="10">
-
-                                            <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                                class="product-image-test product-image-test-active"
-                                                data-productId="10">
-                                            <img src="/img/products/handbags/bag1.avif" alt="product-image"
-                                                class="product-image-test product-image-test-next-slide"
-                                                data-productId="10">
-                                            <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test product-image-test-next-slide"
-                                                data-productId="10">
-                                            <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test product-image-test-next-slide"
-                                                data-productId="10">
-                                            <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test-prev-slide" data-productId="10">
-                                            <!-- TODO: BUSCAR EN UTILS PORCION DE CODIGO CUANDO TRAIGAMOS DEL BACK -->
-                                        </div>
-                                        <!-- TODO: HACER CONTENEDOR DE DOTS ACA ABAJO -->
-
-
-
-                                    </div>
-                                    <div class="product-info-container">
-                                        <div class="price-name-container">
-                                            <p class="product-name">Cartera #1</p>
-                                            <p class="product-price">$3000</p>
-                                        </div>
-
-                                    </div>
-
-                                </a>
-                                <div class="product-dots-container" data-productId="10">
-
-                                    <div class="product-carousel-dot product-carousel-dot-active"></div>
-                                    <div class="product-carousel-dot"></div>
-                                    <div class="product-carousel-dot"></div>
+                                <div class="product-title">
+                                    <h2>Bags</h2>
                                 </div>
 
-
-
-                            </div>
-
-                            <div class="product-card-container">
-
-
-                                <a href="/product/10" class="product-card-link">
-                                    <div class="image-container">
-                                        <div class="image-carousel" data-productId="11">
-                                            <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                                class="product-image-test product-image-test-active"
-                                                data-productId="11">
-                                            <img src="/img/products/handbags/bag1.avif" alt="product-image"
-                                                class="product-image-test" data-productId="11">
-                                            <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test" data-productId="11">
-                                        </div>
-
-
-
-                                    </div>
-                                    <div class="product-info-container">
-                                        <div class="price-name-container">
-                                            <p class="product-name">Cartera #1</p>
-                                            <p class="product-price">$3000</p>
-                                        </div>
-
-                                    </div>
-
-                                </a>
-                                <div class="product-dots-container" data-productId="11">
-                                    <div class="product-carousel-dot product-carousel-dot-active"></div>
-                                    <div class="product-carousel-dot"></div>
-                                    <div class="product-carousel-dot"></div>
-                                </div>
-
-
-                            </div>
-
-                            <div class="product-card-container">
-
-
-                                <a href="/product/10" class="product-card-link">
-                                    <div class="image-container">
-                                        <div class="image-carousel" data-productId="12">
-                                            <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                                class="product-image-test product-image-test-active"
-                                                data-productId="12">
-                                            <img src="/img/products/handbags/bag1.avif" alt="product-image"
-                                                class="product-image-test" data-productId="12">
-                                            <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test" data-productId="12">
-                                        </div>
-
-                                    </div>
-                                    <div class="product-info-container">
-                                        <div class="price-name-container">
-                                            <p class="product-name">Cartera #1</p>
-                                            <p class="product-price">$3000</p>
-                                        </div>
-
-                                    </div>
-
-                                </a>
-                                <div class="product-dots-container" data-productId="11">
-                                    <div class="product-carousel-dot product-carousel-dot-active"></div>
-                                    <div class="product-carousel-dot"></div>
-                                    <div class="product-carousel-dot"></div>
+                                <div class="filter-btn-container">
+                                    <p class="filter-name">FILTRAR POR</p>
+                                    <i class="fa-solid fa-filter"></i>
                                 </div>
 
                             </div>
+                            <section class="product-list-section">
 
-                            <div class="product-card-container">
+                                <div class="product-card-container" data-productId="10">
+                                    <a href="/product/10" class="product-card-link" >
+                                        <div class="image-container">
+                                            <div class="image-carousel" >
+
+                                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-active"
+                                                    data-productId="10">
+                                                <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-next-slide"
+                                                    data-productId="10">
+                                                <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-next-slide"
+                                                    data-productId="10">
+                                                <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-next-slide"
+                                                    data-productId="10">
+                                                <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                                    class="product-image-test-prev-slide" data-productId="10">
+                                                <!-- TODO: BUSCAR EN UTILS PORCION DE CODIGO CUANDO TRAIGAMOS DEL BACK -->
+                                            </div>
+                                            <!-- TODO: HACER CONTENEDOR DE DOTS ACA ABAJO -->
 
 
-                                <a href="/product/10" class="product-card-link">
-                                    <div class="image-container">
-                                        <div class="image-carousel" data-productId="13">
-                                            <img src="/img/products/handbags/cartera1.avif" alt="product-image"
-                                                class="product-image-test product-image-test-active"
-                                                data-productId="13">
-                                            <img src="/img/products/handbags/bag1.avif" alt="product-image"
-                                                class="product-image-test" data-productId="13">
-                                            <img src="/img/products/handbags/bag2.avif" alt="product-image"
-                                                class="product-image-test" data-productId="13">
+
+                                        </div>
+                                        <div class="product-info-container">
+                                            <div class="price-name-container">
+                                                <p class="product-name">Cartera #1</p>
+                                                <p class="product-price">$3000</p>
+                                            </div>
+
                                         </div>
 
-                                    </div>
-                                    <div class="product-info-container">
-                                        <div class="price-name-container">
-                                            <p class="product-name">Cartera #1</p>
-                                            <p class="product-price">$3000</p>
+                                    </a>
+                                    <div class="product-quick-actions-container" data-productId="10">
+                                        <div class="quick-cart-container">
+                                            <div class="logo-container">
+
+                                                <i class="fa-solid fa-bag-shopping quick-add-cart-btn"></i>
+                                            </div>
                                         </div>
-
+                                        <div class="quick-fav-container">
+                                            <div class="logo-container">
+                                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                                    <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
+        
+                                                    <% }else{ %>
+                                                        <i class="fa-solid fa-heart favourite-logo"></i>
+                                                        <% } %>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="quick-sizes-container">
+                                            <!-- TODO: a estos meterle el data-value = size.id -->
+                                            <p class="quick-size" >XS</p>
+                                            <p class="quick-size">S</p>
+                                            <p class="quick-size">M</p>
+                                            <p class="quick-size">L</p>
+                                        </div>
                                     </div>
-
-                                </a>
-                                <div class="product-dots-container" data-productId="11">
-                                    <div class="product-carousel-dot product-carousel-dot-active"></div>
-                                    <div class="product-carousel-dot"></div>
-                                    <div class="product-carousel-dot"></div>
                                 </div>
 
+                                <div class="product-card-container" data-productId="11">
+                                    <a href="/product/10" class="product-card-link" >
+                                        <div class="image-container">
+                                            <div class="image-carousel" >
+                                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-active"
+                                                    data-productId="11">
+                                                <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                                    class="product-image-test" data-productId="11">
+                                                <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                                    class="product-image-test" data-productId="11">
+                                            </div>
+                                        </div>
+                                        <div class="product-info-container">
+                                            <div class="price-name-container">
+                                                <p class="product-name">Cartera #1</p>
+                                                <p class="product-price">$3000</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="product-quick-actions-container" data-productId="11">
+                                        <div class="quick-cart-container">
+                                            <div class="logo-container">
 
-                            </div>
+                                                <i class="fa-solid fa-bag-shopping quick-add-cart-btn"></i>
+                                            </div>
+                                        </div>
+                                        <div class="quick-fav-container">
+                                            <div class="logo-container">
+                                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                                    <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
+        
+                                                    <% }else{ %>
+                                                        <i class="fa-solid fa-heart favourite-logo"></i>
+                                                        <% } %>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="quick-sizes-container">
+                                            <!-- TODO: a estos meterle el data-value = size.id -->
+                                            <p class="quick-size" >XS</p>
+                                            <p class="quick-size">S</p>
+                                            <p class="quick-size">M</p>
+                                            <p class="quick-size">L</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        </section>
+                                <div class="product-card-container" data-productId="12">
+                                    <a href="/product/10" class="product-card-link">
+                                        <div class="image-container">
+                                            <div class="image-carousel" >
+                                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-active"
+                                                    data-productId="12">
+                                                <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                                    class="product-image-test" data-productId="12">
+                                                <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                                    class="product-image-test" data-productId="12">
+                                            </div>
+
+                                        </div>
+                                        <div class="product-info-container">
+                                            <div class="price-name-container">
+                                                <p class="product-name">Cartera #1</p>
+                                                <p class="product-price">$3000</p>
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+                                    <div class="product-quick-actions-container" data-productId="12">
+                                        <div class="quick-cart-container">
+                                            <div class="logo-container">
+
+                                                <i class="fa-solid fa-bag-shopping quick-add-cart-btn"></i>
+                                            </div>
+                                        </div>
+                                        <div class="quick-fav-container">
+                                            <div class="logo-container">
+                                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                                    <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
+        
+                                                    <% }else{ %>
+                                                        <i class="fa-solid fa-heart favourite-logo"></i>
+                                                        <% } %>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="quick-sizes-container">
+                                            <!-- TODO: a estos meterle el data-value = size.id -->
+                                            <p class="quick-size" >XS</p>
+                                            <p class="quick-size">S</p>
+                                            <p class="quick-size">M</p>
+                                            <p class="quick-size">L</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-card-container" data-productId="13">
+                                    <a href="/product/10" class="product-card-link">
+                                        <div class="image-container">
+                                            <div class="image-carousel" >
+                                                <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                                    class="product-image-test product-image-test-active"
+                                                    data-productId="13">
+                                                <img src="/img/products/handbags/bag1.avif" alt="product-image"
+                                                    class="product-image-test" data-productId="13">
+                                                <img src="/img/products/handbags/bag2.avif" alt="product-image"
+                                                    class="product-image-test" data-productId="13">
+                                            </div>
+
+                                        </div>
+                                        <div class="product-info-container">
+                                            <div class="price-name-container">
+                                                <p class="product-name">Cartera #1</p>
+                                                <p class="product-price">$3000</p>
+                                            </div>
+
+                                        </div>
+
+                                    </a>
+                                    <div class="product-quick-actions-container" data-productId="13">
+                                        <div class="quick-cart-container">
+                                            <div class="logo-container">
+
+                                                <i class="fa-solid fa-bag-shopping quick-add-cart-btn"></i>
+                                            </div>
+                                        </div>
+                                        <div class="quick-fav-container">
+                                            <div class="logo-container">
+                                                <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
+                                                    <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
+        
+                                                    <% }else{ %>
+                                                        <i class="fa-solid fa-heart favourite-logo"></i>
+                                                        <% } %>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="quick-sizes-container">
+                                            <!-- TODO: a estos meterle el data-value = size.id -->
+                                            <p class="quick-size" >XS</p>
+                                            <p class="quick-size">S</p>
+                                            <p class="quick-size">M</p>
+                                            <p class="quick-size">L</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+                        </main>
+
+
+
+
+
 
 </body>
 

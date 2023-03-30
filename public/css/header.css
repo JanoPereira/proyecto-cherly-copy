@@ -9,10 +9,6 @@ body {
     overflow-x: hidden;
 }
 
-@media (min-width: 1024px) {
-    
-}
-
 .noScroll {
     overflow: hidden;
 }
@@ -131,26 +127,23 @@ li {
 /* END MENU HAMBURGUESA */
 
 .header {
-    position: static;
+    position: fixed;
     width: 100%;
     padding: 2.5vh 0;
     background-color: white;
     border-bottom: 1px solid rgba(40, 40, 40, .2);
     height: 10vh;
     transition: visibility .2s ease-out;
+    z-index: 10;
+    top: 0;
 }
 .header-hidden{
     animation: fadeOutUp .2s ease-in-out;
-    position: fixed;
-    z-index: 10;
     visibility: hidden;
-    top: 0;
+    
 }
 .header-active{ /* Para cuando scrollean para arriba */
-    position: fixed;
-    z-index: 10;
     animation: fadeInDown .4s ease-in-out;
-    top: 0;
     visibility: visible;
 }
 
@@ -295,9 +288,6 @@ li {
 
 /* MOBILE */
 @media (min-width: 1024px) {
-    .header{
-        height: auto;
-    }
     .brand-name {
         font-size: 40px;
     }

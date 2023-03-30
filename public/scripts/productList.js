@@ -160,8 +160,6 @@ window.addEventListener('load', () => {
         }
     })
 
-   
     
-
 
 })

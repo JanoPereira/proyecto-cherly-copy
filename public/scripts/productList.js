@@ -5,13 +5,19 @@ window.addEventListener('load', () => {
     const allImages = document.querySelectorAll('.product-image-test');
     const filterBtn = document.querySelector('.filter-btn-container')
     const filtersContainer = document.querySelector('.filters-container')
-    const closeFilterMenuX = document.querySelector('.bx-x')
+    const closeFilterMenuX = document.querySelector('.close-filter-menu')
     const allFilters = document.querySelectorAll('.filter')
     const filtersWithDropdown = document.querySelectorAll('.filter-with-dropdown')
     const filtersDropdown = document.querySelectorAll('.filter-dropdown-container')
     const filterAmountContainer = document.querySelectorAll('.filter-amount')
     const blackScreen = document.querySelector('.black-screen')
     const quickActionsContainer = 'product-quick-actions-container';
+    const quickSizesBtns = document.querySelectorAll('.quick-size')
+    const quickSizesCont = document.querySelectorAll('.quick-sizes-container')
+    const quickAddCartContainer = document.querySelector('.add-to-cart-container')
+    const closeCartBtn = document.querySelector('.close-cart-menu')
+    const quickCarts =  document.querySelectorAll('.quick-cart-container')
+    const quickFavs = document.querySelectorAll('.quick-fav-container')
 
     var intervalId;
     let currentImage = 0;

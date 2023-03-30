@@ -19,7 +19,7 @@
                         <div class="filters-container">
                             <div class="filter-title-close-btn-container">
                                 <h3>FILTRAR POR</h3>
-                                <i class='bx bx-x'></i>
+                                <i class='bx bx-x close-filter-menu'></i>
                             </div>
                             <div class="filters-list">
                                 <ul type="none">
@@ -53,6 +53,46 @@
                             </div>
                         </div>
 
+                        <div class="add-to-cart-container">
+                            <div class="quick-add-cart-title">
+                                <i class='bx bx-x close-cart-menu'></i>
+                                <h2>IN THE BAG</h2>
+                                <i class='bx bx-shopping-bag'>1</i>
+                            </div>
+                            <div class="product-selected-container">
+                                <div class="product-selected-first-row">
+                                    <div class="product-selected-img-container">
+                                        <img src="/img/products/handbags/cartera1.avif" alt="product-image"
+                                            class="product-selected-img">
+                                    </div>
+                                    <div class="product-selected-info-qty-container">
+                                        <div class="product-selected-name-remove-container">
+                                            <p class="product-selected-name">Cartera 10</p>
+                                            <button class="product-selected-remove-btn">Remover</button>
+                                        </div>
+                                        <p class="product-selected-color-size">Beige / M</p>
+                                        <div class="product-selected-quantity-container">
+                                            <p>Cant.</p>
+                                            <div class="current-quantity-container">
+                                                <p class="current-quantity">1</p>
+                                                <i class='bx bx-plus add-one-same-product'></i>
+                                            </div>
+                                            <p class="total">US$ 110</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subtotal-container">
+                                    <p>Subtotal</p>
+                                    <p class="subtotal">US$ 116</p>
+                                </div>
+                                <div class="quick-checkout-container">
+                                    <button class="checkout-btn">CHECKOUT</button>
+                                    <button class="view-bag-btn">VIEW BAG</button>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <main class="main">
                             <div class="product-list-intro">
 
@@ -69,9 +109,9 @@
                             <section class="product-list-section">
 
                                 <div class="product-card-container" data-productId="10">
-                                    <a href="/product/10" class="product-card-link" >
+                                    <a href="/product/10" class="product-card-link">
                                         <div class="image-container">
-                                            <div class="image-carousel" >
+                                            <div class="image-carousel">
 
                                                 <img src="/img/products/handbags/cartera1.avif" alt="product-image"
                                                     class="product-image-test product-image-test-active"
@@ -114,12 +154,12 @@
                                             <div class="logo-container">
                                                 <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
                                                     <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
-        
+
                                                     <% }else{ %>
                                                         <i class="fa-solid fa-heart favourite-logo"></i>
                                                         <% } %>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="quick-sizes-container">
                                             <!-- TODO: a estos meterle el data-value = size.id -->
@@ -132,9 +172,9 @@
                                 </div>
 
                                 <div class="product-card-container" data-productId="11">
-                                    <a href="/product/10" class="product-card-link" >
+                                    <a href="/product/10" class="product-card-link">
                                         <div class="image-container">
-                                            <div class="image-carousel" >
+                                            <div class="image-carousel">
                                                 <img src="/img/products/handbags/cartera1.avif" alt="product-image"
                                                     class="product-image-test product-image-test-active"
                                                     data-productId="11">
@@ -162,12 +202,12 @@
                                             <div class="logo-container">
                                                 <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
                                                     <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
-        
+
                                                     <% }else{ %>
                                                         <i class="fa-solid fa-heart favourite-logo"></i>
                                                         <% } %>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="quick-sizes-container">
                                             <!-- TODO: a estos meterle el data-value = size.id -->
@@ -182,7 +222,7 @@
                                 <div class="product-card-container" data-productId="12">
                                     <a href="/product/10" class="product-card-link">
                                         <div class="image-container">
-                                            <div class="image-carousel" >
+                                            <div class="image-carousel">
                                                 <img src="/img/products/handbags/cartera1.avif" alt="product-image"
                                                     class="product-image-test product-image-test-active"
                                                     data-productId="12">
@@ -213,12 +253,12 @@
                                             <div class="logo-container">
                                                 <% if (1==1) { %> <!-- CONDICION DE SI ESTA EN BOOKMARS -->
                                                     <i class="fa-regular fa-heart favourite-logo quick-add-fav-btn"></i>
-        
+
                                                     <% }else{ %>
                                                         <i class="fa-solid fa-heart favourite-logo"></i>
                                                         <% } %>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="quick-sizes-container">
                                             <!-- TODO: a estos meterle el data-value = size.id -->
@@ -233,7 +273,7 @@
                                 <div class="product-card-container" data-productId="13">
                                     <a href="/product/10" class="product-card-link">
                                         <div class="image-container">
-                                            <div class="image-carousel" >
+                                            <div class="image-carousel">
                                                 <img src="/img/products/handbags/cartera1.avif" alt="product-image"
                                                     class="product-image-test product-image-test-active"
                                                     data-productId="13">
@@ -267,12 +307,12 @@
                                                         <i class="fa-solid fa-heart favourite-logo"></i>
                                                         <% } %>
                                             </div>
-                                            
+
                                         </div>
                                         <div class="quick-sizes-container">
                                             <!-- TODO: a estos meterle el data-value = size.id -->
                                             <p class="quick-size" >XS</p>
-                                            <p class="quick-size no-stock">S</p>
+                                            <p class="quick-size">S</p>
                                             <p class="quick-size">M</p>
                                             <p class="quick-size">L</p>
                                         </div>

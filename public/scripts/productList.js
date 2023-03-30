@@ -5,13 +5,19 @@ window.addEventListener('load', () => {
     const allImages = document.querySelectorAll('.product-image-test');
     const filterBtn = document.querySelector('.filter-btn-container')
     const filtersContainer = document.querySelector('.filters-container')
-    const closeFilterMenuX = document.querySelector('.bx-x')
+    const closeFilterMenuX = document.querySelector('.close-filter-menu')
     const allFilters = document.querySelectorAll('.filter')
     const filtersWithDropdown = document.querySelectorAll('.filter-with-dropdown')
     const filtersDropdown = document.querySelectorAll('.filter-dropdown-container')
     const filterAmountContainer = document.querySelectorAll('.filter-amount')
     const blackScreen = document.querySelector('.black-screen')
     const quickActionsContainer = 'product-quick-actions-container';
+    const quickSizesBtns = document.querySelectorAll('.quick-size')
+    const quickSizesCont = document.querySelectorAll('.quick-sizes-container')
+    const quickAddCartContainer = document.querySelector('.add-to-cart-container')
+    const closeCartBtn = document.querySelector('.close-cart-menu')
+    const quickCarts =  document.querySelectorAll('.quick-cart-container')
+    const quickFavs = document.querySelectorAll('.quick-fav-container')
 
     var intervalId;
     let currentImage = 0;
@@ -192,5 +198,34 @@ window.addEventListener('load', () => {
         });
     })
 
+    quickSizesBtns.forEach(size => {
+        size.addEventListener('click', () => {
+            quickAddCartContainer.classList.add('add-to-cart-container-active')
+            blackScreen.classList.add('black-screen-active')
+        })
+    })
+
+    closeCartBtn.addEventListener('click', () => {
+        quickAddCartContainer.classList.remove('add-to-cart-container-active')
+        blackScreen.classList.remove('black-screen-active')
+        quickSizesCont.forEach(size => {
+            if(size.classList.contains('quick-sizes-container-active')){
+                size.classList.remove('quick-sizes-container-active')
+            }
+        })
+
+        quickCarts.forEach(cart => {
+            if(cart.classList.contains('quick-cart-container-active')){
+                cart.classList.remove('quick-cart-container-active')
+            }
+        })
+
+        quickFavs.forEach(fav => {
+            if(fav.classList.contains('quick-fav-container-active')){
+                fav.classList.remove('quick-fav-container-active')
+            }
+        })
+        
+    })
 
 })

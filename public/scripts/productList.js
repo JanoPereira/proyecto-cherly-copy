@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     const dots = document.querySelectorAll('.product-carousel-dot')
     const filterBtn = document.querySelector('.filter-btn-container')
     const filtersContainer = document.querySelector('.filters-container')
-    const closeFilterMenuX = document.querySelector('.close-filter-x')
+    const closeFilterMenuX = document.querySelector('.bx-x')
     const allFilters = document.querySelectorAll('.filter')
     const filtersWithDropdown = document.querySelectorAll('.filter-with-dropdown')
     const filtersDropdown = document.querySelectorAll('.filter-dropdown-container')
@@ -152,6 +152,12 @@ window.addEventListener('load', () => {
                 }
             })
         })
+    })
+
+    blackScreen.addEventListener('click', () => {
+        if(filtersContainer.classList.contains('filters-container-active')){
+            filtersContainer.classList.remove('filters-container-active')
+        }
     })
 
    

@@ -35,17 +35,12 @@ window.addEventListener('load', () => {
         // dotsJump(productSelectedId);
 
         container.addEventListener('mouseenter', () => { //Cuando el mouse se para arriba    
-
             handleConditionForSlide(productSelectedId);
             intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
                 handleConditionForSlide(productSelectedId);
 
             }, 2000);
-
-            // Voy por cada quickActionsContainer
-            document.querySelectorAll(`.${quickActionsContainer}`).forEach(cont => { //Para mostar quickActions
-                cont.dataset.productid == productSelectedId ? cont.classList.add(`${quickActionsContainer}-active`) : null;
-            });
+            applyQuickActions(container);
 
         });
 
@@ -53,24 +48,11 @@ window.addEventListener('load', () => {
             currentImage = 0;
             handleCarouselAutoSlide(productImages[productSelectedId]);
             clearInterval(intervalId);
-            document.querySelectorAll(`.${quickActionsContainer}`).forEach(cont => { //Para dejar de mostrar quickActions
-                cont.dataset.productid == productSelectedId ? cont.classList.remove(`${quickActionsContainer}-active`) : null;
-            });
+            clearQuickActions(container);
         })
 
 
     });
-
-    // const handleCarouselHover = (container, imagesSelected) => { //Retorna las imagenes pertenecientes al carousel
-    //     const id = container.dataset.productid;
-    //     allImages.forEach(img => {
-    //         if (img.dataset.productid == id) {
-    //             imagesSelected.push(img);
-    //         }
-    //     });
-
-    //     return imagesSelected;
-    // }
 
     const handleConditionForSlide = (productSelectedId) => { //Nos dice donde esta parada la foto para saber a cual pasar
 
@@ -83,7 +65,20 @@ window.addEventListener('load', () => {
         return handleCarouselAutoSlide(images);
 
     }
-
+    const applyQuickActions = (container)=>{//Escucha aquel contenedor que se le hace hover para aplicar quickActions
+        container.querySelector('.product-quick-actions-container').classList.add(`product-quick-actions-container-active`);
+        container.querySelector('.quick-cart-container').addEventListener('click',()=>{
+            container.querySelector('.quick-cart-container').classList.add('quick-cart-container-active');
+        container.querySelector('.quick-fav-container').classList.add('quick-fav-container-active');
+        container.querySelector('.quick-sizes-container').classList.add('quick-sizes-container-active');
+        })
+    }
+    const clearQuickActions = (container)=>{ //Vuelve las quickAction del container a predeterminadas
+        container.querySelector('.product-quick-actions-container').classList.remove(`product-quick-actions-container-active`)
+        container.querySelector('.quick-cart-container').classList.remove('quick-cart-container-active');
+        container.querySelector('.quick-fav-container').classList.remove('quick-fav-container-active');
+        container.querySelector('.quick-sizes-container').classList.remove('quick-sizes-container-active');
+    }
     // const handleDotsCount = (container, imagesSelected) => { //Pinta los puntos 
     //     let containers = []
     //     let slidesLength = imagesSelected.length
@@ -178,19 +173,5 @@ window.addEventListener('load', () => {
             filtersContainer.classList.remove('filters-container-active')
         }
     })
-
-
-    // LOGICA PARA QUICK-ACTIONS
-    // TODO: Si eligen de esta manera pensarlo para hacerlo para cada producto
-
-    const quickFavContainer = 'quick-fav-container';
-    const quickCartContainer = 'quick-cart-container';
-    const quickSizesContainer = 'quick-sizes-container'
-    document.querySelectorAll(`.${quickCartContainer}`).forEach(btn=>{
-        btn.addEventListener('click', () => {
-            activateClass([quickCartContainer, quickSizesContainer, quickFavContainer])
-        });
-    })
-
 
 })

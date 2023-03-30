@@ -1,12 +1,8 @@
-window.addEventListener('load', () => {
+import { activateClass, deactivateClass } from './utils.js';
 
-    const backArrow = document.querySelector('.back-button')
-    const nextArrow = document.querySelector('.foward-button')
-    const productCardContainer = document.querySelector('.product-card-container');
-    const carouselContainers = document.querySelectorAll('.image-carousel');
+window.addEventListener('load', () => {
+    const carouselContainers = document.querySelectorAll('.product-card-container');
     const allImages = document.querySelectorAll('.product-image-test');
-    const dotsContainers = document.querySelectorAll('.product-dots-container');
-    const dots = document.querySelectorAll('.product-carousel-dot')
     const filterBtn = document.querySelector('.filter-btn-container')
     const filtersContainer = document.querySelector('.filters-container')
     const closeFilterMenuX = document.querySelector('.bx-x')
@@ -15,6 +11,7 @@ window.addEventListener('load', () => {
     const filtersDropdown = document.querySelectorAll('.filter-dropdown-container')
     const filterAmountContainer = document.querySelectorAll('.filter-amount')
     const blackScreen = document.querySelector('.black-screen')
+    const quickActionsContainer = 'product-quick-actions-container';
 
     var intervalId;
     let currentImage = 0;
@@ -22,34 +19,43 @@ window.addEventListener('load', () => {
 
     allImages.forEach(img => {
         const productId = img.dataset.productid
-        if(productImages[productId]) {
+        if (productImages[productId]) {
             productImages[productId].push(img);
         } else {
             productImages[productId] = [img];
         };
     });
 
-   
+
 
 
     carouselContainers.forEach(container => { //Va por cada carousel los productos
-        
+
         let productSelectedId = container.dataset.productid;
-        dotsJump(productSelectedId);
-        
+        // dotsJump(productSelectedId);
+
         container.addEventListener('mouseenter', () => { //Cuando el mouse se para arriba    
-            
+
             handleConditionForSlide(productSelectedId);
             intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
                 handleConditionForSlide(productSelectedId);
-    
+
             }, 2000);
+
+            // Voy por cada quickActionsContainer
+            document.querySelectorAll(`.${quickActionsContainer}`).forEach(cont => { //Para mostar quickActions
+                cont.dataset.productid == productSelectedId ? cont.classList.add(`${quickActionsContainer}-active`) : null;
+            });
+
         });
-        
+
         container.addEventListener('mouseleave', () => { //Esto es para que una vez que se va del producto, vuelva a la primer imagen
             currentImage = 0;
             handleCarouselAutoSlide(productImages[productSelectedId]);
             clearInterval(intervalId);
+            document.querySelectorAll(`.${quickActionsContainer}`).forEach(cont => { //Para dejar de mostrar quickActions
+                cont.dataset.productid == productSelectedId ? cont.classList.remove(`${quickActionsContainer}-active`) : null;
+            });
         })
 
 
@@ -68,7 +74,7 @@ window.addEventListener('load', () => {
 
     const handleConditionForSlide = (productSelectedId) => { //Nos dice donde esta parada la foto para saber a cual pasar
 
-        let images =  productImages[productSelectedId]; // Imagenes del producto
+        let images = productImages[productSelectedId]; // Imagenes del producto
         if (currentImage < images.length - 1) {
             currentImage += 1;
         } else {
@@ -95,6 +101,18 @@ window.addEventListener('load', () => {
 
     // }
 
+    // const dotsNextSlide = () => { //Se invoca cuando una imagen cambia
+    //     const imgDots = document.querySelectorAll('.product-carousel-dot');
+    //     const activeDot = document.querySelector('.product-carousel-dot-active')
+    //     activeDot.classList.remove('product-carousel-dot-active');
+    //     if (activeDot.nextElementSibling) {
+    //         const dotToActive = activeDot.nextElementSibling;
+    //         dotToActive.classList.add('product-carousel-dot-active');
+    //     } else {
+    //         imgDots[0].classList.add('product-carousel-dot-active'); //imgDots es un selectorAll de todos
+    //     }
+    // }
+
     const handleCarouselAutoSlide = (images) => { //[<prev>,<active>,<next>]
         let slidesLength = images.length;
 
@@ -113,22 +131,23 @@ window.addEventListener('load', () => {
                 img.classList.remove('product-image-test-prev-slide');
                 img.classList.add('product-image-test-next-slide');
             }
-        })
+        });
+        // dotsNextSlide();
     }
 
-    function dotsJump(productSelectedId) { //Cuando el usuario clickea un dot random
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => {
-                if (!dot.classList.contains('product-carousel-dot-active')) {
-                    const activeDot = document.querySelector('.product-carousel-dot-active');
-                    activeDot.classList.remove('product-carousel-dot-active')
-                    dot.classList.add('product-carousel-dot-active')
-                    currentImage = i;
-                    handleCarouselAutoSlide(productImages[productSelectedId]);
-                }
-            })
-        })
-    }
+    // function dotsJump(productSelectedId) { //Cuando el usuario clickea un dot random
+    //     dots.forEach((dot, i) => {
+    //         dot.addEventListener('click', () => {
+    //             if (!dot.classList.contains('product-carousel-dot-active')) {
+    //                 const activeDot = document.querySelector('.product-carousel-dot-active');
+    //                 activeDot.classList.remove('product-carousel-dot-active')
+    //                 dot.classList.add('product-carousel-dot-active')
+    //                 currentImage = i;
+    //                 handleCarouselAutoSlide(productImages[productSelectedId]);
+    //             }
+    //         })
+    //     })
+    // }
 
 
     //filters function
@@ -147,7 +166,7 @@ window.addEventListener('load', () => {
         filter.addEventListener('click', () => {
             const dataLabel = filter.dataset.label
             filtersDropdown.forEach(dropdown => {
-                if(dropdown.dataset.label === dataLabel ) {
+                if (dropdown.dataset.label === dataLabel) {
                     dropdown.classList.toggle('filter-dropdown-container-active')
                 }
             })
@@ -155,11 +174,23 @@ window.addEventListener('load', () => {
     })
 
     blackScreen.addEventListener('click', () => {
-        if(filtersContainer.classList.contains('filters-container-active')){
+        if (filtersContainer.classList.contains('filters-container-active')) {
             filtersContainer.classList.remove('filters-container-active')
         }
     })
 
-    
+
+    // LOGICA PARA QUICK-ACTIONS
+    // TODO: Si eligen de esta manera pensarlo para hacerlo para cada producto
+
+    const quickFavContainer = 'quick-fav-container';
+    const quickCartContainer = 'quick-cart-container';
+    const quickSizesContainer = 'quick-sizes-container'
+    document.querySelectorAll(`.${quickCartContainer}`).forEach(btn=>{
+        btn.addEventListener('click', () => {
+            activateClass([quickCartContainer, quickSizesContainer, quickFavContainer])
+        });
+    })
+
 
 })

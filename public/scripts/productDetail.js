@@ -22,12 +22,10 @@ window.addEventListener('load', () => {
             document.querySelector('.product-image-active').classList.remove('product-image-active');
 
             // Tengo que crear una etiqueta para agregarsela al div
-            const newImg = document.createElement('img');
-            newImg.src = img.getAttribute('src');
-            newImg.classList.add('product-image');
+            const currentImage = document.getElementById('current-displayed-image');
+            const newSrc = img.getAttribute('src');
+            currentImage.src = newSrc;
             img.classList.add('product-image-active');
-            carouselImagesContainer.innerHTML = '';
-            carouselImagesContainer.appendChild(newImg);
 
         })
     });

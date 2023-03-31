@@ -2,7 +2,6 @@ import { activateClass, deactivateClass } from './utils.js';
 
 window.addEventListener('load', () => {
     const carouselContainers = document.querySelectorAll('.product-card-container');
-    const allImages = document.querySelectorAll('.product-image-test');
     const filterBtn = document.querySelector('.filter-btn-container');
     const filtersContainer = 'filters-container';
     const closeFilterMenuX = document.querySelector('.close-filter-menu');
@@ -14,16 +13,8 @@ window.addEventListener('load', () => {
 
     var intervalId;
     let currentImage = 0;
-    const productImages = {};
 
-    allImages.forEach(img => {
-        const productId = img.dataset.productid
-        if (productImages[productId]) {
-            productImages[productId].push(img);
-        } else {
-            productImages[productId] = [img];
-        };
-    });
+
 
     closeCartBtn.addEventListener('click', () => { //Escucha la x del quickCart
         deactivateClass([quickAddCartContainer, blackScreen])
@@ -35,18 +26,16 @@ window.addEventListener('load', () => {
             handleConditionForSlide(container);//Apenas se para arriba, cambia la foto
             intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
                 handleConditionForSlide(container);
-
             }, 2000);
             applyQuickActions(container);
-
         });
  
-        container.addEventListener('mouseleave', () => { //Esto es para que una vez que se va del producto, vuelva a la primer imagen
+        container.addEventListener('mouseleave', () => { //Cuando el mouse se va del producto
             currentImage = 0;
             const images = container.querySelectorAll('.product-image-test');
-            handleCarouselAutoSlide(images);
-            clearInterval(intervalId);
-            clearQuickActions(container);
+            handleCarouselAutoSlide(images); //Vuelve a la 1er foto
+            clearInterval(intervalId); // Detiene el carousel
+            clearQuickActions(container); //no muestra mas el quickActions del product
         })
 
 

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 body {
@@ -314,6 +314,15 @@ li {
 
     .burguer-menu-option {
         /* font-size: 15px; */
+    }
+    .info-menu-item{
+        margin-top: .6rem;
+    }
+    .info-menu-item i{
+        margin-right: .5rem;
+    }
+    .info-menu-item a{
+        color: #000;
     }
 
 

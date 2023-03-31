@@ -1,5 +1,4 @@
-@media(min-width:1024px) {
-    .main {
+.main {
         margin-top: 10vh;
-    }
-}
+        margin-bottom: 3vh;
+}   

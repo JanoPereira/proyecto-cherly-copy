@@ -31,23 +31,20 @@ window.addEventListener('load', () => {
 
 
     carouselContainers.forEach(container => { //Va por cada carousel los productos
-
-        let productSelectedId = container.dataset.productid;
-        // dotsJump(productSelectedId);
-        // TODO: Aplicar logica de container.queryselector();
         container.addEventListener('mouseenter', () => { //Cuando el mouse se para arriba    
-            handleConditionForSlide(productSelectedId);//Apenas se para arriba, cambia la foto
+            handleConditionForSlide(container);//Apenas se para arriba, cambia la foto
             intervalId = setInterval(() => { //Esto es para que vaya cambiando la foto cada 2 seg
-                handleConditionForSlide(productSelectedId);
+                handleConditionForSlide(container);
 
             }, 2000);
             applyQuickActions(container);
 
         });
- // TODO: Aplicar logica de container.queryselector();
+ 
         container.addEventListener('mouseleave', () => { //Esto es para que una vez que se va del producto, vuelva a la primer imagen
             currentImage = 0;
-            handleCarouselAutoSlide(productImages[productSelectedId]);
+            const images = container.querySelectorAll('.product-image-test');
+            handleCarouselAutoSlide(images);
             clearInterval(intervalId);
             clearQuickActions(container);
         })
@@ -55,8 +52,8 @@ window.addEventListener('load', () => {
 
     });
 
-    const handleConditionForSlide = (productSelectedId) => { //Nos dice donde esta parada la foto para saber a cual pasar
-        let images = productImages[productSelectedId]; // Imagenes del producto
+    const handleConditionForSlide = (container) => { //Nos dice donde esta parada la foto para saber a cual pasar
+        let images = container.querySelectorAll('.product-image-test');// Imagenes del producto
         if (currentImage < images.length - 1) {
             currentImage += 1;
         } else {

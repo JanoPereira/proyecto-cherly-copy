@@ -442,7 +442,7 @@
         transform: translateX(-100%);
     }
     .quick-size.no-stock{
-        color: #666;
+        color: #888;
     }
     .quick-size.no-stock:hover{
         text-decoration: initial;

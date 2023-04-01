@@ -520,6 +520,7 @@
         position: sticky;
         top: 15%;
         padding: 5rem;
+        padding-top: 1rem;
     }
 
     .cart-add-button {
